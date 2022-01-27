@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { RegistrationComponentComponent } from './Authentication/registration-co
 import { NavbarComponentComponent } from './Shared/navbar-component/navbar-component.component';
 import { FooterComponentComponent } from './Shared/footer-component/footer-component.component';
 import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-navbar-component.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgImageSliderModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
