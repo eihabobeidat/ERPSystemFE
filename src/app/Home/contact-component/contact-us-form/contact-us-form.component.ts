@@ -17,9 +17,13 @@ export class ContactUsFormComponent implements OnInit {
     //public contactService: ContactService
     ) {}
 
+    formValidationCheck(){
+      return this.contactForm.controls['name'].valid && this.contactForm.controls['email'].valid && this.contactForm.controls['message'].valid;
+    }
   ngOnInit(): void {}
 
   onSubmit() {
+    console.log("submited!!");
     //this.contactService.createContact();
   }
 }

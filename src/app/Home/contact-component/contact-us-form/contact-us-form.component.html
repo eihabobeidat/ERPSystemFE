@@ -1,12 +1,12 @@
 <div class="bg-image">
     <section>
         <h3>Contact US</h3>
-        <p>We Appreciate your feedback about our service</p>
-        <form class="mt-4" [formGroup]="contactForm">
+        <p>We appreciate your feedback about our service</p>
+        <form class="mt-4" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="col-6 px-0">
                 <mat-form-field class="example-full-width w-100" appearance="outline">
                     <mat-label>Full Name</mat-label>
-                    <input type="text" matInput formControlName="name" placeholder="Full Name">
+                    <input type="text" matInput formControlName="name" placeholder="full name">
                     <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
                         Full name is <strong>required</strong>
                     </mat-error>
@@ -16,8 +16,8 @@
             <div class="col-6 px-0">
                 <mat-form-field class="example-full-width w-100" appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input type="text" matInput formControlName="email" placeholder="Email">
-                    <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
+                    <input type="text" matInput formControlName="email" placeholder="email">
+                    <mat-error *ngIf="contactForm.controls['email'].hasError('email')">
                         Enter a <strong>valid</strong> email address
                     </mat-error>
                 </mat-form-field>
@@ -25,13 +25,13 @@
             <div class="col-6 px-0">
                 <mat-form-field class="example-full-width w-100" appearance="outline">
                     <mat-label>Message</mat-label>
-                    <input type="text" matInput formControlName="message" placeholder="Your Feedback here">
-                    <mat-error *ngIf="contactForm.controls['message'].hasError('required')">
-                        Message <strong>must be more</strong> than 8 characters
+                    <input type="text" matInput formControlName="message" placeholder="your feedback here">
+                    <mat-error *ngIf="(contactForm.controls['message'].hasError('minlength'))">
+                        Message <strong>must be more</strong> than 12 characters
                     </mat-error>
                 </mat-form-field>
             </div>
-            <button type="submit">Send</button>
+            <button type="submit" [disabled]="!formValidationCheck()"><strong>SEND</strong></button>
         </form>
     </section>
 </div>
