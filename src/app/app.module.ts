@@ -11,6 +11,9 @@ import { RegistrationComponentComponent } from './Authentication/registration-co
 import { NavbarComponentComponent } from './Shared/navbar-component/navbar-component.component';
 import { FooterComponentComponent } from './Shared/footer-component/footer-component.component';
 import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-navbar-component.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './Home/contact-component/header/header.component';
 import { ContactUsInfoCardComponent } from './Home/contact-component/contact-us-info-card/contact-us-info-card.component';
 import { ContactUsFormComponent } from './Home/contact-component/contact-us-form/contact-us-form.component';
@@ -45,6 +48,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    
     BrowserAnimationsModule,
     ToastrModule.forRoot({timeOut:5000, progressAnimation:'increasing'}),
     NgxSpinnerModule,
