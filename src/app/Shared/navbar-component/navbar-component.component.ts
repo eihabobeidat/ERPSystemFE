@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponentComponent implements OnInit {
 
-  constructor() { }
+  accountStatus: boolean = false;
+  constructor(
+    //public userService: UserService, private router: Router
+    ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    // if (localStorage.getItem('token')) {
+    //   this.accountStatus = true;
+    // }
   }
-  logOut()
-  {
-    
+
+  logOut() {
+    //localStorage.clear();
+    //this.router.navigate(['/auth/login']);
   }
 }
