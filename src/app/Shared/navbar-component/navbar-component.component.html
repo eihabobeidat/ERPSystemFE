@@ -1,6 +1,6 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand logo">Real Estate Investments</a>
+        <a class="navbar-brand logo">ERP System</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="oi oi-menu"></span> Menu
   </button>
@@ -13,12 +13,14 @@
                 <li class="nav-item"><a routerLink="/client/contact" class="nav-link">Contact</a></li>
 
                 <li class="nav-item" *ngIf="!accountStatus"><a routerLink="/auth/login" class="nav-link">Login</a></li>
-                <li class="nav-item" *ngIf="accountStatus && (userService.selectedUser != null)">
+                <!-- <li class="nav-item" *ngIf="accountStatus && (userService.selectedUser != null)"> -->
+                    <li class="nav-item">
                     <div class="dropdown">
                         <a class="btn mat-stroked-button font-weight-normal pt-2 border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{userService.selectedUser.username}}
+                            <!-- {{userService.selectedUser.username}} -->
+                            UserName Here
                         </a>
-                        
+
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="http://localhost:65406/">Dashboard</a>
                             <button class="dropdown-item" (click)="logOut()">Log out</button>
@@ -28,4 +30,4 @@
             </ul>
         </div>
     </div>
-</nav> -->
+</nav>
