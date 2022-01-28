@@ -1,0 +1,37 @@
+<div class="bg-image">
+    <section>
+        <h3>Contact US</h3>
+        <p>We Appreciate your feedback about our service</p>
+        <form class="mt-4" [formGroup]="contactForm">
+            <div class="col-6 px-0">
+                <mat-form-field class="example-full-width w-100" appearance="outline">
+                    <mat-label>Full Name</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Full Name">
+                    <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
+                        Full name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="col-6 px-0">
+                <mat-form-field class="example-full-width w-100" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput formControlName="email" placeholder="Email">
+                    <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
+                        Enter a <strong>valid</strong> email address
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6 px-0">
+                <mat-form-field class="example-full-width w-100" appearance="outline">
+                    <mat-label>Message</mat-label>
+                    <input type="text" matInput formControlName="message" placeholder="Your Feedback here">
+                    <mat-error *ngIf="contactForm.controls['message'].hasError('required')">
+                        Message <strong>must be more</strong> than 8 characters
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</div>

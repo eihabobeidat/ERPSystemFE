@@ -1,1 +1,17 @@
-<p>Contact Works!!</p>
+<app-header pageName="CONTACT US"></app-header>
+
+<div class="container">
+    <div class="row d-flex mb-5 contact-info justify-content-center">
+        <div class="col-md-8">
+            <div class="row mb-5">
+                <div *ngFor="let item of contactUsInfo" class="col-md-4 text-center py-4">
+                    <app-contact-us-info-card [contactInfo]="item"></app-contact-us-info-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-contact-us-form></app-contact-us-form>
+
+<app-footer-component></app-footer-component>
