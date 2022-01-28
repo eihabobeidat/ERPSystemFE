@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponentComponent } from './Home/home-component/home-component.component';
@@ -14,6 +14,21 @@ import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './Home/contact-component/header/header.component';
+import { ContactUsInfoCardComponent } from './Home/contact-component/contact-us-info-card/contact-us-info-card.component';
+import { ContactUsFormComponent } from './Home/contact-component/contact-us-form/contact-us-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponentComponent,
     NavbarComponentComponent,
     FooterComponentComponent,
-    MainNavbarComponentComponent
+    MainNavbarComponentComponent,
+    HeaderComponent,
+    ContactUsInfoCardComponent,
+    ContactUsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +52,24 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({timeOut:5000, progressAnimation:'increasing'}),
+    NgxSpinnerModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatTableModule,
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule
+    NgImageSliderModule,
+    NgbModule
   ],
+  entryComponents:[],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
