@@ -11,6 +11,9 @@ import { RegistrationComponentComponent } from './Authentication/registration-co
 import { NavbarComponentComponent } from './Shared/navbar-component/navbar-component.component';
 import { FooterComponentComponent } from './Shared/footer-component/footer-component.component';
 import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-navbar-component.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,11 @@ import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
