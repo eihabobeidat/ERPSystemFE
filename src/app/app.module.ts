@@ -11,9 +11,7 @@ import { RegistrationComponentComponent } from './Authentication/registration-co
 import { NavbarComponentComponent } from './Shared/navbar-component/navbar-component.component';
 import { FooterComponentComponent } from './Shared/footer-component/footer-component.component';
 import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-navbar-component.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './Home/contact-component/header/header.component';
 import { ContactUsInfoCardComponent } from './Home/contact-component/contact-us-info-card/contact-us-info-card.component';
 import { ContactUsFormComponent } from './Home/contact-component/contact-us-form/contact-us-form.component';
@@ -23,12 +21,13 @@ import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TestimonialComponent } from './Home/testimonial/testimonial.component';
+import { SliderComponent } from './Home/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MainNavbarComponentComponent,
     HeaderComponent,
     ContactUsInfoCardComponent,
-    ContactUsFormComponent
+    ContactUsFormComponent,
+    TestimonialComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -52,10 +53,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     HttpClientModule,
     
-    BrowserAnimationsModule,
     ToastrModule.forRoot({timeOut:5000, progressAnimation:'increasing'}),
     NgxSpinnerModule,
-    HttpClientModule,
+    
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -63,9 +63,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
-    NgImageSliderModule,
-    NgbModule
+    MatFormFieldModule,
+    NgImageSliderModule
+    
   ],
   entryComponents:[],
   providers: [],
