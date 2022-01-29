@@ -1,103 +1,296 @@
-body {
-	font-family: "Open Sans", sans-serif;
+
+
+.main input,
+.search-btn {
+    width: 75%;
+    border: none;
+    box-shadow: 5px 5px 15px #000;
+    border-right: 0px;
+    font-size: 18px;
+    padding: 12px;
+    /* background-color: transparent; */
+    color: rgb(34, 31, 31);
+    cursor: pointer;
 }
-h2 {
-	color: #333;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: "Roboto", sans-serif;
-	font-weight: bold;
-	position: relative;
-	margin: 25px 0 50px;
+
+.main button {
+    width: 25%;
+    background-color: rgb(238, 199, 199);
+    color: black;
+    transition: all 0.3s;
+    float: right;
+    border-left: 0px;
 }
-h2::after {
-	content: "";
-	width: 100px;
-	position: absolute;
-	margin: 0 auto;
-	height: 3px;
-	background: rgb(39, 37, 37);
-	left: 0;
-	right: 0;
-	bottom: -10px;
+
+.main button:hover {
+    opacity: .8;
 }
-.carousel {
-	width: 650px;
-	margin: 0 auto;
-	padding-bottom: 50px;
+
+.main input:hover {
+    opacity: .8;
 }
-.carousel .carousel-item {
-	color: #999;
-	font-size: 14px;
-	text-align: center;
-	overflow: hidden;
-	min-height: 340px;
+
+
+/* swiper-slide */
+
+.swiper {
+    width: 100%;
+    height: 100%;
 }
-.carousel .carousel-item a {
-	color: #eb7245;
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
-.carousel .img-box {
-	width: 145px;
-	height: 145px;
-	margin: 0 auto;
-	border-radius: 50%;
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.carousel .img-box img {
-	width: 100%;
-	height: 100%;
-	display: block;
-	border-radius: 50%;
+
+
+/* Website Features */
+
+.untree_co-section {
+    padding: 70px 0
 }
-.carousel .testimonial {	
-	padding: 30px 0 10px;
+
+.untree_co-section .heading {
+    font-size: 20px
 }
-.carousel .overview {	
-	text-align: center;
-	padding-bottom: 5px;
+
+.service {
+    text-align: center
 }
-.carousel .overview b {
-	color: #333;
-	font-size: 15px;
-	text-transform: uppercase;
-	display: block;	
-	padding-bottom: 5px;
+
+.service .icon-wrap {
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block
 }
-.carousel .star-rating i {
-	font-size: 18px;
-	color: #ffdc12;
+
+.service .icon-wrap span {
+    font-size: 50px;
+    color: #12947f
 }
-.carousel-control-prev, .carousel-control-next {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	background: #999;
-	text-shadow: none;
-	top: 4px;
+
+.service .icon-wrap:before {
+    top: 0;
+    left: -10px;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    content: "";
+    background: rgba(18, 148, 127, .1);
+    border-radius: 50%
 }
-.carousel-control-prev i, .carousel-control-next i {
-	font-size: 20px;
-	margin-right: 2px;
+
+.service h3 {
+    font-size: 16px
 }
-.carousel-control-prev {
-	left: auto;
-	right: 40px;
+
+.text-secondary {
+    color: #12947f!important;
 }
-.carousel-control-next i {
-	margin-right: -2px;
+
+.service h3 a {
+    color: #000
 }
-.carousel .carousel-indicators {
-	bottom: 15px;
+
+
+/* start OUR TEAM section */
+
+.team-area {
+    margin-bottom: 50px;
 }
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 11px;
-	height: 11px;
-	margin: 1px 5px;
-	border-radius: 50%;
+
+.section-title h2 {
+    text-transform: uppercase;
 }
-.carousel-indicators li {	
-	background: #e2e2e2;
-	border: none;
+
+.section-title {
+    margin: 3% 0;
 }
-.carousel-indicators li.active {		
-	background: #888;		
+
+.section-title p {
+    text-transform: uppercase;
+    font-weight: bold;
 }
+
+.single-team {
+    padding-bottom: 70px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px #000;
+}
+
+.team-img {
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.team-img img {
+    width: 100%;
+    transition: .3s;
+}
+
+.single-team:hover .team-img img {
+    transform: scale(1.1);
+}
+
+.team-content {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    bottom: 0;
+    transition: all .4s;
+    background: tomato;
+    z-index: 5;
+}
+
+.single-team:hover .team-content {
+    height: 150px;
+}
+
+.team-info {
+    padding: 5px 20px 5px 20px;
+    transition: all .5s;
+}
+
+.single-team:hover .team-content {
+    background: #000;
+}
+
+.single-team .team-content .team-info h3 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.single-team:hover .team-info h3 {
+    color: tomato;
+}
+
+.team-info p {
+    margin-top: 15px;
+    color: #fff;
+}
+
+.single-team-text p {
+    margin-top: 5px;
+}
+
+.team-text {
+    color: #fff;
+    padding: 0 10px 5px;
+}
+
+
+/* ignore the code below */
+
+.link-area {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 15px;
+    border-radius: 40px;
+    background: tomato;
+    z-index: 10;
+}
+
+.link-area a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+/* Feedback btn */
+
+.feedback-btn {
+    border: none;
+    outline: none;
+    position: fixed;
+    font-size: 15px;
+    background-color: #2d88ff;
+    color: white;
+    z-index: 5;
+    top: 50px;
+    right: -27px;
+    transform: rotateZ( 90deg);
+}
+
+
+
+  /* cell */
+
+  body {
+    --l: calc(100vw/var(--n-cols));
+    --hl: calc(.5*var(--l));
+    --ri: calc(.5*1.73205*var(--l));
+    
+    display: grid;
+    place-content: center;
+    grid-template: repeat(var(--n-rows), var(--l))/repeat(var(--n-cols), var(--ri));
+    grid-gap: var(--hl) 0;
+    overflow: hidden;
+    margin: 0;
+    padding: var(--hl) 0;
+    height: 100vh;
+   
+  }
+  @media (orientation: landscape) {
+    body {
+      --l: calc(100vh/(var(--n-rows) + 3));
+    }
+  }
+  
+  .hex-cell {
+    overflow: hidden;
+    grid-column-end: span 2;
+    margin: calc(-1*var(--hl)) 0;
+    transform: scale(0.95);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  }
+  
+  img {
+    --hl: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(calc(1 + .2*var(--hl)));
+    filter: brightness(calc(.6*(1 + var(--hl))));
+    transition: .7s;
+  }
+  
+img:hover {
+    --hl: 1;
+
+  } 
+  img:hover #tt {
+    --hl: 1;
+    display: block;
+
+  } 
+ 
