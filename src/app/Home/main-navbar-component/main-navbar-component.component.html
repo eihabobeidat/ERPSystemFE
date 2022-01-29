@@ -1,7 +1,7 @@
 <div class="container-content">
     <div class="navbar">
         <div class="menu">
-            <h3 class="logo">Munther <span>REI</span></h3>
+            <h3 class="logo">ERP <span>System</span></h3>
             <a routerLink="auth/login" *ngIf="!accountStatus" class="text-white btn">Login</a>
             <div class="hamburger-menu" (click)="callFun()">
                 <div class="bar"></div>
@@ -12,8 +12,8 @@
     <div class="main-container">
         <div class="main">
             <header>
-                <video autoplay>
-                  <source src="/assets/videos/Cinematic Real estate video tour example 4K _ Laowa 12mm & Sony A7III.mp4" type="video/mp4">
+                <video autoplay> 
+                  <source src="../../../assets/videos/Corporate video for IT company Perfectial - oDownloader.com.mp4" type="video/mp4">
                 </video>
             </header>
         </div>
@@ -26,27 +26,27 @@
         <ul>
             <li>
                 <i class="far fa-home icon"></i>
-                <a routerLink="/client/home" style="--i: 0.1s;">Home</a>
+                <a [routerLink]="'home/'" style="--i: 0.1s;">Home</a>
             </li>
-            <li>
+            <!-- <li>
                 <i class="far fa-camera-alt icon"></i>
                 <a href="/client/gallery" style="--i: 0.1s;">Gallary</a>
-            </li>
+            </li> -->
             <!-- <li>
                 <i class="far fa-user-cog icon"></i>
                 <a href="#" style="--i: 0.15s;">Our Service</a>
             </li> -->
-            <li>
+            <!-- <li>
                 <i class="fal fa-ad icon"></i>
                 <a routerLink="/client/advertisement" style="--i: 0.2s;">Advertisement</a>
-            </li>
+            </li> -->
             <li>
                 <i class="fal fa-address-book icon"></i>
-                <a routerLink="/client/aboutUs" style="--i: 0.25s;">About</a>
+                <a [routerLink]="'home/about'" style="--i: 0.25s;">About</a>
             </li>
             <li>
                 <i class="far fa-address-card icon"></i>
-                <a routerLink="/client/contact" style="--i: 0.3s;">Contact Us</a>
+                <a [routerLink]="'home/contact'" style="--i: 0.3s;">Contact Us</a>
             </li>
         </ul>
     </div>

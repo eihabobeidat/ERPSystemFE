@@ -1,36 +1,12 @@
-<h2>Testimonials</h2>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" >
-	<!-- Carousel indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-	</ol>   
-	<!-- Wrapper for carousel items -->
-	<div class="carousel-inner" >	
-       <ng-container  *ngFor="let item of service.testimonial;let i=index; first as isFirst">
-           
-            <div  [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' " >
-                
-                <div class="img-box"><img src="../../../assets/images/faces/{{item.imagePath}}" alt=""></div>
-                <p class="testimonial">{{ item.message }}</p>
-                <p class="overview"><b>{{ item.firstName }} {{item.lastName}}</b></p>
-				
-            </div>
-	
-        </ng-container>
-		
-	</div>
-	<!-- Carousel controls -->
-	<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-		<i class="fa fa-angle-left"></i>
-	</a>
-	<a class="carousel-control-next" href="#myCarousel" data-slide="next">
-		<i class="fa fa-angle-right"></i>
-	</a>
 
-<app-slider></app-slider>
+<app-navbar-component></app-navbar-component>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 
 <div class="team-area ">

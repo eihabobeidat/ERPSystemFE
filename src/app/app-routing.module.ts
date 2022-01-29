@@ -9,23 +9,15 @@ import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-
 
 const routes: Routes = [
   { 
-    path:'main',component:MainNavbarComponentComponent
+    path:'',component:MainNavbarComponentComponent 
   },
   {
-    path:'home',component:HomeComponentComponent
+    path: 'home',
+    loadChildren: () => import('../app/Modules/homemodule/homemodule.module').then(
+      (m) => m.HomemoduleModule,
+    )
   },
-  {
-    path:'about',component:AboutComponentComponent
-  },
-  {
-    path:'contact',component:ContactComponentComponent
-  },
-  {
-    path:'login',component:LoginComponentComponent
-  },
-  {
-    path:'register',component:RegistrationComponentComponent
-  }
+ 
 ];
 
 @NgModule({

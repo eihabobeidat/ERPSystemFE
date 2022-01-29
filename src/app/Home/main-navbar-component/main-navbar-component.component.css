@@ -14,10 +14,10 @@ button {
     min-height: 100vh;
     width: 100%;
     background-color: #485461;
-    background-image: linear-gradient(135deg, #66c4a0 0%, #28313b 74%);
+    background-image: linear-gradient(135deg,black 0%, rgba(85, 78, 78, 0.651) 74%);
     overflow-x: hidden;
     transform-style: preserve-3d;
-}
+} 
 
 .navbar {
     position: fixed;
