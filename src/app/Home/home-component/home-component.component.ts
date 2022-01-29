@@ -11,19 +11,14 @@ import { HomeServiceService } from 'src/app/service/home-service.service';
 })
 export class HomeComponentComponent implements OnInit {
 
-
-  constructor(config: NgbCarouselConfig) { 
+  data:any[]=[{}]
+  constructor(config: NgbCarouselConfig ) { 
     config.interval = 2000;  
     config.wrap = true;  
     config.keyboard = false;  
     config.pauseOnHover = false;  
-
-  data:any[]=[{}]
-
-  constructor(public service:HomeServiceService) {  
-   this.service.getHomeTestimonial()
-
   }
+
 
   ngOnInit(): void {
   }
