@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
     ContactUsFormComponent,
     TestimonialComponent,
     SpinnerComponent
+
   ],
   imports: [
     BrowserModule,

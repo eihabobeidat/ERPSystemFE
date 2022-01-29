@@ -11,7 +11,7 @@
     <div class="carousel-inner" >	
        <ng-container  *ngFor= "let item of service.testimonial;let i=index; first as isFirst">
            
-            <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' " >
+            <div [ngClass]= "isFirst ? 'carousel-item active' : 'carousel-item' " >
                 
                 <div class="img-box"><img src="../../../assets/images/faces/{{item.imagePath}}" alt=""></div>
                 <p class="testimonial">{{ item.message }}</p>

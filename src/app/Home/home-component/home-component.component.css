@@ -132,13 +132,22 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 .single-team {
     padding-bottom: 70px;
     position: relative;
     z-index: 1;
     overflow: hidden;
     box-shadow: 5px 5px 15px #000;
+    border:3px yellow solid;
+    margin-bottom: 10px;
 }
 
 .team-img {
@@ -164,12 +173,12 @@
     overflow: hidden;
     bottom: 0;
     transition: all .4s;
-    background: tomato;
+    background: black;
     z-index: 5;
 }
 
 .single-team:hover .team-content {
-    height: 150px;
+    height: 100px;
 }
 
 .team-info {
@@ -178,7 +187,7 @@
 }
 
 .single-team:hover .team-content {
-    background: #000;
+    background: black;
 }
 
 .single-team .team-content .team-info h3 {
