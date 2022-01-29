@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeServiceService } from 'src/app/service/home-service.service';
 
 @Component({
   selector: 'app-navbar-component',
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponentComponent implements OnInit {
 
   accountStatus: boolean = false;
-  constructor(
-    //public userService: UserService, private router: Router
-    ) { }
+  constructor(public service:HomeServiceService) //public userService: UserService, private router: Router)
+   {
+     service.getImageSlider();
+  }
 
   async ngOnInit() {
     // if (localStorage.getItem('token')) {
