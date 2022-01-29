@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from 'src/app/service/ContactService/contact.service';
 //import { ContactService } from 'src/app/service/contact.service';
 
 @Component({
@@ -13,9 +14,7 @@ export class ContactUsFormComponent implements OnInit {
     email:new FormControl('',[Validators.required, Validators.email]),
     message:new FormControl('',[Validators.required,Validators.minLength(12)])
   })
-  constructor(
-    //public contactService: ContactService
-    ) {}
+  constructor(private service:ContactService) {}
 
     formValidationCheck(){
       return this.contactForm.controls['name'].valid && this.contactForm.controls['email'].valid && this.contactForm.controls['message'].valid;
@@ -23,7 +22,6 @@ export class ContactUsFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    console.log("submited!!");
-    //this.contactService.createContact();
+    this.service.submitMessage(this.contactForm.value);
   }
 }
