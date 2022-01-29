@@ -44,7 +44,8 @@ import { SliderComponent } from './Home/slider/slider.component';
     ContactUsInfoCardComponent,
     ContactUsFormComponent,
     TestimonialComponent,
-    SliderComponent
+    SliderComponent,
+    
   ],
   imports: [
     BrowserModule,

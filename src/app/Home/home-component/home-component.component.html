@@ -2,6 +2,8 @@
 <app-slider></app-slider>
 <br>
 
+<div >  
+
 <div class="team-area ">
     <div class="container ">
         <div class="row ">
@@ -13,65 +15,23 @@
             </div>
 
             <!--== Single Team Item ==-->
-            <div class="col-md-3 ">
+            <div class="col-md-3 " *ngFor= "let item of service.topTenEmployee;let i=index; first as isFirst" >
                 <div class="single-team ">
                     <div class="team-img " >
-                        <img src="https://i.postimg.cc/1t2svTt5/1.jpg " alt=" " class="img-responsive ">
+                        <img src="../../../assets/images/faces/{{item.imagepath }}" alt=" " class="img-responsive ">
                     </div>
                     <div class="team-content ">
                         <div class="team-info ">
-                            <h3>Lisa Ray</h3>
-                            <p>Web Developer</p>
+                            <h3>{{item.firstName +" " + item.lastName}}</h3>
+                            <h3>{{item.name}}</h3>
+
                         </div>
-                        <p class="team-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quasi, vel.</p>
                     </div>
                 </div>
             </div>
-            <!--== Single Team Item ==-->
-            <div class="col-md-3 ">
-                <div class="single-team ">
-                    <div class="team-img " >
-                        <img src="https://i.postimg.cc/1t2svTt5/1.jpg " alt=" " class="img-responsive ">
-                    </div>
-                    <div class="team-content ">
-                        <div class="team-info ">
-                            <h3>Lisa Ray</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <p class="team-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quasi, vel.</p>
-                    </div>
-                </div>
-            </div>
-            <!--== Single Team Item ==-->
-            <div class="col-md-3 ">
-                <div class="single-team ">
-                    <div class="team-img " >
-                        <img src="https://i.postimg.cc/1t2svTt5/1.jpg " alt=" " class="img-responsive ">
-                    </div>
-                    <div class="team-content ">
-                        <div class="team-info ">
-                            <h3>Lisa Ray</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <p class="team-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quasi, vel.</p>
-                    </div>
-                </div>
-            </div>
-            <!--== Single Team Item ==-->
-            <div class="col-md-3 ">
-                <div class="single-team ">
-                    <div class="team-img " >
-                        <img src="https://i.postimg.cc/1t2svTt5/1.jpg " alt=" " class="img-responsive ">
-                    </div>
-                    <div class="team-content ">
-                        <div class="team-info ">
-                            <h3>Lisa Ray</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <p class="team-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quasi, vel.</p>
-                    </div>
-                </div>
-            </div>
+       
+           
+            
             
             
             
@@ -79,18 +39,16 @@
     </div>
 </div>
 
-
  
 <body style="--n-rows: 3; --n-cols: 6">
     <style>.hex-cell:nth-of-type(5n + 1) { grid-column-start: 2 }</style>
-    <div  class="hex-cell" ><img  src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=650&amp;fm=jpg"/> 
-        <p id="tt" style="color: red; text-align: center;" >Tameem </p></div>
-    <div class="hex-cell"><img src="https://images.unsplash.com/photo-1497733942558-e74c87ef89db?w=650&amp;fm=jpg"/></div>
-    <div class="hex-cell"><img src="https://images.unsplash.com/photo-1540744276164-9dc898353c7b?w=650&amp;fm=jpg"/></div>
-    <div class="hex-cell"><img src="https://images.unsplash.com/photo-1469975692758-66d107a536cb?w=650&amp;fm=jpg"/></div>
-    <div class="hex-cell"><img src="https://images.unsplash.com/photo-1490845060161-85f9ce08a9f4?w=650&amp;fm=jpg"/></div>
-    <div class="hex-cell"><img src="https://images.unsplash.com/photo-1541673504494-8bcc1a340180?w=650&amp;fm=jpg"/></div>
-    <div class="hex-cell"><img src="https://images.unsplash.com/photo-1515937350506-3e7b51a95339?w=650&amp;fm=jpg"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img1}}"></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img2}}"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img3}}"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img4}}"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img5}}"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img6}}"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img7}}"/></div>
   </body>
 
   
