@@ -27,7 +27,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
-import { SliderComponent } from './Home/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,7 @@ import { SliderComponent } from './Home/slider/slider.component';
     ContactUsInfoCardComponent,
     ContactUsFormComponent,
     TestimonialComponent,
-    SliderComponent,
+    
     
   ],
   imports: [
