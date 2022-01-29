@@ -18,7 +18,7 @@ h2::after {
 	position: absolute;
 	margin: 0 auto;
 	height: 3px;
-	background: rgb(39, 37, 37);
+	background: #18d26e;
 	left: 0;
 	right: 0;
 	bottom: -10px;
