@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponentComponent } from './Home/home-component/home-component.component';
@@ -21,12 +20,13 @@ import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
+import { SpinnerComponent } from './Shared/spinner/spinner.component';
+
 
 @NgModule({
   declarations: [
@@ -43,8 +43,8 @@ import { TestimonialComponent } from './Home/testimonial/testimonial.component';
     ContactUsInfoCardComponent,
     ContactUsFormComponent,
     TestimonialComponent,
-    
-    
+    SpinnerComponent
+
   ],
   imports: [
     BrowserModule,
@@ -52,10 +52,7 @@ import { TestimonialComponent } from './Home/testimonial/testimonial.component';
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
     ToastrModule.forRoot({timeOut:5000, progressAnimation:'increasing'}),
-    NgxSpinnerModule,
-    
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -64,7 +61,7 @@ import { TestimonialComponent } from './Home/testimonial/testimonial.component';
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    NgImageSliderModule
+
     
   ],
   entryComponents:[],
