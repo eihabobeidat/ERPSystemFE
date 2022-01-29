@@ -146,7 +146,7 @@
     z-index: 1;
     overflow: hidden;
     box-shadow: 5px 5px 15px #000;
-    border:3px yellow solid;
+    border:3px #18d26e solid;
     margin-bottom: 10px;
 }
 
@@ -302,4 +302,24 @@ img:hover {
     display: block;
 
   } 
+  h2 {
+	color: #333;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	position: relative;
+	margin: 25px 0 50px;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #18d26e;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}
  
