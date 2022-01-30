@@ -1,14 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.center-text {
-    top: 100%;
-    position: absolute;
-    color: #000;
-    left: 0;
-    text-align: center;
-    right: 0;
-    margin: auto;
-    /* margin-bottom: 50%; */
-}
+
 
 .main input,
 .search-btn {
@@ -142,13 +132,22 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 .single-team {
     padding-bottom: 70px;
     position: relative;
     z-index: 1;
     overflow: hidden;
     box-shadow: 5px 5px 15px #000;
+    border:3px #18d26e solid;
+    margin-bottom: 10px;
 }
 
 .team-img {
@@ -174,12 +173,12 @@
     overflow: hidden;
     bottom: 0;
     transition: all .4s;
-    background: tomato;
+    background: black;
     z-index: 5;
 }
 
 .single-team:hover .team-content {
-    height: 150px;
+    height: 100px;
 }
 
 .team-info {
@@ -188,7 +187,7 @@
 }
 
 .single-team:hover .team-content {
-    background: #000;
+    background: black;
 }
 
 .single-team .team-content .team-info h3 {
@@ -250,3 +249,78 @@
     right: -27px;
     transform: rotateZ( 90deg);
 }
+
+
+
+  /* cell */
+
+  body {
+    --l: calc(100vw/var(--n-cols));
+    --hl: calc(.5*var(--l));
+    --ri: calc(.5*1.73205*var(--l));
+    
+    display: grid;
+    place-content: center;
+    grid-template: repeat(var(--n-rows), var(--l))/repeat(var(--n-cols), var(--ri));
+    grid-gap: var(--hl) 0;
+    overflow: hidden;
+    margin: 0;
+    padding: var(--hl) 0;
+    height: 100vh;
+   
+  }
+  @media (orientation: landscape) {
+    body {
+      --l: calc(100vh/(var(--n-rows) + 3));
+    }
+  }
+  
+  .hex-cell {
+    overflow: hidden;
+    grid-column-end: span 2;
+    margin: calc(-1*var(--hl)) 0;
+    transform: scale(0.95);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  }
+  
+  img {
+    --hl: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(calc(1 + .2*var(--hl)));
+    filter: brightness(calc(.6*(1 + var(--hl))));
+    transition: .7s;
+  }
+  
+img:hover {
+    --hl: 1;
+
+  } 
+  img:hover #tt {
+    --hl: 1;
+    display: block;
+
+  } 
+
+
+  h1 {
+
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	position: relative;
+}
+h1::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #18d26e;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}
+ 

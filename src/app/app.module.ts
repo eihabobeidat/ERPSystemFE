@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgImageSliderModule } from 'ng-image-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponentComponent } from './Home/home-component/home-component.component';
@@ -11,6 +10,7 @@ import { RegistrationComponentComponent } from './Authentication/registration-co
 import { NavbarComponentComponent } from './Shared/navbar-component/navbar-component.component';
 import { FooterComponentComponent } from './Shared/footer-component/footer-component.component';
 import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-navbar-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { HeaderComponent } from './Home/contact-component/header/header.component';
 import { ContactUsInfoCardComponent } from './Home/contact-component/contact-us-info-card/contact-us-info-card.component';
 import { ContactUsFormComponent } from './Home/contact-component/contact-us-form/contact-us-form.component';
@@ -20,8 +20,6 @@ import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -29,6 +27,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import {MatIconModule} from '@angular/material/icon';
 import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
+import { TestimonialComponent } from './Home/testimonial/testimonial.component';
+import { SpinnerComponent } from './Shared/spinner/spinner.component';
+import{MatSlideToggleModule} from '@angular/material/slide-toggle'
+
 
 @NgModule({
   declarations: [
@@ -44,15 +46,17 @@ import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 
     HeaderComponent,
     ContactUsInfoCardComponent,
     ContactUsFormComponent,
-    AuthenticationComponentngComponent
+    AuthenticationComponentngComponent,
+    TestimonialComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({timeOut:5000, progressAnimation:'increasing'}),
-    NgxSpinnerModule,
     HttpClientModule,
+    ToastrModule.forRoot({timeOut:5000, progressAnimation:'increasing'}),
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -64,7 +68,9 @@ import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 
     NgImageSliderModule,
     NgbModule,
     MatIconModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatSlideToggleModule,
+    FormsModule,
   ],
   entryComponents:[],
   providers: [

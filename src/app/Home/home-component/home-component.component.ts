@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from 'src/app/app.component';
+
+import { HomeServiceService } from 'src/app/service/home-service.service';
+import { SpinnerComponent } from 'src/app/Shared/spinner/spinner.component';
+
 
 @Component({
   selector: 'app-home-component',
@@ -6,10 +12,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-component.component.css']
 })
 export class HomeComponentComponent implements OnInit {
+  data:any[]=[{}]
+  constructor(config: NgbCarouselConfig , public service:HomeServiceService , public app:AppComponent) { 
+    config.interval = 2000;  
+    config.wrap = true;  
+    config.keyboard = false;  
+    config.pauseOnHover = false;  
+    service.getTopTenEmployee();
+    service.getCellImage();
+    SpinnerComponent.show()
+    setTimeout(() => SpinnerComponent.hide(), 2000);
+   
+  
+  }
+  
 
-  constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  
 }

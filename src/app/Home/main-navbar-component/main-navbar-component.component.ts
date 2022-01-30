@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpinnerComponent } from 'src/app/Shared/spinner/spinner.component';
 declare const openNavBar: any;
 
 @Component({
@@ -12,7 +13,12 @@ export class MainNavbarComponentComponent implements OnInit {
     openNavBar();
   }
   accountStatus: boolean = false;
-  constructor() { }
+  constructor() 
+  {
+
+    SpinnerComponent.show()
+    setTimeout(() => SpinnerComponent.hide(), 2000);
+   }
 
   ngOnInit(): void {
   }

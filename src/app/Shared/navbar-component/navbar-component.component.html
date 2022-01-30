@@ -1,33 +1,47 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand logo">ERP System</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="oi oi-menu"></span> Menu
-  </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a routerLinkActive="active" routerLink="/client/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a routerLink="/client/gallery" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a routerLink="/client/advertisement" class="nav-link">Advertisement</a></li>
-                <li class="nav-item"><a routerLink="/client/aboutUs" class="nav-link">About</a></li>
-                <li class="nav-item"><a routerLink="/client/contact" class="nav-link">Contact</a></li>
 
-                <li class="nav-item" *ngIf="!accountStatus"><a routerLink="/auth/login" class="nav-link">Login</a></li>
-                <!-- <li class="nav-item" *ngIf="accountStatus && (userService.selectedUser != null)"> -->
-                    <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="btn mat-stroked-button font-weight-normal pt-2 border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <!-- {{userService.selectedUser.username}} -->
-                            UserName Here
-                        </a>
+    <header  id="header"  class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container-fluid" >
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="http://localhost:65406/">Dashboard</a>
-                            <button class="dropdown-item" (click)="logOut()">Log out</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+
+
+
+            <div class="row justify-content-center align-items-center">
+                <div class="col-xl-11 d-flex align-items-center justify-content-between">
+                    <h1 class="logo"><a routerLink="/home">ERP System </a></h1>
+
+                    <nav id="navbar" class="navbar">
+                        <ul>
+                            <li><a class="nav-link scrollto active" routerLink="/home">Home</a></li>
+                            <li><a class="nav-link scrollto" [routerLink]="'contact'">ContactUs</a></li>
+                            <li><a class="nav-link scrollto" [routerLink]="'about'">Aboutus</a></li>
+                            <li><a class="nav-link "                  >Login</a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <mat-slide-toggle [(ngModel)]="app.isDark" color="yellow"
+                         style=" margin-left: 50px; color:#18d26e ;font-size:medium;">
+                         Dark Theme</mat-slide-toggle>
+                    </nav><!-- .navbar -->
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
+
+    </header>
+    <body [ngClass]="{darkTheme: app.isDark}">
+        
+
+
+    
+ 
+		<div class='col-12' class="carousel-inner" >  
+			<ngb-carousel >  
+				<ng-template ngbSlide *ngFor= "let item of service.sliderImage;let i=index; first as isFirst" >  
+					<img  src="../../../assets/SliderImage/{{item.image}}"
+					class="d-block w-100" style="width: 100%; height: 100vh">  
+					
+				</ng-template>  
+				 
+			</ngb-carousel>  
+		</div>
+	</body>
+    
+
