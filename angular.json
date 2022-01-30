@@ -42,7 +42,9 @@
               "node_modules/ngx-toastr/toastr.css"
 
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -110,8 +112,11 @@
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           }
         }
       }

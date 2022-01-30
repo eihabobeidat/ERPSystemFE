@@ -1,0 +1,21 @@
+<div class="body">
+    <div class="container-box" id="container">
+
+        <app-registration-component></app-registration-component>
+
+        <app-login-component></app-login-component>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <!-- <p>To keep connected with us please login with your personal info</p> -->
+                    <button style="margin-top: 55px;cursor: pointer;" class="ghost" (click)="displayLogin()" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <!-- <p>Enter your personal details and start journey with us</p> -->
+                    <button style="margin-top: 55px;cursor: pointer;" (click)="displayRegister()" class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

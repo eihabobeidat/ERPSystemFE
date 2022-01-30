@@ -24,6 +24,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
+import {MatIconModule} from '@angular/material/icon';
+import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
@@ -43,11 +46,9 @@ import{MatSlideToggleModule} from '@angular/material/slide-toggle'
     HeaderComponent,
     ContactUsInfoCardComponent,
     ContactUsFormComponent,
+    AuthenticationComponentngComponent,
     TestimonialComponent,
     SpinnerComponent,
-    
-    
-
   ],
   imports: [
     BrowserModule,
@@ -64,13 +65,35 @@ import{MatSlideToggleModule} from '@angular/material/slide-toggle'
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
+    NgImageSliderModule,
+    NgbModule,
+    MatIconModule,
+    SocialLoginModule,
     MatSlideToggleModule,
-    FormsModule
-
-    
+    FormsModule,
   ],
   entryComponents:[],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('308405098854-l89f4688c66c9mdfmdvhb595r1jmgfid.apps.googleusercontent.com',{
+              //scope: 'profile email'
+            })
+          }
+          //,
+          // {
+          //   id: FacebookLoginProvider.PROVIDER_ID,
+          //   provider: new FacebookLoginProvider('clientId')
+          // }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
