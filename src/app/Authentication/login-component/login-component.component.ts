@@ -25,11 +25,15 @@ export class LoginComponentComponent implements OnInit {
   }
 
   googleLogin(){
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.dataRetreived = (user != null);
-      console.log(this.user);
-    });
+    // this.authService.authState.subscribe((user:SocialUser) =>
+    // {
+    //   this.user = user;
+    //   this.dataRetreived = (user != null);
+    //   console.log(this.user);
+    // }, err => {
+    //   console.log(err);
+    // });
+    console.log("improve the token first");
   }
 
   login() 
@@ -38,18 +42,22 @@ export class LoginComponentComponent implements OnInit {
   }
 
   formValidation(){
-    if(this.loginForm.status === "VALID"){
+    if(this.loginForm.status === "VALID")
+    {
       return true;
     }
     return false;
   }
 
   ngOnInit(): void {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.dataRetreived = (user != null);
-      console.log(this.user);
-    });
+    // this.authService.authState.subscribe((user:SocialUser) =>
+    // {
+    //   this.user = user;
+    //   this.dataRetreived = (user != null);
+    //   console.log(this.user);
+    // }, err => {
+    //   console.log(err);
+    // });
   }
 
 }

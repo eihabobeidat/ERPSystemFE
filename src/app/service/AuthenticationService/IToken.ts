@@ -1,6 +1,6 @@
 export interface IToken
 {
-    sid:string
-    emailaddress:string
+    id:string
+    email:string
     role:string
 }

@@ -38,9 +38,9 @@ export class AuthenticationService {
     this.http.post('https://localhost:44333/api/Jwt',form, requestOption)
     .subscribe(res =>{
       let token:IToken = jwt_Decode(res.toString());
-      localStorage.setItem('id', token.sid);
+      localStorage.setItem('id', token.id);
       localStorage.setItem('role', token.role);
-      localStorage.setItem('email', token.emailaddress);
+      localStorage.setItem('email', token.email);
       
       if(token.role === 'Admin'){
         //this.router.navigate(['admin']);
