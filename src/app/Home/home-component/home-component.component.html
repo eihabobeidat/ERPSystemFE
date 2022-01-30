@@ -1,6 +1,8 @@
 
 <app-navbar-component></app-navbar-component>
-<br>
+
+<div [ngClass]="{darkTheme: app.isDark }">
+    <br>
 <div class="team-area ">
     <div class="container ">
         <div class="row ">
@@ -36,8 +38,9 @@
     </div>
 
 </div>
+<h1 >Gallery</h1>
+<body style="--n-rows: 3; --n-cols: 6" [ngClass]="{darkTheme: app.isDark }">
 
-<h1>Gallery</h1>
 <body style="--n-rows: 3; --n-cols: 6">
     <style>.hex-cell:nth-of-type(5n + 1) { grid-column-start: 2 }</style>
     <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img1}}"></div>
@@ -48,10 +51,13 @@
     <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img6}}"/></div>
     <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img7}}"/></div>
   </body>
-
+</div>
   
-<app-testimonial></app-testimonial>
- <app-footer-component></app-footer-component>
+
+
+<app-testimonial  [ngClass]="{darkTheme: app.isDark }">
+    </app-testimonial>
+<app-footer-component></app-footer-component>
   
   
 

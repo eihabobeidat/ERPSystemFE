@@ -1,8 +1,9 @@
 
+    <header  id="header"  class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container-fluid" >
 
 
-	<header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container-fluid">
+
 
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-11 d-flex align-items-center justify-content-between">
@@ -16,14 +17,21 @@
                             <li><a class="nav-link "                  >Login</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
+                        <mat-slide-toggle [(ngModel)]="app.isDark"
+                         style="margin-left: 50px; color: white;font-size: large;">
+                         Dark Theme</mat-slide-toggle>
+                    </nav><!-- .navbar -->
                     </nav>
                 </div>
             </div>
         </div>
 
     </header>
+    <body [ngClass]="{darkTheme: app.isDark}">
+        
 
-    <body>
+
+    
  
 		<div class='col-12' class="carousel-inner" >  
 			<ngb-carousel >  
@@ -36,4 +44,5 @@
 			</ngb-carousel>  
 		</div>
 	</body>
+    
 

@@ -10,7 +10,6 @@ h1{
 	font-family: "Roboto", sans-serif;
 	font-weight: bold;
 	position: relative;
-	margin: 25px 0 50px;
 }
 h1::after {
 	content: "";
