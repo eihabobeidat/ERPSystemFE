@@ -30,6 +30,7 @@ import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
