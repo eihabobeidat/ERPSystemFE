@@ -26,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
+import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 
 
 @NgModule({
@@ -43,7 +44,9 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
     ContactUsInfoCardComponent,
     ContactUsFormComponent,
     TestimonialComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    
+    
 
   ],
   imports: [
@@ -61,6 +64,8 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
+    FormsModule
 
     
   ],
