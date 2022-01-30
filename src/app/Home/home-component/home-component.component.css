@@ -302,7 +302,7 @@ img:hover {
     display: block;
 
   } 
-  h2 {
+  h1 {
 	color: #333;
 	text-align: center;
 	text-transform: uppercase;
@@ -311,7 +311,7 @@ img:hover {
 	position: relative;
 	margin: 25px 0 50px;
 }
-h2::after {
+h1::after {
 	content: "";
 	width: 100px;
 	position: absolute;

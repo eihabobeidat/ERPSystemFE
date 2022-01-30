@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { HomeServiceService } from 'src/app/service/home-service.service';
+import { SpinnerComponent } from 'src/app/Shared/spinner/spinner.component';
 
 
 @Component({
@@ -19,11 +20,16 @@ export class HomeComponentComponent implements OnInit {
     config.pauseOnHover = false;  
     service.getTopTenEmployee();
     service.getCellImage();
+    SpinnerComponent.show()
+    setTimeout(() => SpinnerComponent.hide(), 2000);
+   
+  
   }
   
 
 
   ngOnInit(): void {
+    
   }
 
   

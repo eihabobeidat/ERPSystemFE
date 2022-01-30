@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpinnerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+   }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    
   }
 
+  static show() {
+    let spinner: any = document.querySelector(".spinner-bg-color") as HTMLElement;
+    spinner.classList.remove("display-none");
+  }
+
+  static hide() {
+    let spinner: any = document.querySelector(".spinner-bg-color") as HTMLElement;
+    spinner.classList.add("display-none");
+  }
+
+
+  
 }
