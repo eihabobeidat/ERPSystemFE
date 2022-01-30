@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpinnerComponent } from 'src/app/Shared/spinner/spinner.component';
 
 @Component({
   selector: 'app-contact-component',
@@ -23,7 +24,12 @@ export class ContactComponentComponent implements OnInit {
       subtitle: "info@yoursite.com"
     }
   ];
-  constructor() { }
+  constructor() 
+  {
+
+    SpinnerComponent.show()
+    setTimeout(() => SpinnerComponent.hide(), 2000);
+   }
 
   ngOnInit(): void {
   }
