@@ -305,14 +305,12 @@ img:hover {
 
 
   h1 {
-	color: #333;
 
 	text-align: center;
 	text-transform: uppercase;
 	font-family: "Roboto", sans-serif;
 	font-weight: bold;
 	position: relative;
-	margin: 25px 0 50px;
 }
 h1::after {
 	content: "";
