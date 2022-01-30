@@ -1,1 +1,47 @@
-<p>login-component works!</p>
+<div class="form-container sign-in-container">
+    <form class="example-form" (submit)="login()" [formGroup]="loginForm">
+        <h1>Sign in</h1>
+
+        <mat-form-field class="w-100" appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="email">
+            <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
+                Enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="password">
+            <button class="border-0 hide-password" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">
+                Password length must be <strong>8 characters</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <div class="form-group">
+            <a routerLink="#">Forgot Password?</a>
+        </div>
+
+        <button [disabled]="!formValidation()" class="btn btn-outline-danger" style="margin-inline: none;">Login</button>
+        <div class="text-center" style="margin-top:5px;">
+            <div class="form-group">
+                <a routerLink="#">or sign in with Google..</a>
+            </div>
+            <button type="button" (click)="googleLogin()" class="btn btn-outline-danger" style="padding-inline: 56px;">
+                <svg xmlns="http://www.w3.org/2000/svg" *ngIf="!dataRetreived" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"></path>
+                </svg>
+                <span *ngIf="dataRetreived">Ready</span>
+              </button>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import { LoginComponentComponent } from './Authentication/login-component/login-component.component';
 import { RegistrationComponentComponent } from './Authentication/registration-component/registration-component.component';
 import { AboutComponentComponent } from './Home/about-component/about-component.component';
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path:'register',component:RegistrationComponentComponent
+  },
+  {
+    path:'auth', component:AuthenticationComponentngComponent
   }
 ];
 
