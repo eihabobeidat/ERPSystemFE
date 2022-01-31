@@ -31,6 +31,8 @@ import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { NgImageSliderModule } from 'ng-image-slider';
+import { CardComponent } from './Home/about-component/card/card.component';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     AuthenticationComponentngComponent,
     TestimonialComponent,
     SpinnerComponent,
+    CardComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

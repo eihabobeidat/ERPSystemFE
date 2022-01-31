@@ -1,1 +1,44 @@
-<p>about-component works!</p>
+<app-header pageName="About"></app-header>
+<section class="ftco-section pb-0">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image:url(assets/images/image_6.jpg)">
+            </div>
+            <div class="col-md-6 wrap-about py-md-5">
+                <div class="heading-section p-md-5" [innerHTML]="service.aboutValue">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="services mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <div class="section_subtitle">the best deals</div>
+                    <div class="section_title">
+                        <h1>Services</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row services_row">
+
+            <app-card class="col-xl-4 col-md-6" *ngFor="let item of service.aboutServices"
+             cardTitle="{{item.title}}"
+             cardImage="{{item.imagePath}}"
+             cardDescription="{{item.description}}"
+             ></app-card>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer-component></app-footer-component>
