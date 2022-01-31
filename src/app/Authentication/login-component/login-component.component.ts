@@ -13,6 +13,7 @@ export class LoginComponentComponent implements OnInit {
   hide:boolean = true;
   dataRetreived:boolean = false;
   user?: SocialUser;
+  userTemp:any;
   
   loginForm = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -25,13 +26,12 @@ export class LoginComponentComponent implements OnInit {
   }
 
   googleLogin(){
-    let user:any;
     if(!this.dataRetreived){
       this.authService.initState.subscribe(res => {
         let temp:any = this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((response:SocialUser) => {
           this.user = response;
           this.dataRetreived = (response != null);
-          user = {
+          this.userTemp = {
             roleId: 4,
             firstName: response.firstName,
             lastName: response.lastName,
@@ -44,7 +44,7 @@ export class LoginComponentComponent implements OnInit {
         }, err => {console.log(err);});
       });
     } else {
-      this.service.checkUser(user);
+      this.service.checkUser(this.userTemp);
     }
     
   }
