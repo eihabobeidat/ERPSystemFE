@@ -32,8 +32,9 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
-import { DashboardComponent } from './Admin/dashboard/dashboard.component';
-
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
+import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
     TestimonialComponent,
     SpinnerComponent,
     CardComponent,
-    DashboardComponent,
+    AdminDashboardComponent,
+    HrDashboardComponent,
+    EmployeeDashboardComponent,
   ],
   imports: [
     BrowserModule,

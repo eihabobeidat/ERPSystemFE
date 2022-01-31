@@ -4,8 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import jwt_Decode from 'jwt-decode';
 import { Router } from '@angular/router';
 import { IToken } from './IToken';
-import { validateVerticalPosition } from '@angular/cdk/overlay';
-
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +42,8 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
-    this.http.post('https://localhost:44333/api/Jwt/CheckEmail', {email:form.email} ,requestOption)
+    console.log(form);
+    this.http.post('https://localhost:44333/api/Jwt/CheckEmail', form ,requestOption)
     .subscribe(res => {
       let temp = res.toString();
       if(temp.indexOf('is alredy exist') !== -1) {
@@ -72,13 +71,13 @@ export class AuthenticationService {
       localStorage.setItem('email', token.email);
       
       if(token.role === 'Admin'){
-        this.router.navigate(['admin']);
+        this.router.navigate(['app/admin']);
       }
       else if(token.role === 'HR'){
-        this.router.navigate(['hr']);
+        this.router.navigate(['app/hr']);
       }
       else if(token.role === 'Employee'){
-        this.router.navigate(['employee']);
+        this.router.navigate(['app/employee']);
         console.log(token);
       }
     },err =>{
