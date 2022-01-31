@@ -25,23 +25,28 @@ export class LoginComponentComponent implements OnInit {
   }
 
   googleLogin(){
-    this.authService.initState.subscribe(res => {
-      let temp:any = this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((response:SocialUser) => {
-        this.user = response;
-        this.dataRetreived = (response != null);
-        let user = {
-          roleId: 4,
-          firstName: response.firstName,
-          lastName: response.lastName,
-          email: response.email,
-          password: 'Google temporary password',
-          address: response.provider,
-          mobile: '',
-          imagePath: response.photoUrl
-        }
-        this.service.checkUser(user);
-      }, err => {console.log(err);});
-    });
+    let user:any;
+    if(!this.dataRetreived){
+      this.authService.initState.subscribe(res => {
+        let temp:any = this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((response:SocialUser) => {
+          this.user = response;
+          this.dataRetreived = (response != null);
+          user = {
+            roleId: 4,
+            firstName: response.firstName,
+            lastName: response.lastName,
+            email: response.email,
+            password: 'Google temporary password',
+            address: response.provider,
+            mobile: '',
+            imagePath: response.photoUrl
+          }
+        }, err => {console.log(err);});
+      });
+    } else {
+      this.service.checkUser(user);
+    }
+    
   }
 
   login() 
