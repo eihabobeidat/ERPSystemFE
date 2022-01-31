@@ -4,8 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import jwt_Decode from 'jwt-decode';
 import { Router } from '@angular/router';
 import { IToken } from './IToken';
-import { validateVerticalPosition } from '@angular/cdk/overlay';
-
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +42,8 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
-    this.http.post('https://localhost:44333/api/Jwt/CheckEmail', {email:form.email} ,requestOption)
+    console.log(form);
+    this.http.post('https://localhost:44333/api/Jwt/CheckEmail', form ,requestOption)
     .subscribe(res => {
       let temp = res.toString();
       if(temp.indexOf('is alredy exist') !== -1) {
