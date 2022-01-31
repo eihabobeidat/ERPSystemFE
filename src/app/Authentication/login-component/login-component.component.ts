@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SocialAuthService } from "angularx-social-login";
+import { CheckboxControlValueAccessor, FormControl, FormGroup, Validators } from '@angular/forms';
+import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 import { AuthenticationService } from 'src/app/service/AuthenticationService/authentication.service';
 
@@ -25,20 +25,33 @@ export class LoginComponentComponent implements OnInit {
   }
 
   googleLogin(){
-    // this.authService.authState.subscribe((user:SocialUser) =>
-    // {
-    //   this.user = user;
-    //   this.dataRetreived = (user != null);
-    //   console.log(this.user);
-    // }, err => {
-    //   console.log(err);
-    // });
-    console.log("improve the token first");
+    let user:any;
+    if(!this.dataRetreived){
+      this.authService.initState.subscribe(res => {
+        let temp:any = this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((response:SocialUser) => {
+          this.user = response;
+          this.dataRetreived = (response != null);
+          user = {
+            roleId: 4,
+            firstName: response.firstName,
+            lastName: response.lastName,
+            email: response.email,
+            password: 'Google temporary password',
+            address: response.provider,
+            mobile: '',
+            imagePath: response.photoUrl
+          }
+        }, err => {console.log(err);});
+      });
+    } else {
+      this.service.checkUser(user);
+    }
+    
   }
 
   login() 
   {
-    this.service.checkUser(this.loginForm.value);
+    this.service.validateUser(this.loginForm.value);
   }
 
   formValidation(){
@@ -50,14 +63,6 @@ export class LoginComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.authService.authState.subscribe((user:SocialUser) =>
-    // {
-    //   this.user = user;
-    //   this.dataRetreived = (user != null);
-    //   console.log(this.user);
-    // }, err => {
-    //   console.log(err);
-    // });
   }
 
 }
