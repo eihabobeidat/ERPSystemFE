@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AboutService } from 'src/app/service/AboutService/about.service';
 import { SpinnerComponent } from 'src/app/Shared/spinner/spinner.component';
 
 @Component({
@@ -7,15 +8,11 @@ import { SpinnerComponent } from 'src/app/Shared/spinner/spinner.component';
   styleUrls: ['./about-component.component.css']
 })
 export class AboutComponentComponent implements OnInit {
-
-  constructor() 
-  {
-
-    SpinnerComponent.show()
-    setTimeout(() => SpinnerComponent.hide(), 2000);
-   }
+  constructor(public service:AboutService) { }
 
   ngOnInit(): void {
+    this.service.GetPage(41);
+    this.service.GetServices();
   }
 
 }
