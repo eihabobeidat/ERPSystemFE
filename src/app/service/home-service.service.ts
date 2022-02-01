@@ -61,7 +61,10 @@ sliderImage:any=[{}];
            this.testimonial.push(x)
          }
        })
-   console.log(this.testimonial);
+  //  console.log(this.testimonial.length);
+
+  //  console.log(this.testimonial);
+
    //this.toastr.success("All data retreived","Get data")
    
    })
