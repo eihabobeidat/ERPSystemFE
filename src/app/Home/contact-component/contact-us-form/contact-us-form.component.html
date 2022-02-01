@@ -3,8 +3,8 @@
         <h3>Contact US</h3>
         <p>We appreciate your feedback about our service</p>
         <form class="mt-4" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            <div class="col-6 px-0">
-                <mat-form-field class="example-full-width w-100" appearance="outline">
+            <div class="col-6 px-0 b-light">
+                <mat-form-field class="example-full-width w-100 b-light" appearance="outline">
                     <mat-label>Full Name</mat-label>
                     <input type="text" matInput formControlName="name" placeholder="full name">
                     <mat-error *ngIf="contactForm.controls['name'].hasError('required')">
@@ -12,7 +12,6 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-
             <div class="col-6 px-0">
                 <mat-form-field class="example-full-width w-100" appearance="outline">
                     <mat-label>Email</mat-label>

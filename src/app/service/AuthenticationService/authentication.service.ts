@@ -71,13 +71,13 @@ export class AuthenticationService {
       localStorage.setItem('email', token.email);
       
       if(token.role === 'Admin'){
-        this.router.navigate(['admin']);
+        this.router.navigate(['app/admin']);
       }
       else if(token.role === 'HR'){
-        this.router.navigate(['hr']);
+        this.router.navigate(['app/hr']);
       }
       else if(token.role === 'Employee'){
-        this.router.navigate(['employee']);
+        this.router.navigate(['app/employee']);
         console.log(token);
       }
     },err =>{

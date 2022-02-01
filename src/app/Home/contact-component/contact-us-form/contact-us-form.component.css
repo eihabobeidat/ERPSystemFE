@@ -73,6 +73,10 @@ button[disabled]{
   color: #666666;
 }
 
+mat-label{
+    color: rgb(255, 255, 255);
+}
+
 @media(max-width: 1000px) {
     section {
         width: 80%;
@@ -101,8 +105,8 @@ button[disabled]{
 
 .ng-valid {
     border-color: #28a745;
-}
-
+} */
+/*
 .block-9 .form-control {
     outline: none!important;
     -webkit-box-shadow: none!important;
