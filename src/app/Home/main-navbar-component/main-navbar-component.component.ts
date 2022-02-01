@@ -32,5 +32,4 @@ export class MainNavbarComponentComponent implements OnInit {
       audio.play();
     }
   }
-
 }
