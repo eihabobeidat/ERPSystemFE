@@ -2,19 +2,22 @@
     <div class="navbar">
         <div class="menu">
             <h3 class="logo">ERP <span>System</span></h3>
-            <a routerLink="auth/login" *ngIf="!accountStatus" class="text-white btn">Login</a>
+            <a routerLink="home/authentication" *ngIf="!accountStatus" class="text-white btn">Login</a>
             <div class="hamburger-menu" (click)="callFun()">
                 <div class="bar"></div>
             </div>
         </div>
     </div>
-
-    <div class="main-container">
+<!-- to resolve the video ==> when the interveiw is ip ==> use: chrome.exe --autoplay-policy=no-user-gesture-required -->
+    <div class="main-container" (click)="soundOn(musicAudio)">
         <div class="main">
             <header>
-                <video autoplay> 
-                  <source src="../../../assets/videos/Corporate video for IT company Perfectial - oDownloader.com.mp4" type="video/mp4">
+                <video #Video loop muted autoplay (canplay)="this.Video.play()" (loadedmetadata)="Video.muted = true">
+                  <source src="../../../assets/videos/ERPSys.mp4" type="video/mp4">
                 </video>
+                <audio #musicAudio loop style="display: none;">
+                    <source src="../../../assets/videos/music.mp3" type="audio/mp3">
+                </audio>
             </header>
         </div>
 
