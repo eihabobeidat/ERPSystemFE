@@ -32,7 +32,6 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
-import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ListComponent } from './Admin/Employee/list/list.component';
 
@@ -55,7 +54,7 @@ import { ListComponent } from './Admin/Employee/list/list.component';
     TestimonialComponent,
     SpinnerComponent,
     CardComponent,
-    DashboardComponent,
+    
     ListComponent,
     
 
