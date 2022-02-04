@@ -1,0 +1,27 @@
+
+
+table {
+    width: 85%;
+    background-color: rgb(73, 68, 68);
+  }
+
+  td{
+      color: white;
+  }
+
+  th{
+	color: black;
+    background-color: #18d26e;
+  }
+
+
+.col-sm-4 {
+    padding-left: 0px;
+   
+}
+
+.btn-success {
+    color: white;
+    background-color: #18d26e;
+    border-color: #020202;
+}

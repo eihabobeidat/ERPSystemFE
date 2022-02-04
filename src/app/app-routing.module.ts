@@ -22,6 +22,11 @@ const routes: Routes = [
       (m) => m.HomemoduleModule,
     )
   },
+  {
+    path: 'app', loadChildren: () => import('../app/Modules/authentication/authentication.module').then(
+      (m) => m.AuthenticationModule,
+    )
+  }
 ];
 
 @NgModule({

@@ -22,7 +22,7 @@ sliderImage:any=[{}];
     this.http.get<ImageSlider>('https://localhost:44333/api/Slider/getslider')
     .subscribe((result:any)=>{
       this.sliderImage=result;
-      console.log(this.sliderImage);
+      //console.log(this.sliderImage);
       
 
 
@@ -33,7 +33,7 @@ sliderImage:any=[{}];
     this.http.get<ICells>('https://localhost:44333/api/Cell/Getimage')
     .subscribe((result:any)=>{
       this.cellsImage=result;
-      console.log(this.cellsImage);
+     // console.log(this.cellsImage);
 
       })
    
@@ -47,7 +47,7 @@ sliderImage:any=[{}];
         
       })
     })
-    console.log(this.topTenEmployee);
+    //console.log(this.topTenEmployee);
   }
 
 
@@ -61,7 +61,10 @@ sliderImage:any=[{}];
            this.testimonial.push(x)
          }
        })
-   console.log(this.testimonial);
+  //  console.log(this.testimonial.length);
+
+  //  console.log(this.testimonial);
+
    //this.toastr.success("All data retreived","Get data")
    
    })

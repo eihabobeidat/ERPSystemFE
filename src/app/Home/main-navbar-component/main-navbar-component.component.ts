@@ -8,14 +8,14 @@ declare const openNavBar: any;
   styleUrls: ['./main-navbar-component.component.css']
 })
 export class MainNavbarComponentComponent implements OnInit {
-  
+  muteSound:boolean = true;
+  playSound:boolean = false;
   callFun() {
     openNavBar();
   }
   accountStatus: boolean = false;
   constructor() 
   {
-
     SpinnerComponent.show()
     setTimeout(() => SpinnerComponent.hide(), 2000);
    }
@@ -23,4 +23,13 @@ export class MainNavbarComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  soundOn(audio:any){
+    if(this.playSound){
+      this.muteSound = !this.muteSound;
+      audio.muted = this.muteSound;
+    } else {
+      this.playSound = true;
+      audio.play();
+    }
+  }
 }
