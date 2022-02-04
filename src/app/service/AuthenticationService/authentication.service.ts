@@ -42,7 +42,7 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
-    console.log(form);
+
     this.http.post('https://localhost:44333/api/Jwt/CheckEmail', form ,requestOption)
     .subscribe(res => {
       let temp = res.toString();
