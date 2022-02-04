@@ -35,6 +35,7 @@ import { CardComponent } from './Home/about-component/card/card.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
+import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employ
     AdminDashboardComponent,
     HrDashboardComponent,
     EmployeeDashboardComponent,
+    AdminNavComponent,
   ],
   imports: [
     BrowserModule,
