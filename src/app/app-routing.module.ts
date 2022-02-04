@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
+import { ListComponent } from './Admin/Employee/list/list.component';
 import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import { LoginComponentComponent } from './Authentication/login-component/login-component.component';
 import { RegistrationComponentComponent } from './Authentication/registration-component/registration-component.component';
@@ -11,6 +13,12 @@ import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-
 const routes: Routes = [
   { 
     path:'',component:MainNavbarComponentComponent 
+  },
+  {
+    path:'aaa',component:ListComponent
+  },
+  {
+    path:'wer',component:DashboardComponent
   },
   {
     path: 'home', loadChildren: () => import('../app/Modules/homemodule/homemodule.module').then(

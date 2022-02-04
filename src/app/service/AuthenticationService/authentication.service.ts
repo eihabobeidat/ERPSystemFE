@@ -44,7 +44,7 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
-    this.http.post('https://localhost:44333/api/Jwt/CheckEmail', {email:form.email} ,requestOption)
+    this.http.post('https://localhost:44333/api/Jwt/CheckEmail', form ,requestOption)
     .subscribe(res => {
       let temp = res.toString();
       if(temp.indexOf('is alredy exist') !== -1) {

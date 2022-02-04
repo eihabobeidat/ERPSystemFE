@@ -19,7 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -33,6 +33,8 @@ import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
+import {MatSortModule} from '@angular/material/sort';
+import { ListComponent } from './Admin/Employee/list/list.component';
 
 
 @NgModule({
@@ -54,6 +56,9 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
     SpinnerComponent,
     CardComponent,
     DashboardComponent,
+    ListComponent,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,9 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
     SocialLoginModule,
     MatSlideToggleModule,
     FormsModule,
+    MatSortModule
+    
+    
   ],
   entryComponents:[],
   providers: [
