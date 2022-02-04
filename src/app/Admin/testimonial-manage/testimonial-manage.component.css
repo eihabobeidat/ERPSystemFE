@@ -1,0 +1,15 @@
+table {
+    width: 85%;
+    background-color: rgb(73, 68, 68);
+  }
+
+  td{
+      color: white;
+  }
+
+  th{
+	color: black;
+    background-color: #18d26e;
+  }
+
+  

@@ -35,6 +35,9 @@ import { CardComponent } from './Home/about-component/card/card.component';
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
+import { HolidaysSearchComponent } from './Admin/holidays-search/holidays-search.component';
+import { ContactusComponent } from './Admin/Contactus/contactus.component';
+import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,9 @@ import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employ
     AdminDashboardComponent,
     HrDashboardComponent,
     EmployeeDashboardComponent,
+    HolidaysSearchComponent,
+    ContactusComponent,
+    TestimonialManageComponent,
   ],
   imports: [
     BrowserModule,
