@@ -19,7 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -32,6 +32,9 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
+import {MatSortModule} from '@angular/material/sort';
+import { ListComponent } from './Admin/Employee/list/list.component';
+
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
@@ -59,7 +62,8 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     AuthenticationComponentngComponent,
     TestimonialComponent,
     SpinnerComponent,
-    CardComponent,
+    CardComponent,    
+    ListComponent,  
     AdminDashboardComponent,
     HrDashboardComponent,
     EmployeeDashboardComponent,
@@ -91,6 +95,9 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     SocialLoginModule,
     MatSlideToggleModule,
     FormsModule,
+    MatSortModule
+    
+    
   ],
   entryComponents:[],
   providers: [

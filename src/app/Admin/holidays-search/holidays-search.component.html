@@ -2,7 +2,7 @@
 <form class="mt-4" [formGroup]="searchForm" (ngSubmit)="onSubmit()" 
 style="display:flex;flex-direction: row; justify-content: space-around;">
     <div class="col-sm-4">
-        <mat-form-field class="example-full-width w-55 b-light" appearance="outline">
+        <mat-form-field class="example-full-width w-70 b-light" appearance="outline">
             <mat-label>Start Date</mat-label>
             <input type="datetime-local" matInput formControlName="startDate" placeholder="Start Date">
             <mat-error *ngIf="searchForm.controls['startDate'].hasError('required')">
@@ -13,7 +13,7 @@ style="display:flex;flex-direction: row; justify-content: space-around;">
 
         <div class="col-sm-4 end"> -->
         
-        <mat-form-field class="example-full-width w-55 offset-1" appearance="outline">
+        <mat-form-field class="example-full-width w-70 offset-1" appearance="outline">
             <mat-label>End Date</mat-label>
             <input type="datetime-local" matInput formControlName="endDate" placeholder="End Date">
             <mat-error *ngIf="searchForm.controls['endDate'].hasError('required')">
@@ -23,8 +23,8 @@ style="display:flex;flex-direction: row; justify-content: space-around;">
         </mat-form-field>
     </div>
     
-   <button type="submit" class="btn btn-success " style="height: 50px;position: relative; right: 340px; top: 2px;"
-        [disabled]="!formValidationCheck()" > <strong>Search</strong></button>
+   <button type="submit" class="btn btn-success " style="height: 50px;position: relative; right: 340px; 
+   top: 2px;" [disabled]="!formValidationCheck()" > <strong>Search</strong></button>
 
 </form>
 <br><br><br><br><br>
