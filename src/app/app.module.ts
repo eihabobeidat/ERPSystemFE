@@ -87,6 +87,7 @@ import { TestimonialManageComponent } from './Admin/testimonial-manage/testimoni
     SocialLoginModule,
     MatSlideToggleModule,
     FormsModule,
+    SpinnerComponent
   ],
   entryComponents:[],
   providers: [

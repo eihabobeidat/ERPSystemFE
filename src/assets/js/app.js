@@ -107,76 +107,86 @@ function openNavBar() {
 //     }
 // }
 
-// /* download reports */
+/* download reports */
 
-// /* export Table To CSV */
-// function exportTableToCSV(filename) {
-//     var csv = [];
-//     var rows = document.querySelectorAll("table tr");
-//     for (var i = 0; i < rows.length; i++) {
-//         var row = [],
-//             cols = rows[i].querySelectorAll("td, th");
-//         for (var j = 0; j < cols.length; j++)
-//             row.push(cols[j].innerText);
-//         csv.push(row.join(","));
-//     }
+/* export Table To CSV */
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    for (var i = 0; i < rows.length; i++) {
+        var row = [],
+            cols = rows[i].querySelectorAll("td, th");
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+        csv.push(row.join(","));
+    }
 
-//     downloadCSV(csv.join("\n"), filename);
-// }
+    downloadCSV(csv.join("\n"), filename);
+}
 
-// function downloadCSV(csv, filename) {
-//     var csvFile;
-//     var downloadLink;
-//     csvFile = new Blob([csv], { type: "text/csv" });
-//     downloadLink = document.createElement("a");
-//     downloadLink.download = filename;
-//     downloadLink.href = window.URL.createObjectURL(csvFile);
-//     downloadLink.style.display = "none";
-//     document.body.appendChild(downloadLink);
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+    csvFile = new Blob([csv], { type: "text/csv" });
+    downloadLink = document.createElement("a");
+    downloadLink.download = filename;
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
 
-//     downloadLink.click();
-// }
+    downloadLink.click();
+}
 
-// /* export Table To Excel */
+/* export Table To Excel */
 
-// function exportTableToExcel() {
-//     var tableId = document.getElementById('tableData').id;
-//     htmlTableToExcel(tableId, filename = '');
-// }
+function exportTableToExcel() {
+    var tableId = document.getElementById('tableData').id;
+    htmlTableToExcel(tableId, filename = '');
+}
 
-// var htmlTableToExcel = function(tableId, fileName = '') {
-//     var downloadedFileName = 'excel_table_data';
-//     var TableDataType = 'application/vnd.ms-excel';
-//     var selectTable = document.getElementById(tableId);
-//     var htmlTable = selectTable.outerHTML.replace(/ /g, '%20');
+var htmlTableToExcel = function(tableId, fileName = '') {
+    var downloadedFileName = 'excel_table_data';
+    var TableDataType = 'application/vnd.ms-excel';
+    var selectTable = document.getElementById(tableId);
+    var htmlTable = selectTable.outerHTML.replace(/ /g, '%20');
 
-//     filename = filename ? filename + '.xls' : downloadedFileName + '.xls';
-//     var downloadingURL = document.createElement("a");
-//     document.body.appendChild(downloadingURL);
+    filename = filename ? filename + '.xls' : downloadedFileName + '.xls';
+    var downloadingURL = document.createElement("a");
+    document.body.appendChild(downloadingURL);
 
-//     if (navigator.msSaveOrOpenBlob) {
-//         var blob = new Blob(['\ufeff', htmlTable], {
-//             type: TableDataType
-//         });
-//         navigator.msSaveOrOpenBlob(blob, fileName);
-//     } else {
+    if (navigator.msSaveOrOpenBlob) {
+        var blob = new Blob(['\ufeff', htmlTable], {
+            type: TableDataType
+        });
+        navigator.msSaveOrOpenBlob(blob, fileName);
+    } else {
 
-//         downloadingURL.href = 'data:' + TableDataType + ', ' + htmlTable;
-//         downloadingURL.download = fileName;
-//         downloadingURL.click();
-//     }
-// }
+        downloadingURL.href = 'data:' + TableDataType + ', ' + htmlTable;
+        downloadingURL.download = fileName;
+        downloadingURL.click();
+    }
+}
 
-// /* print Table */
+/* print Table */
 
-// function printTable() {
-//     var el = document.getElementById("tableData");
+function printTable() {
+    var el = document.getElementById("tableData");
 
-//     el.setAttribute('border', '5px');
-//     el.setAttribute('cellpadding', '5');
-//     el.setAttribute('color', 'green');
-//     newPrint = window.open("");
-//     newPrint.document.write(el.outerHTML);
-//     newPrint.print();
-//     newPrint.close();
-// }
+    // el.setAttribute('border', '1px');
+    // el.setAttribute('cellpadding', '1');
+    // el.setAttribute('color', 'green');
+    newPrint = window.open("");
+    newPrint.document.write(el.outerHTML);
+    newPrint.print();
+    newPrint.close();
+    printContent('example');
+    
+}
+
+function printContent(el) {
+    var restorepage = document.body.innerHTML;
+    var printcontent = document.getElementById(el).innerHTML;
+    document.body.innerHTML = printcontent;
+    window.print();
+    document.body.innerHTML = restorepage;
+}
