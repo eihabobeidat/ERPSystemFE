@@ -15,7 +15,7 @@ export class LeaveService {
     //6 => is Admin, 5 => is Hr
    this.http.get<IVacation[]>('https://localhost:44333/api/Vacation').subscribe((res:IVacation[]) => {
      console.log(res);
-     this.vacations = res.filter(x => x.reviewedby === 4 || x.reviewedby === 5);
+     this.vacations = res.filter(x => x.reviewedby === 5 || x.reviewedby === 6);
      console.log(this.vacations);
    },err => {
      this.toaster.error('Failed to connect to server','Connectivity Issue');
