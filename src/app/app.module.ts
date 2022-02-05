@@ -95,9 +95,11 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     SocialLoginModule,
     MatSlideToggleModule,
     FormsModule,
-    MatSortModule
+    SpinnerComponent,
+    MatSortModule,
     
     
+
   ],
   entryComponents:[],
   providers: [

@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
 
+declare const exportTableToCSV: any;
+declare const exportTableToExcel: any;
+declare const printTable: any;
+
 export interface IVacationList{
 
   employeeid:number,
@@ -52,5 +56,16 @@ export class HolidaysSearchComponent implements OnInit {
     this.admin.HolidyasSearch(this.searchForm.value);
   }
 
+  exportToCSV(fileName: string) {
+    exportTableToCSV(fileName);
+  }
+
+  exportToExcel() {
+    exportTableToExcel();
+  }
+
+  printBtn() {
+    printTable();
+  }
  
 }

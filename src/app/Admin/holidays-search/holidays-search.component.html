@@ -1,8 +1,14 @@
-<br>
+<div class="container-fluid">
+  <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+  <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+
+<br><br><br>
+
 <form class="mt-4" [formGroup]="searchForm" (ngSubmit)="onSubmit()" 
 style="display:flex;flex-direction: row; justify-content: space-around;">
     <div class="col-sm-4">
-        <mat-form-field class="example-full-width w-70 b-light" appearance="outline">
+        <mat-form-field class="example-full-width w-70 "  appearance="outline" >
             <mat-label>Start Date</mat-label>
             <input type="datetime-local" matInput formControlName="startDate" placeholder="Start Date">
             <mat-error *ngIf="searchForm.controls['startDate'].hasError('required')">
@@ -29,8 +35,9 @@ style="display:flex;flex-direction: row; justify-content: space-around;">
 </form>
 <br><br><br><br><br>
 
-<table mat-table [dataSource]="admin.vacationSearch" class="mat-elevation-z8 offset-1">
-
+<div id="example">
+<table mat-table [dataSource]="admin.vacationSearch" class="mat-elevation-z8 offset-1"  id="tableData">
+ 
     
     <ng-container matColumnDef="employeeid">
       <th mat-header-cell *matHeaderCellDef> Employee Id </th>
@@ -82,7 +89,9 @@ style="display:flex;flex-direction: row; justify-content: space-around;">
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
 
+  </div>
  
 
 

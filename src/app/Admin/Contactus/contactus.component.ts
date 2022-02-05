@@ -9,6 +9,12 @@ export interface IContactList{
 
 }
 
+
+declare const exportTableToCSV: any;
+declare const exportTableToExcel: any;
+declare const printTable: any;
+
+
 @Component({
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
@@ -27,4 +33,16 @@ export class ContactusComponent implements OnInit {
 
   displayedColumns: string[] = ['email', 'description', 'time'];
 
+  exportToCSV(fileName: string) {
+    exportTableToCSV(fileName);
+  }
+
+  exportToExcel() {
+    exportTableToExcel();
+  }
+
+  printBtn() {
+    printTable();
+  }
+ 
 }
