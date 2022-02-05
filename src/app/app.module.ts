@@ -19,7 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import {matDialogAnimations, MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -32,6 +32,9 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
+import {MatSortModule} from '@angular/material/sort';
+import { ListComponent } from './Admin/Employee/list/list.component';
+
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
@@ -39,6 +42,8 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { HolidaysSearchComponent } from './Admin/holidays-search/holidays-search.component';
 import { ContactusComponent } from './Admin/Contactus/contactus.component';
 import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
+import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
+import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +62,8 @@ import { TestimonialManageComponent } from './Admin/testimonial-manage/testimoni
     AuthenticationComponentngComponent,
     TestimonialComponent,
     SpinnerComponent,
-    CardComponent,
+    CardComponent,    
+    ListComponent,  
     AdminDashboardComponent,
     HrDashboardComponent,
     EmployeeDashboardComponent,
@@ -65,6 +71,8 @@ import { TestimonialManageComponent } from './Admin/testimonial-manage/testimoni
     HolidaysSearchComponent,
     ContactusComponent,
     TestimonialManageComponent,
+    EmployeesLeaveComponent,
+    EmployeesReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +95,11 @@ import { TestimonialManageComponent } from './Admin/testimonial-manage/testimoni
     SocialLoginModule,
     MatSlideToggleModule,
     FormsModule,
-    SpinnerComponent
+    SpinnerComponent,
+    MatSortModule,
+    
+    
+
   ],
   entryComponents:[],
   providers: [

@@ -1,0 +1,28 @@
+body{
+    width: 50%;
+}
+table {
+    width: 50%;
+    box-shadow: 2px 2px 2px 2px black;
+}
+table:hover{
+    width: 75%;
+    height: 75%;
+}
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 50%;
+  }
+  
+  td, th {
+    width: 25%;
+    border: black 1px solid;
+  }
+  tr:hover{
+    background-color: azure;
+
+  }
+  th{
+      background-color: gray;
+  }
