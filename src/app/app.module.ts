@@ -45,6 +45,7 @@ import { TestimonialManageComponent } from './Admin/testimonial-manage/testimoni
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
+//import { AdminModuleModule } from './Admin/admin-module/admin-module.module';
 
 @NgModule({
   declarations: [
@@ -98,9 +99,6 @@ import { AdminReviewComponent } from './Admin/admin-review/admin-review.componen
     MatSlideToggleModule,
     FormsModule,
     MatSortModule,
-    
-    
-
   ],
   entryComponents:[],
   providers: [

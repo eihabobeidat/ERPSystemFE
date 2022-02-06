@@ -22,9 +22,9 @@ export class ReviewService {
 
   submitReview(form:any){
     this.http.get<IReviewBasic>('https://localhost:44333/api/Review/getreviewbyid/'+form.id).subscribe((res:IReviewBasic) =>{
-      res.competency = (form.competency + res.competency)/2;
-      res.objective = (form.objective + res.objective)/2;
-      res.value = (form.value + res.value)/2;
+      res.competency = Math.ceil((form.competency + res.competency)/2);
+      res.objective = Math.ceil((form.objective + res.objective)/2);
+      res.value = Math.ceil((form.value + res.value)/2);
       res.time = form.time;
       res.reviewedby = form.reviewedby;
       console.log(res);
