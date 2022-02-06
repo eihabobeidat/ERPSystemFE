@@ -5,21 +5,18 @@
 
 <br><br><br>
 
-<form class="mt-4" [formGroup]="searchForm" (ngSubmit)="onSubmit()" 
-style="display:flex;flex-direction: row; justify-content: space-around;">
-    <div class="col-sm-4">
-        <mat-form-field class="example-full-width w-70 "  appearance="outline" >
+<form class="" [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
+    <div style="display:flex;flex-direction: row; flex-wrap: wrap;">
+        <mat-form-field class="example-full-width w-60 offset-1"  appearance="outline" >
             <mat-label>Start Date</mat-label>
             <input type="datetime-local" matInput formControlName="startDate" placeholder="Start Date">
             <mat-error *ngIf="searchForm.controls['startDate'].hasError('required')">
                 Start Date is <strong>required</strong>
             </mat-error>
         </mat-form-field>
-        <!-- </div>
-
-        <div class="col-sm-4 end"> -->
         
-        <mat-form-field class="example-full-width w-70 offset-1" appearance="outline">
+        
+        <mat-form-field class="example-full-width w-60 offset-1" appearance="outline" color="white">
             <mat-label>End Date</mat-label>
             <input type="datetime-local" matInput formControlName="endDate" placeholder="End Date">
             <mat-error *ngIf="searchForm.controls['endDate'].hasError('required')">
@@ -27,13 +24,12 @@ style="display:flex;flex-direction: row; justify-content: space-around;">
             </mat-error>
 
         </mat-form-field>
+         <button type="submit" style="height: 40px; position: relative;top: 15px;" 
+         class="btn btn-success offset-1"  [disabled]="!formValidationCheck()" >Search</button>
     </div>
     
-   <button type="submit" class="btn btn-success " style="height: 50px;position: relative; right: 340px; 
-   top: 2px;" [disabled]="!formValidationCheck()" > <strong>Search</strong></button>
-
 </form>
-<br><br><br><br><br>
+<br><br>
 
 <div id="example">
 <table mat-table [dataSource]="admin.vacationSearch" class="mat-elevation-z8 offset-1"  id="tableData">
