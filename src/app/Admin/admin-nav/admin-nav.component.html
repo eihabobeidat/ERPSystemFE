@@ -25,16 +25,16 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item " (mouseenter)="active($event.target)" >
-            <a class="nav-link" href="">
+          <li class="nav-item (mouseenter)="active($event.target)"">
+            <a class="nav-link" [routerLink]="'review'">
               <i class="material-icons">person</i>
-              <p>Holidays Search</p>
+              <p>Reviews</p>
             </a>
           </li>
-          <li class="nav-item " (mouseenter)="active($event.target)" >
-            <a class="nav-link" href="#">
+          <li class="nav-item ">
+            <a class="nav-link" [routerLink]="'leave'" (mouseenter)="active($event.target)">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Leaves</p>
             </a>
           </li>
           <li class="nav-item " (mouseenter)="active($event.target)" >
@@ -134,10 +134,7 @@
       <!-- start here: Body starts here tameem, sameh, malek, eihab-->
       <div style="margin-top: 50px; margin-left: 12px; " >
         <br>
-        <!-- <app-testimonial-manage></app-testimonial-manage> -->
-        <!-- <app-employees-leave></app-employees-leave> -->
-        <app-holidays-search></app-holidays-search>
-        <!-- <app-contactus></app-contactus> -->
+          <router-outlet></router-outlet>
         <br>
       </div>
       <!-- end here: Body Ends here tameem, sameh, malek, eihab-->

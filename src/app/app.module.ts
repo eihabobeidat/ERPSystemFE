@@ -46,6 +46,8 @@ import { Dashboard1Component } from './Admin/dashboard1/dashboard1.component';
 import { EditDialogComponent } from './Admin/Employee/edit-dialog/edit-dialog.component';
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
+import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
+//import { AdminModuleModule } from './Admin/admin-module/admin-module.module';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,7 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     EditDialogComponent
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
+    AdminReviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,9 +103,6 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     MatSlideToggleModule,
     FormsModule,
     MatSortModule,
-    
-    
-
   ],
   entryComponents:[],
   providers: [
