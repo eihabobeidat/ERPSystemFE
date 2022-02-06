@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Employee } from 'src/app/service/Admin/Employee';
 import { EmployeeService } from 'src/app/service/Admin/Employee/employee.service';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-list',
@@ -14,16 +16,15 @@ import { EmployeeService } from 'src/app/service/Admin/Employee/employee.service
 export class ListComponent implements OnInit {
   fileToUpload: File | null = null;
   fileForm = new FormGroup({
-    file: new FormControl('',[Validators.required])
+  file: new FormControl('',[Validators.required])
     
   })
-  displayedColumns: string[] = ['firstname', 'email', 'mobile','address','imagepath','salary'];
+  displayedColumns: string[] = ['imagepath','firstname', 'email', 'mobile','address','salary','Action'];
   dataSource: MatTableDataSource<Employee>;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+ 
 
-  constructor(public service:EmployeeService) {
+  constructor(public service:EmployeeService,public dialog: MatDialog) {
     // Create 100 users
     // Assign the data to the data source for the table to render
     this.service.getEmployee();
@@ -31,8 +32,16 @@ export class ListComponent implements OnInit {
     this.dataSource.data=this.service.EmployeeList;
 
   }
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   
-
+  openDialog() {
+    this.dialog.open(EditDialogComponent, {
+      data: {
+        animal: 'panda',
+      },
+    });
+  }
   upload(file:any)
   {
     console.log(file);
@@ -55,7 +64,7 @@ export class ListComponent implements OnInit {
   }
 
   applyFilter(event: Event) {
-const filterValue = (event.target as HTMLInputElement).value;
+     const filterValue = (event.target as HTMLInputElement).value;
      this.dataSource.filter = filterValue.trim().toLowerCase();
 
      if (this.dataSource.paginator) {

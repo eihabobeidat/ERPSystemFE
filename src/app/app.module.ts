@@ -42,6 +42,8 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { HolidaysSearchComponent } from './Admin/holidays-search/holidays-search.component';
 import { ContactusComponent } from './Admin/Contactus/contactus.component';
 import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
+import { Dashboard1Component } from './Admin/dashboard1/dashboard1.component';
+import { EditDialogComponent } from './Admin/Employee/edit-dialog/edit-dialog.component';
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
 
@@ -71,6 +73,8 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     HolidaysSearchComponent,
     ContactusComponent,
     TestimonialManageComponent,
+    Dashboard1Component,
+    EditDialogComponent
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
   ],

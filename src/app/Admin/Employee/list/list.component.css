@@ -1,28 +1,30 @@
 body{
-    width: 50%;
+    width: 100%;
 }
 table {
-    width: 50%;
-    box-shadow: 2px 2px 2px 2px black;
+    width: 80%;
+    text-align: center;
+    justify-content:center;
+
 }
-table:hover{
-    width: 75%;
-    height: 75%;
-}
+
   
   .mat-form-field {
     font-size: 14px;
-    width: 50%;
+    width: 80%;
   }
   
   td, th {
-    width: 25%;
-    border: black 1px solid;
+    text-align: center;
+
+    
   }
   tr:hover{
-    background-color: azure;
+    background-color: whitesmoke;
 
   }
-  th{
-      background-color: gray;
+  
+  img{
+    border-radius: 50%;
+
   }
