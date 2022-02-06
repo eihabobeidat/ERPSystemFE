@@ -42,6 +42,8 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { HolidaysSearchComponent } from './Admin/holidays-search/holidays-search.component';
 import { ContactusComponent } from './Admin/Contactus/contactus.component';
 import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
+import { Dashboard1Component } from './Admin/dashboard1/dashboard1.component';
+import { EditDialogComponent } from './Admin/Employee/edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,9 @@ import { TestimonialManageComponent } from './Admin/testimonial-manage/testimoni
     HolidaysSearchComponent,
     ContactusComponent,
     TestimonialManageComponent,
+    
+    Dashboard1Component,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
