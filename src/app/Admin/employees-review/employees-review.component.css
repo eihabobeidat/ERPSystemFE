@@ -1,0 +1,164 @@
+* [lang~="x-star-wrapper"]:hover *[lang~="x-star-number"] {
+    color: #119da2 !important;
+    border-color: #119da2 !important;
+  }
+
+  * [lang~="x-star-wrapper"]:hover *[lang~="x-full-star"],
+  * [lang~="x-star-wrapper"]:hover~*[lang~="x-star-wrapper"] *[lang~="x-full-star"] {
+    display: block !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    margin-top: -1px !important;
+  }
+
+  * [lang~="x-star-wrapper"]:hover *[lang~="x-empty-star"],
+  * [lang~="x-star-wrapper"]:hover~*[lang~="x-star-wrapper"] *[lang~="x-empty-star"] {
+    display: block !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    float: left !important;
+    height: 0 !important;
+  }
+
+  /* Normal email CSS */
+  @-ms-viewport {
+    width: device-width;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: #119da2;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  *[class=main-wrapper],
+  *[class=main-content] {
+    min-width: 0 !important;
+    width: 600px !important;
+    margin: 0 auto !important;
+  }
+
+  *[class=rating] {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+
+  *[class=rating]>*[class=star] {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+  }
+
+  @media (max-width: 621px) {
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -o-box-sizing: border-box;
+    }
+
+    table {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+
+    *[class=body-copy] {
+      padding: 0 10px !important;
+    }
+
+    *[class=main-wrapper],
+    *[class=main-content] {
+      min-width: 0 !important;
+      width: 320px !important;
+      margin: 0 auto !important;
+    }
+
+    *[class=ms-sixhundred-table] {
+      width: 100% !important;
+      display: block !important;
+      float: left !important;
+      clear: both !important;
+    }
+
+    *[class=content-padding] {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+
+    *[class=bottom-padding] {
+      margin-bottom: 15px !important;
+      font-size: 0 !important;
+      line-height: 0 !important;
+    }
+
+    *[class=top-padding] {
+      display: none !important;
+    }
+
+    *[class=hide-mobile] {
+      display: none !important;
+    }
+
+    /* Prevent hover effects so double click issue doesn't happen on mobile devices */
+    * [lang~="x-star-wrapper"]:hover *[lang~="x-star-number"] {
+      color: #AEAEAE !important;
+      border-color: #FFFFFF !important;
+    }
+
+    * [lang~="x-star-wrapper"] {
+      pointer-events: none !important;
+    }
+
+    * [lang~="x-star-divbox"] {
+      pointer-events: auto !important;
+    }
+
+    *[class=rating] *[class="star-wrapper"] a div:nth-child(2),
+    *[class=rating] *[class="star-wrapper"]:hover a div:nth-child(2),
+    *[class=rating] *[class="star-wrapper"]~*[class="star-wrapper"] a div:nth-child(2) {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      float: left !important;
+    }
+
+    *[class=rating] *[class="star-wrapper"] a div:nth-child(1),
+    *[class=rating] *[class="star-wrapper"]:hover a div:nth-child(1),
+    *[class=rating] *[class="star-wrapper"]~*[class="star-wrapper"] a div:nth-child(1) {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      float: none !important;
+    }
+  }
+
+  a:hover {
+      cursor: pointer;
+  }

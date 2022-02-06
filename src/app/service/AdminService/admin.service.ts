@@ -10,7 +10,7 @@ export class AdminService {
 
   vacationSearch:any[]=[]
   ContactUs:any[]=[]
-  Testimonial:any[]=[]
+  Testimonial:any=[]
   constructor(private http: HttpClient,private toaster:ToastrService) { }
 
 
@@ -51,6 +51,8 @@ GetTestimonial()
   this.http.get<any[]>('https://localhost:44333/api/Testimonial/GetHomeTestimonial')
   .subscribe((result)=>{
    this.Testimonial=result
+   console.log(this.Testimonial);
+
    this.toaster.success('Data Retrieved successfully','Retrieve')
    
    })

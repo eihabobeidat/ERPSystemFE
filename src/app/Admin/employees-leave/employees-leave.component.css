@@ -1,0 +1,27 @@
+.mat-table{    
+    border-radius: 12px;
+    overflow:hidden !important;
+  }
+  
+  
+  table {
+      width: 85%;
+      background-color: rgb(73, 68, 68);
+      border-collapse:collapse;
+      border-radius: 5em;
+    }
+    table tr:last-child td /*To remove the last border*/
+    {
+      border-bottom:0 solid
+    }
+  
+    td{
+        color: white;
+    }
+  
+    th{
+      color: black;
+      background-color: #18d26e;
+    }
+  
+    

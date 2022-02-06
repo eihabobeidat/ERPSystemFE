@@ -1,4 +1,12 @@
-<table mat-table [dataSource]="admin.Testimonial" class="mat-elevation-z8 offset-1">
+<div class="container-fluid">
+  <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+  <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+
+<br><br><br>
+
+<div id="example">
+<table mat-table [dataSource]="admin.Testimonial" class="mat-elevation-z8 offset-1" id="tableData">
 
     <ng-container matColumnDef="firstName">
       <th mat-header-cell *matHeaderCellDef> First Name </th>
@@ -33,3 +41,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     
   </table>
+</div>
+  </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpinnerComponent } from './Shared/spinner/spinner.component';
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,6 @@ import { SpinnerComponent } from './Shared/spinner/spinner.component';
 export class AppComponent {
   title = 'ERPSystemFE';
   isDark:boolean=false;
-
-
 }
 
 
