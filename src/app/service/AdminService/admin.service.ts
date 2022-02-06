@@ -31,7 +31,7 @@ export class AdminService {
   this.http.post<any[]>('https://localhost:44333/api/Vacation/ByDate',temp,requestOption).subscribe((result)=>{
     this.vacationSearch=result
 console.log(this.vacationSearch);
-this.toaster.success('Data Retrieved successfully','Retrieve');
+// this.toaster.success('Data Retrieved successfully','Retrieve');
 })
 }
     
@@ -41,8 +41,9 @@ GetContactUs()
   this.http.get<any[]>('https://localhost:44333/api/ContactUs').subscribe((result)=>{
     this.ContactUs=result
     //console.log(this.ContactUs);
-    this.toaster.success('Data Retrieved successfully','Retrieve');
+    
     })
+    
 }
   
 
@@ -53,7 +54,7 @@ GetTestimonial()
    this.Testimonial=result
    console.log(this.Testimonial);
 
-   this.toaster.success('Data Retrieved successfully','Retrieve')
+  //  this.toaster.success('Data Retrieved successfully','Retrieve')
    
    })
 }

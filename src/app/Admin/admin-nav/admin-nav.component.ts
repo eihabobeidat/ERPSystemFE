@@ -12,4 +12,15 @@ export class AdminNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  active(item:any)
+  {
+    item.classList.add('active')
+    setTimeout(() => {
+      item.classList.remove('active')
+    }, 1500);
+    console.log(item);
+    
+
+  }
+
 }

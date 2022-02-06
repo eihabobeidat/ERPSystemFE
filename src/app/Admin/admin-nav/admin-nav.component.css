@@ -15,6 +15,9 @@
   font-size: .875rem;
 }
 
+.main-panel {
+  background-color: #1a2035;
+}
 *,
 *::before,
 *::after {
@@ -13792,6 +13795,7 @@ fieldset[disabled] .form-group .form-control {
 .navbar .navbar-nav .nav-item.active .nav-link:focus {
   color: inherit;
   background-color: rgba(255, 255, 255, 0.1);
+  /*sameh*/
 }
 
 .navbar .btn,
@@ -20482,7 +20486,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .navbar .notification {
-  background: linear-gradient(60deg, #7b1fa2, #913f9e);
+  background: linear-gradient(60deg, #2b8866, #479c52);
   border: 0;
   height: 18px;
   min-width: 18px;
@@ -21939,7 +21943,8 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control,
 .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu li>a:focus,
 .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu li>a:active {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
-  background: linear-gradient(60deg, #7b1fa2, #913f9e);
+  /* background: linear-gradient(60deg, #7b1fa2, #913f9e); */
+  background: linear-gradient(60deg, #2b8866, #479c52);
   color: #fff;
 }
 
