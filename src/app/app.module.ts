@@ -44,6 +44,7 @@ import { ContactusComponent } from './Admin/Contactus/contactus.component';
 import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
+import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
     TestimonialManageComponent,
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
+    AdminReviewComponent,
   ],
   imports: [
     BrowserModule,
