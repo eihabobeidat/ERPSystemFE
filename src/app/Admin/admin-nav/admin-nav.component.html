@@ -8,7 +8,7 @@
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+    <div class="sidebar" data-color="green" data-background-color="black"  data-image="../assets/img/sidebar-2.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -19,43 +19,43 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item " (mouseenter)="active($event.target)" >
             <a class="nav-link" href="#">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item (mouseenter)="active($event.target)"">
             <a class="nav-link" [routerLink]="'review'">
               <i class="material-icons">person</i>
               <p>Reviews</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" [routerLink]="'leave'">
+            <a class="nav-link" [routerLink]="'leave'" (mouseenter)="active($event.target)">
               <i class="material-icons">content_paste</i>
               <p>Leaves</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " (mouseenter)="active($event.target)" >
             <a class="nav-link" href="#">
               <i class="material-icons">library_books</i>
               <p>Typography</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " (mouseenter)="active($event.target)" >
             <a class="nav-link" href="#">
               <i class="material-icons">bubble_chart</i>
               <p>Icons</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " (mouseenter)="active($event.target)">
             <a class="nav-link" href="#">
               <i class="material-icons">location_ons</i>
               <p>Maps</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " (mouseenter)="active($event.target)">
             <a class="nav-link" href="#">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
@@ -70,7 +70,7 @@
         </ul>
       </div>
     </div>
-    <div class="main-panel">
+    <div class="main-panel" data-background-color="black">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
         <div class="container-fluid">
@@ -105,7 +105,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
+                  <span class="notification" >5</span>
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>
@@ -132,7 +132,7 @@
       </nav>
       <!-- End Navbar -->
       <!-- start here: Body starts here tameem, sameh, malek, eihab-->
-      <div style="margin-top: 50px; margin-left: 12px;">
+      <div style="margin-top: 50px; margin-left: 12px; " >
         <br>
           <router-outlet></router-outlet>
         <br>
@@ -431,4 +431,7 @@
     });
   </script>
 </body>
+
+
+
 

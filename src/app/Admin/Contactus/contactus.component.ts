@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
 
 export interface IContactList{
@@ -15,6 +17,7 @@ declare const exportTableToExcel: any;
 declare const printTable: any;
 
 
+
 @Component({
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
@@ -23,15 +26,22 @@ declare const printTable: any;
 
 export class ContactusComponent implements OnInit {
 
+  public list_product:any = new MatTableDataSource<any>([]);
+  displayedColumns: string[] = ['email', 'description', 'time'];
+  @ViewChild(MatPaginator) private paginator: MatPaginator;
+
   constructor(public admin:AdminService) 
   { 
     this.admin.GetContactUs()
+    
   }
 
   ngOnInit(): void {
+    this.get_data();
+    // this.list_product=this.admin.GetContactUs() 
   }
 
-  displayedColumns: string[] = ['email', 'description', 'time'];
+ 
 
   exportToCSV(fileName: string) {
     exportTableToCSV(fileName);
@@ -44,5 +54,13 @@ export class ContactusComponent implements OnInit {
   printBtn() {
     printTable();
   }
+
+  get_data()
+  {
+    this.list_product.data=this.admin.GetContactUs()
+  }
  
+  ngAfterViewInit(): void {
+    this.list_product.paginator = this.paginator;
+}
 }
