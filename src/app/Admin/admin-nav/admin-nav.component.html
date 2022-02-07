@@ -19,25 +19,25 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item "  >
+          <li #dashboardli class="nav-item "  (click)="active(dashboardli)">
             <a class="nav-link" [routerLink]="'dashboard'">
               <i class="fa fa-area-chart"></i>
               <p>Dashboard</p>
             </a>
           </li> <!--done-->
-          <li class="nav-item" >
+          <li #employeeli class="nav-item" (click)="active(employeeli)">
             <a class="nav-link" [routerLink]="'employee'">
               <i class="material-icons">person</i>
               <p>Employee Managment</p>
             </a>
           </li> <!--done-->
-          <li class="nav-item " >
+          <li #attendanceli class="nav-item " (click)="active(attendanceli)">
             <a class="nav-link" [routerLink]="'dashboard'" > 
               <i class="fa fa-clock-o" aria-hidden="true"></i>
               <p>Attendance</p>
             </a>
             </li>
-            <li class="nav-item " >
+            <li #leavereportli class="nav-item " (click)="active(leavereportli)">
                 <a class="nav-link" [routerLink]="'holidays'">
                     <i class="fa fa-file" aria-hidden="true"></i>
                   <p>Leaves Report</p>
@@ -55,7 +55,7 @@
               <p>Evaluation</p>
             </a>
           </li>
-          <li class="nav-item " >
+          <li #systemmanagmentli class="nav-item " (click)="active(systemmanagmentli)">
             <a class="nav-link" (click)="showList()">
               <i class="material-icons">location_ons</i>
               <p>System Managment</p>
@@ -63,35 +63,35 @@
           </li>
 
         <ul [hidden]="hideList" id="systemmanagmentlist">
-            <li class="nav-item">
+            <li #imagesliderli class="nav-item" (click)="active(imagesliderli)">
                 <a class="nav-link" href="#">
                     <i class="fas fa-images"></i>
                   <p>Image Slider</p>
                 </a>
               </li>
     
-              <li class="nav-item">
+              <li #cellimageli class="nav-item" (click)="active(cellimageli)">
                 <a class="nav-link" href="#">
                     <i class="fas fa-images"></i>
                   <p>Cell Image</p>
                 </a>
               </li>
     
-              <li class="nav-item">
+              <li #testimonialli class="nav-item" (click)="active(testimonialli)">
                 <a class="nav-link" [routerLink]="'testimonial'">
                   <i class="fa fa-quote-right" aria-hidden="true"></i>
                   <p>Testimonial</p>
                 </a>
               </li>
     
-              <li class="nav-item">
+              <li #contactusli class="nav-item" (click)="active(contactusli)">
                 <a class="nav-link" [routerLink]="'feedback'">
                     <i class="fas fa-id-card"></i>
                   <p>Contact Us</p>
                 </a>
               </li>
     
-              <li class="nav-item">
+              <li #aboutusli class="nav-item" (click)="active(aboutusli)">
                 <a class="nav-link" href="#">
                     <i class="fas fa-info-circle"></i>
                   <p>About Us</p>
