@@ -69,7 +69,6 @@ export class AuthenticationService {
       localStorage.setItem('id', token.id);
       localStorage.setItem('role', token.role);
       localStorage.setItem('email', token.email);
-      
       if(token.role === 'Admin'){
         this.router.navigate(['app/admin']);
       }
@@ -78,10 +77,13 @@ export class AuthenticationService {
       }
       else if(token.role === 'Employee'){
         this.router.navigate(['app/employee']);
-        console.log(token);
       }
     },err =>{
-      this.toaster.error('Incorrect email or password', 'Login failed');
+      if(err.status === 401 ){
+        this.toaster.error('Incorrect email or password', 'Authentication');
+      }else{
+        this.toaster.error('Can\'t Reach ERP Server', 'Connectivity Proplem');
+      }
     })
   }
 }

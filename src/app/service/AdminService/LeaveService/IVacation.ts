@@ -4,8 +4,8 @@ export interface IVacation {
     employeeName?:string
     reviewedby?:number
     approvedby?:number
-    starttime?:Date
-    endtime?:Date
+    starttime:Date
+    endtime:Date
     type?:number
     filepath?:string
     status?:number
