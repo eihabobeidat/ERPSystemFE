@@ -1,4 +1,4 @@
- =========================================================
+ /*=========================================================
  * Material Dashboard Dark Edition - v2.1.0
  =========================================================
 
@@ -10,7 +10,7 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
-/*     brand Colors              */
+/* brand Colors */
 .card {
   font-size: .875rem;
 }
@@ -22069,6 +22069,20 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control,
   100% {
     transform: scale(0.75);
   }
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+#systemmanagmentlist {
+
+  list-style-type: none;
+
+}
+
+element::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */

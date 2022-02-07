@@ -19,48 +19,85 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item " (mouseenter)="active($event.target)" >
-            <a class="nav-link" href="#">
-              <i class="material-icons">dashboard</i>
+          <li class="nav-item "  >
+            <a class="nav-link" [routerLink]="'dashboard'">
+              <i class="fa fa-area-chart"></i>
               <p>Dashboard</p>
             </a>
-          </li>
-          <li class="nav-item (mouseenter)="active($event.target)"">
-            <a class="nav-link" [routerLink]="'review'">
+          </li> <!--done-->
+          <li class="nav-item" >
+            <a class="nav-link" [routerLink]="'employee'">
               <i class="material-icons">person</i>
-              <p>Reviews</p>
+              <p>Employee Managment</p>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" [routerLink]="'leave'" (mouseenter)="active($event.target)">
-              <i class="material-icons">content_paste</i>
-              <p>Leaves</p>
+          </li> <!--done-->
+          <li class="nav-item " >
+            <a class="nav-link" [routerLink]="'dashboard'" > 
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              <p>Attendance</p>
             </a>
-          </li>
-          <li class="nav-item " (mouseenter)="active($event.target)" >
-            <a class="nav-link" href="#">
+            </li>
+            <li class="nav-item " >
+                <a class="nav-link" [routerLink]="'holidays'">
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                  <p>Leaves Report</p>
+                </a>
+          </li> <!--almost done-->
+          <li #leaveRequestli class="nav-item " (click)="active(leaveRequestli)" >
+            <a class="nav-link" [routerLink]="'leave'">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Leave Request</p>
+            </a>
+          </li> <!--done-->
+          <li #evaluationli class="nav-item " (click)="active(evaluationli)" >
+            <a class="nav-link" [routerLink]="'review'">
+              <i class="fa fa-star-half-empty"></i>
+              <p>Evaluation</p>
             </a>
           </li>
-          <li class="nav-item " (mouseenter)="active($event.target)" >
-            <a class="nav-link" href="#">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item " (mouseenter)="active($event.target)">
-            <a class="nav-link" href="#">
+          <li class="nav-item " >
+            <a class="nav-link" (click)="showList()">
               <i class="material-icons">location_ons</i>
-              <p>Maps</p>
+              <p>System Managment</p>
             </a>
           </li>
-          <li class="nav-item " (mouseenter)="active($event.target)">
-            <a class="nav-link" href="#">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
+
+        <ul [hidden]="hideList" id="systemmanagmentlist">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-images"></i>
+                  <p>Image Slider</p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-images"></i>
+                  <p>Cell Image</p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'testimonial'">
+                  <i class="fa fa-quote-right" aria-hidden="true"></i>
+                  <p>Testimonial</p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'feedback'">
+                    <i class="fas fa-id-card"></i>
+                  <p>Contact Us</p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-info-circle"></i>
+                  <p>About Us</p>
+                </a>
+              </li>
+        </ul>
           <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>
