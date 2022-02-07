@@ -47,7 +47,22 @@ import { EditDialogComponent } from './Admin/Employee/edit-dialog/edit-dialog.co
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
-//import { AdminModuleModule } from './Admin/admin-module/admin-module.module';
+//////
+import * as echarts from 'echarts';
+import 'echarts-gl';
+import 'echarts/theme/macarons.js';
+import 'echarts/dist/extension/bmap.min.js';
+import { NgxEchartsModule } from 'ngx-echarts';
+////
+// Import the echarts core module, which provides the necessary interfaces for using echarts.
+// import * as echarts from 'echarts/core';
+// // Import bar charts, all with Chart suffix
+// import { BarChart } from 'echarts/charts';
+// import { TitleComponent, TooltipComponent, GridComponent } from 'echarts/components';
+// // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
+// import { CanvasRenderer } from 'echarts/renderers';
+// import 'echarts/theme/macarons.js';
+//////
 
 @NgModule({
   declarations: [
@@ -103,6 +118,7 @@ import { AdminReviewComponent } from './Admin/admin-review/admin-review.componen
     MatSlideToggleModule,
     FormsModule,
     MatSortModule,
+    NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
   ],
   entryComponents:[],
   providers: [
