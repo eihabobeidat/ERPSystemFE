@@ -76,7 +76,7 @@ import { AdminReviewComponent } from './Admin/admin-review/admin-review.componen
     ContactusComponent,
     TestimonialManageComponent,
     Dashboard1Component,
-    EditDialogComponent
+    EditDialogComponent,
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
     AdminReviewComponent,
