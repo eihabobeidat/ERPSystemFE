@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Dashboard1Component } from './Admin/dashboard1/dashboard1.component';
 import { ListComponent } from './Admin/Employee/list/list.component';
+import { ImagesliderManageComponent } from './Admin/imageslider-manage/imageslider-manage.component';
 import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import { LoginComponentComponent } from './Authentication/login-component/login-component.component';
 import { RegistrationComponentComponent } from './Authentication/registration-component/registration-component.component';
@@ -17,9 +17,8 @@ const routes: Routes = [
   {
     path:'aaa',component:ListComponent
   },
-  {
-    path:'ttt',component:Dashboard1Component
-  },
+  
+
   
   {
     path: 'home', loadChildren: () => import('../app/Modules/homemodule/homemodule.module').then(

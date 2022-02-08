@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { EditDialogComponent } from 'src/app/Admin/Employee/edit-dialog/edit-dialog.component';
 import { ListComponent } from 'src/app/Admin/Employee/list/list.component';
 import { InputFiles } from 'typescript';
 import { Employee } from '../Employee';
@@ -8,11 +10,20 @@ import { Employee } from '../Employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  EmployeeList:any[]=[];
+  EmployeeList:any=[];
   file:File;
   sss:any[]=[];
-  constructor(private http:HttpClient) { }
-
+  oneEmployee:any={};
+  id:number;
+  constructor(private http:HttpClient ) { }
+  GetEmployeeInf(id:number){
+    this.http.get<Employee>('https://localhost:44333/api/Employee/GetById/'+ id).
+    subscribe((result)=> 
+   { 
+      this.oneEmployee=result
+  });
+  
+  }
   getEmployee(){
      this.http.get<Employee[]>('https://localhost:44333/api/Employee/employeelist').subscribe
      ((result)=>{
@@ -44,6 +55,14 @@ export class EmployeeService {
    
    );
   
+}
+
+UpdateEmployee(form:any)
+{
+  console.log(form);
+  this.http.put('https://localhost:44333/api/Employee/updateemployee',form).subscribe((result)=>{
+   console.log(result);
+  });
 }
 }
 

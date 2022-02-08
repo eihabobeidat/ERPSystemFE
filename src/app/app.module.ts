@@ -34,7 +34,6 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ListComponent } from './Admin/Employee/list/list.component';
-
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
@@ -42,10 +41,12 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { HolidaysSearchComponent } from './Admin/holidays-search/holidays-search.component';
 import { ContactusComponent } from './Admin/Contactus/contactus.component';
 import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
-import { Dashboard1Component } from './Admin/dashboard1/dashboard1.component';
 import { EditDialogComponent } from './Admin/Employee/edit-dialog/edit-dialog.component';
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
+import { ImagesliderManageComponent } from './Admin/imageslider-manage/imageslider-manage.component';
+import { AboutManageComponent } from './Admin/about-manage/about-manage.component';
+import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
 //////
 import * as echarts from 'echarts';
@@ -91,6 +92,9 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
     HolidaysSearchComponent,
     ContactusComponent,
     TestimonialManageComponent,
+    ImagesliderManageComponent,
+    AboutManageComponent,
+    CellmanageComponent
     Dashboard1Component,
     EditDialogComponent,
     EmployeesLeaveComponent,
