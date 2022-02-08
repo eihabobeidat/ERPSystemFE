@@ -19,7 +19,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li #dashboardli class="nav-item "  (click)="active(dashboardli)">
-            <a class="nav-link" [routerLink]="'dashboard'">
+            <a class="nav-link" routerLink="/app/admin">
               <i class="fa fa-area-chart"></i>
               <p>Dashboard</p>
             </a>
@@ -171,6 +171,7 @@
       <div style="margin-top: 50px; margin-left: 12px; " >
         <br>
           <router-outlet></router-outlet>
+          
         <br>
       </div>
       <!-- end here: Body Ends here tameem, sameh, malek, eihab-->
