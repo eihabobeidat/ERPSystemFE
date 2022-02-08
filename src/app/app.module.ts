@@ -53,6 +53,7 @@ import 'echarts-gl';
 import 'echarts/theme/macarons.js';
 import 'echarts/dist/extension/bmap.min.js';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
 ////
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
@@ -95,6 +96,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
     AdminReviewComponent,
+    FlowerChartComponent,
   ],
   imports: [
     BrowserModule,
