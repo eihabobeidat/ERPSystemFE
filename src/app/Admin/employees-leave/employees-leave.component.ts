@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaveService } from 'src/app/service/AdminService/LeaveService/leave.service';
 
+declare const exportTableToCSV: any;
+declare const exportTableToExcel: any;
+declare const printTable: any;
+
 @Component({
   selector: 'app-employees-leave',
   templateUrl: './employees-leave.component.html',
@@ -28,5 +32,18 @@ export class EmployeesLeaveComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllVacation();
   }
+
+  exportToCSV(fileName: string) {
+    exportTableToCSV(fileName);
+  }
+
+  exportToExcel() {
+    exportTableToExcel();
+  }
+
+  printBtn() {
+    printTable();
+  }
+ 
 
 }

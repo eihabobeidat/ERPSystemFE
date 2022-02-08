@@ -32,7 +32,7 @@
 <br><br>
 
 <div id="example">
-<table mat-table [dataSource]="admin.vacationSearch" class="mat-elevation-z8 offset-1"  id="tableData">
+<table mat-table [dataSource]="admin.vacationSearch" class="mat-elevation-z8 sameh offset-1"  id="tableData">
  
     
     <ng-container matColumnDef="employeeid">
@@ -68,13 +68,33 @@
       </ng-container>
 
       <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef> Vacation Type  </th>
-        <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.type}} </td>
+        <th mat-header-cell *matHeaderCellDef> Vacation Type </th>
+        <td mat-cell *matCellDef="let IVacationList">
+          <div *ngIf="IVacationList.type === 1">
+            <span>Annual</span>
+          </div>
+          <div *ngIf="IVacationList.type === 21">
+            <span>Sick Leave</span>
+          </div>
+          <div *ngIf="IVacationList.type === 41">
+            <span>Other</span>
+          </div>
+          
       </ng-container>
 
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef> Status  </th>
-        <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.status}} </td>
+        <td mat-cell *matCellDef="let IVacationList"> 
+          <div *ngIf="IVacationList.status === 0">
+            <span>Pending</span>
+        </div>
+        <div *ngIf="IVacationList.status === 1">
+            <span >Approved</span>
+        </div>
+        <div *ngIf="IVacationList.status === 2">
+            <span >Rejected</span>
+        </div>
+         </td>
       </ng-container>
 
       <ng-container matColumnDef="comments">

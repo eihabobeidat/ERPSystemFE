@@ -1,4 +1,13 @@
-<table mat-table [dataSource]="this.service.reviews" class="mat-elevation-z8 offset-1">
+<div class="container-fluid">
+    <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+    <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
+    <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+  
+  <br><br><br>
+  
+<div id="example">
+
+<table mat-table [dataSource]="this.service.reviews" class="mat-elevation-z8 sameh offset-1" id="tableData">
 
     <ng-container matColumnDef="firstName">
         <th mat-header-cell *matHeaderCellDef>First Name</th>
@@ -44,7 +53,7 @@
                 <span>Closed</span>
             </div>
             <ng-template #elseBlock>
-                <button (click)="reviewEmployee(review.id)">Pending</button>
+                <button (click)="reviewEmployee(review.id)" class="btn btn-success">Pending</button>
             </ng-template>
         </td>
     </ng-container>
@@ -52,3 +61,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  </div>
+</div>

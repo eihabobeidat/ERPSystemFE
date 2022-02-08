@@ -177,10 +177,10 @@ function printTable() {
     // el.setAttribute('border', '1px');
     // el.setAttribute('cellpadding', '1');
     // el.setAttribute('color', 'green');
-    newPrint = window.open("");
-    newPrint.document.write(el.outerHTML);
-    newPrint.print();
-    newPrint.close();
+    // newPrint = window.open("");
+    // newPrint.document.write(el.outerHTML);
+    // newPrint.print();
+    // newPrint.close();
     printContent('example');
     
 }
@@ -190,5 +190,7 @@ function printContent(el) {
     var printcontent = document.getElementById(el).innerHTML;
     document.body.innerHTML = printcontent;
     window.print();
-    document.body.innerHTML = restorepage;
+    // document.body.innerHTML = restorepage;
+    location.reload();
+    
 }
