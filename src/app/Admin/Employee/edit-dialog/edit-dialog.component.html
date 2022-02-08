@@ -1,15 +1,28 @@
-<h1 mat-dialog-title>Favorite Animal</h1>
-<div mat-dialog-content>
-  My favorite animal is:
-  <ul>
-    <li>
-      <span>&#10003;</span> Panda
-    </li>
-    <li>
-      <span >&#10003;</span> Unicorn
-    </li>
-    <li>
-      <span >&#10003;</span> Lion
-    </li>
-  </ul>
-</div>
+<h1 mat-dialog-title>Edit Employee </h1>
+<mat-dialog-content style="width: 800px; height: 200px;">
+  <form [formGroup]="EditEmployee" (ngSubmit)="UpdateEmployee()" >
+        <input  type="email"   formControlName="email"  class="form-control">
+  
+        <input   type="number" formControlName="phone"    class="form-control">
+        <input type="text"  formControlName="firstname" class="form-control">
+        
+  
+  
+        <input type="text" formControlName="lastname"    class="form-control">
+      
+        <input  type="text"  formControlName="address"  class="form-control">
+       
+     
+        <input  type="password" formControlName="password" class="form-control">
+     
+    
+    
+<button>submit</button>
+<button (click)="closeDialogBox()"></button>    
+  
+  </form>
+</mat-dialog-content>
+
+
+ 
+  

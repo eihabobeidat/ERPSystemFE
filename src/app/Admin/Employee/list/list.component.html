@@ -1,93 +1,70 @@
 
-<body >
-  <div style="background-color: skyblue; width: 100%; height: 150px; margin-bottom: -25px;" >
-    <mat-form-field appearance="standard">
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-    </mat-form-field> 
-    <br>
-       
-   </div>
- 
-   <img src="../../../../assets/OtherImage/plus.jpg" 
-   style="width: 50px; height: 50px; display: flex; ">
-  <div class="mat-elevation-z8" style="margin-top: -25px;">
-    
-    
-    <table  [dataSource]="dataSource" mat-table   class="table table-striped table-responsive-md btn-table table-bordered" matSort>
+<div class="container-fluid">
+   <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+  <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button> 
 
-      <ng-container matColumnDef="imagepath">
-        <th  *matHeaderCellDef mat-sort-header> Picture </th>
-        <td mat-cell *matCellDef="let row">
-            <img class="img" style="height: 50px; width: 50px;"
-             src="../../../../assets/images/faces/{{row.imagepath}}"> </td>
-      </ng-container>
-      <!-- ID Column -->
-     
-      <ng-container matColumnDef="firstname">
-        <th  *matHeaderCellDef mat-sort-header> Name </th>
-        <td mat-cell *matCellDef="let row"> {{row.firstname +" "+ row.lastname}} </td>
-      </ng-container>
-      <!-- Progress Column -->
-      <ng-container matColumnDef="email">
-        <th  *matHeaderCellDef mat-sort-header> E-mail </th>
-        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-      </ng-container>
-  
-     
-      <ng-container matColumnDef="mobile">
-        <th  *matHeaderCellDef mat-sort-header> Mobile </th>
-        <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
-      </ng-container>
-      <ng-container matColumnDef="address">
-        <th  *matHeaderCellDef mat-sort-header> Address </th>
-        <td mat-cell *matCellDef="let row"> {{row.address}} </td>
-      </ng-container>
-      
-      <ng-container matColumnDef="salary">
-        <th  *matHeaderCellDef mat-sort-header> Salary </th>
-        <td mat-cell *matCellDef="let row"> {{row.salary}} </td>
-      </ng-container>
-      <ng-container matColumnDef="Action">
-        <th  *matHeaderCellDef > </th>
-        <td mat-cell *matCellDef="let row"> 
-          <button class="btn btn-success" mat-button (click)="openDialog()">Edit</button>
-          <button class="btn btn-danger" mat-button (click)="openDialog()">Delete</button>
-      </ng-container>
-     
+  <div class="image-upload"  style="margin-top: 10px;">
+  <label for="file-input">
+    <img src="../../../../assets/OtherImage/excel_100767.jpg" style="width: 50;height: 50px;"/>
+  </label>
+  <input #fileinput type="file"  (change)="upload(fileinput.files)" />
+</div>
+<br><br><br>
+<div style="display: none;">{{this.service.EmployeeList[5].email}}</div>
+<div id="example">
+<table mat-table [dataSource]="this.service.EmployeeList" class="mat-elevation-z8 offset-1" id="tableData">
 
+    <ng-container matColumnDef="imagepath">
+      <th mat-header-cell *matHeaderCellDef> Picture </th>
+      <td mat-cell *matCellDef="let row"> <img class="img" style="height: 50px; width: 50px; margin-bottom: 10px;margin-top: 10px;"
+        src="../../../../assets/images/faces/{{row.imagepath}}"> </td>
+    </ng-container>
+     
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.firstname + " " + row.lastname}} </td>
+    </ng-container>
   
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mobile">
+      <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+      <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let row"> {{row.address}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="salary">
+      <th mat-header-cell *matHeaderCellDef> Salary </th>
+      <td mat-cell *matCellDef="let row"> {{row.salary}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row"> 
+        <input type="submit" class="btn btn-success" value="Edit" (click)="openDialog(row.id);"  >
+      </td>
+    </ng-container>
+
+
+
+     
   
-       <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="7">No data matching the filter "{{input.value}}"</td>
-      </tr> 
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users">dsfg</mat-paginator>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
   </div>
-<input #fileinput type="file"  (change)="upload(fileinput.files)"/>
-
-
-</body>
-<!-- <body>
-<table class="table  table-striped" style="text-align: center;" matSort>
-    <tr>
-        <th mat-sort-header>Picture</th>
-
-        <th>Name</th>
-        <th>Phone No.</th>
-        <th>Address</th>
-        <th>Salary</th>
-    </tr>
-    <tr *ngFor= "let item of service.EmployeeList;let i=index; first as isFirst">
-        <td><img style="width: 50px;height: 50px;" src="../../../../assets/images/faces/{{item.imagepath}}"></td>
-
-        <td>{{item.firstname + " " + item.lastname }}</td>
-        <td>{{item.mobile}}</td>
-        <td>{{item.address}}</td>
-        <td>{{item.salary}}</td>
-    </tr>
-</table>
-</body> -->
+  
