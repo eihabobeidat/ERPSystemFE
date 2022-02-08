@@ -115,7 +115,7 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatFormFieldModule, 
     NgImageSliderModule,
     NgbModule,
     MatIconModule,

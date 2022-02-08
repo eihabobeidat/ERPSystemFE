@@ -15,9 +15,10 @@ import { TestimonialManageComponent } from '../testimonial-manage/testimonial-ma
 const routes: Routes = [
   {
     path:'', component: AdminNavComponent,
+    
     children: [
       {
-        path:'dashboard', component: AdminDashboardComponent
+        path:'', component: AdminDashboardComponent
       },
       { 
         path : 'review', component : AdminReviewComponent
