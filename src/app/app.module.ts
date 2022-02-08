@@ -94,8 +94,7 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
     TestimonialManageComponent,
     ImagesliderManageComponent,
     AboutManageComponent,
-    CellmanageComponent
-    Dashboard1Component,
+    CellmanageComponent,
     EditDialogComponent,
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
