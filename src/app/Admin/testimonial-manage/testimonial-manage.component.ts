@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
 
 
@@ -23,20 +26,30 @@ declare const printTable: any;
 })
 export class TestimonialManageComponent implements OnInit {
   displayedColumns: string[] = ['firstName', 'lastName', 'message','time','status'];
+  // @ViewChild(MatPaginator) private paginator: MatPaginator;
   // dataSource: MatTableDataSource<ITestimonialList>
-
-  constructor(public admin:AdminService,)
+  //  list_product = new MatTableDataSource<any>(this.admin.Testimonial);
+  
+  constructor(public admin:AdminService)
   {
     this.admin.GetTestimonial()
-    
+       
     
   }
 
   
   ngOnInit(): void {
+    
+   
+    
   }
 
-  
+  // get_data(){
+  //   this.http.get<any[]>('https://localhost:44333/api/Testimonial/GetHomeTestimonial')
+  // .subscribe((result)=>{
+  //   this.list_product.data = result
+  // })}
+    
 
   StatusCheck(status:any,Id:number)
   {
@@ -76,6 +89,11 @@ export class TestimonialManageComponent implements OnInit {
     printTable();
   }
  
+
+//   ngAfterViewInit(): void {
+//     this.list_product.paginator = this.paginator;
+// }
+
 
   // applyFilter(event: Event) {
   //   const filterValue = (event.target as HTMLInputElement).value;

@@ -20,6 +20,28 @@ export interface IEmployee{
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+
+  employeeCount:any={}
+  vacationCount:any={}
+  salarySummation:any={}
+
+
+  GetCards()
+  {
+    // Employee count
+    this.http.get('https://localhost:44333/api/Employee/GetCount').subscribe((result)=>{
+   this.employeeCount=result
+   })
+    //vacation count
+   this.http.get('https://localhost:44333/api/Vacation/GetVacationCount').subscribe((result)=>{
+   this.vacationCount=result
+   })
+   // salary summation
+   this.http.get('https://localhost:44333/api/Salary/GetSalarySummation').subscribe((result)=>{
+   this.salarySummation=result
+   })
+
+
   options: Observable<any>;
 
   initOpts = {
@@ -41,6 +63,7 @@ export class AdminDashboardComponent implements OnInit {
     } else {
       return 50
     }
+
   }
 
   getRate(sal:number){
@@ -48,6 +71,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+        this.GetCards()
     this.http.get<IEmployee[]>('https://localhost:44333/api/Employee').subscribe((res:IEmployee[]) => {
       let data:any[] = [["Salary","HRate","EI","Address","Expertise"]];
       res.forEach(employee => {

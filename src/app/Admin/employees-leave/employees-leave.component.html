@@ -5,7 +5,10 @@
 
 <br><br><br>
 
-<table mat-table [dataSource]="this.service.vacations" class="mat-elevation-z8 offset-1" id="tableData">
+
+<div id="example">
+
+<table mat-table [dataSource]="this.service.vacations" class="mat-elevation-z8 sameh offset-1" id="tableData">
 
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> Leave Id </th>
@@ -23,17 +26,6 @@
       <td mat-cell *matCellDef="let vacation"> {{vacation.employeeName}} </td>
     </ng-container>
   
-    
-    <!-- <ng-container matColumnDef="reviewedby">
-      <th mat-header-cell *matHeaderCellDef> Reviewed By </th>
-      <td mat-cell *matCellDef="let vacation"> {{vacation.reviewedby}} </td>
-    </ng-container>
-
-      <ng-container matColumnDef="approvedby">
-        <th mat-header-cell *matHeaderCellDef> Approved By </th>
-        <td mat-cell *matCellDef="let vacation"> {{vacation.approvedby}} </td>
-      </ng-container> -->
-
       <ng-container matColumnDef="starttime">
         <th mat-header-cell *matHeaderCellDef> Start Time  </th>
         <td mat-cell *matCellDef="let vacation"> {{vacation.starttime}} </td>
@@ -54,6 +46,7 @@
             <div *ngIf="vacation.type === 21; else LastElseBlock">
               <span>Sick Leave</span>
             </div>
+
             <ng-template #LastElseBlock>
               <span>Other</span>
             </ng-template>
@@ -85,9 +78,10 @@
         <th mat-header-cell *matHeaderCellDef>Approve</th>
         <td mat-cell *matCellDef="let vacation">
             <div *ngIf="vacation.status === 0; else elseBlock">
-                <button (click)="Approve(vacation,1)" class="btn btn-success ">Approve</button>
-                <button (click)="Approve(vacation,2)" class="btn btn-danger" style="padding-inline: 19px;
-                margin-left: 0;">Reject</button>
+
+                <button (click)="Approve(vacation,1)" class="btn btn-success">Approve</button>
+                <button (click)="Approve(vacation,2)" class="btn btn-danger sameh"
+                style="width: 84px;">Reject</button>
             </div>
             <ng-template #elseBlock>
                 <div *ngIf="vacation.status === 1; else elseBlock">
@@ -103,4 +97,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  </div>
 </div>
+

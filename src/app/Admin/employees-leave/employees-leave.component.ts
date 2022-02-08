@@ -3,6 +3,8 @@ import { LeaveService } from 'src/app/service/AdminService/LeaveService/leave.se
 
 declare const exportTableToCSV: any;
 declare const exportTableToExcel: any;
+declare const printTable: any;
+
 
 @Component({
   selector: 'app-employees-leave',
@@ -32,6 +34,13 @@ export class EmployeesLeaveComponent implements OnInit {
     return this.service.getDifferenceInDays(new Date(date1), new Date(date2));
   }
 
+ 
+
+  ngOnInit(): void {
+    this.service.getAllVacation();
+  }
+
+
   exportToCSV(fileName: string) {
     exportTableToCSV(fileName);
   }
@@ -41,11 +50,7 @@ export class EmployeesLeaveComponent implements OnInit {
   }
 
   printBtn() {
-    exportTableToExcel();
+    printTable();
   }
-
-  ngOnInit(): void {
-    this.service.getAllVacation();
-  }
-  
+ 
 }

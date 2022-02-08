@@ -33,7 +33,7 @@ sliderImage:any=[{}];
     this.http.get<ICells>('https://localhost:44333/api/Cell/Getimage')
     .subscribe((result:any)=>{
       this.cellsImage=result;
-     // console.log(this.cellsImage);
+     console.log(this.cellsImage);
 
       })
    

@@ -35,7 +35,7 @@
               <i class="fa fa-clock-o" aria-hidden="true"></i>
               <p>Attendance</p>
             </a>
-            </li>
+            </li> <!--done-->
             <li #leavereportli class="nav-item " (click)="active(leavereportli)">
                 <a class="nav-link" [routerLink]="'holidays'">
                     <i class="fa fa-file" aria-hidden="true"></i>
@@ -53,13 +53,13 @@
               <i class="fa fa-star-half-empty"></i>
               <p>Evaluation</p>
             </a>
-          </li>
+          </li> <!--done-->
           <li #systemmanagmentli class="nav-item " (click)="active(systemmanagmentli)">
             <a class="nav-link" (click)="showList()">
-              <i class="material-icons">location_ons</i>
+                <i class="fa fa-desktop" aria-hidden="true"></i>
               <p>System Managment</p>
             </a>
-          </li>
+          </li> <!--almost done-->
 
         <ul [hidden]="hideList" id="systemmanagmentlist">
             <li #imagesliderli class="nav-item" (click)="active(imagesliderli)">
@@ -213,7 +213,7 @@
       </script>
     </div>
   </div>
-  <div class="fixed-plugin">
+  <!-- <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
         <i class="fa fa-cog fa-2x"> </i>
@@ -261,7 +261,7 @@
                 <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
                   Get the pro version
                 </a>
-            </li> -->
+            </li> 
         <li class="button-container">
           <a href="https://demos.creative-tim.com/material-dashboard-dark/docs/2.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
             View Documentation
@@ -279,7 +279,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
   <!--   Core JS Files   -->
   <script src="../../../assets/dashboard/assets/js/core/jquery.min.js"></script>
   <script src="../../../assets/dashboard/assets/js/core/popper.min.js"></script>
