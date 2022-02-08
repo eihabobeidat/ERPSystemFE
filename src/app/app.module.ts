@@ -47,6 +47,25 @@ import { EmployeesReviewComponent } from './Admin/employees-review/employees-rev
 import { ImagesliderManageComponent } from './Admin/imageslider-manage/imageslider-manage.component';
 import { AboutManageComponent } from './Admin/about-manage/about-manage.component';
 import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
+import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
+//////
+import * as echarts from 'echarts';
+import 'echarts-gl';
+import 'echarts/theme/macarons.js';
+import 'echarts/dist/extension/bmap.min.js';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
+////
+// Import the echarts core module, which provides the necessary interfaces for using echarts.
+// import * as echarts from 'echarts/core';
+// // Import bar charts, all with Chart suffix
+// import { BarChart } from 'echarts/charts';
+// import { TitleComponent, TooltipComponent, GridComponent } from 'echarts/components';
+// // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
+// import { CanvasRenderer } from 'echarts/renderers';
+// import 'echarts/theme/macarons.js';
+//////
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,13 +92,15 @@ import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
     HolidaysSearchComponent,
     ContactusComponent,
     TestimonialManageComponent,
-    EditDialogComponent,
-    EmployeesLeaveComponent,
-    EmployeesReviewComponent,
     ImagesliderManageComponent,
     AboutManageComponent,
     CellmanageComponent
-    
+    Dashboard1Component,
+    EditDialogComponent,
+    EmployeesLeaveComponent,
+    EmployeesReviewComponent,
+    AdminReviewComponent,
+    FlowerChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,9 +124,7 @@ import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
     MatSlideToggleModule,
     FormsModule,
     MatSortModule,
-    
-    
-
+    NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
   ],
   entryComponents:[],
   providers: [
