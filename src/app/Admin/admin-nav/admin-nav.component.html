@@ -63,14 +63,14 @@
 
         <ul [hidden]="hideList" id="systemmanagmentlist">
             <li #imagesliderli class="nav-item" (click)="active(imagesliderli)">
-                <a class="nav-link" href="#">
+                <a class="nav-link" [routerLink]="'slider'">
                     <i class="fas fa-images"></i>
                   <p>Image Slider</p>
                 </a>
               </li>
     
               <li #cellimageli class="nav-item" (click)="active(cellimageli)">
-                <a class="nav-link" href="#">
+                <a class="nav-link" [routerLink]= "'cell'" >
                     <i class="fas fa-images"></i>
                   <p>Cell Image</p>
                 </a>
@@ -91,7 +91,7 @@
               </li>
     
               <li #aboutusli class="nav-item" (click)="active(aboutusli)">
-                <a class="nav-link" href="#">
+                <a class="nav-link" [routerLink]="'about'">
                     <i class="fas fa-info-circle"></i>
                   <p>About Us</p>
                 </a>
