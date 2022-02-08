@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Form } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { aboutClass } from 'src/app/Admin/about-manage/aboutClass';
 // import { IVacationList } from './IVacationList';
 
 @Injectable({
@@ -74,13 +76,53 @@ UpdateTestimonialStatus(form:any)
   })
   this.toaster.success("Updated record Successfully ","Update")
 }  
-
-
-
-
-
+UploadImageSlider(form:FormData):any{
+  console.log(form);
+  const header={
+    'Content-Type':'application/json'
+  }
+  const requestoption={
+    headers:new HttpHeaders(header)
+  }
+  this.http.post('https://localhost:44333/api/Slider/postslider',form)
+  .subscribe((result:any)=>{
+    console.log(result);
 
  }
+ , error=>{console.log(error);}
+ 
+ );
+
+}
+
+UpdateAbout(form:FormData)
+{
+  this.http.put('https://localhost:44333/api/AboutService/updateabout',form).
+  subscribe((result)=>{
+   
+   
+  });
+
+}
+
+UpdateCell(formdata:FormData)
+{
+    
+  this.http.put('https://localhost:44333/api/Cell/putcell',formdata).
+  subscribe((result)=>{
+   
+   
+  });
+
+}
+
+}
+
+
+
+
+
+
 
 
 

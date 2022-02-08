@@ -53,7 +53,9 @@
                 <span>Closed</span>
             </div>
             <ng-template #elseBlock>
-                <button (click)="reviewEmployee(review.id)" class="btn btn-success">Pending</button>
+
+                <button class="btn btn-warning" (click)="reviewEmployee(review.id)">Pending</button>
+
             </ng-template>
         </td>
     </ng-container>

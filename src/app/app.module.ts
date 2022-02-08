@@ -34,7 +34,6 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { CardComponent } from './Home/about-component/card/card.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ListComponent } from './Admin/Employee/list/list.component';
-
 import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
 import { HrDashboardComponent } from './Hr/hr-dashboard/hr-dashboard.component';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
@@ -42,12 +41,30 @@ import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
 import { HolidaysSearchComponent } from './Admin/holidays-search/holidays-search.component';
 import { ContactusComponent } from './Admin/Contactus/contactus.component';
 import { TestimonialManageComponent } from './Admin/testimonial-manage/testimonial-manage.component';
-import { Dashboard1Component } from './Admin/dashboard1/dashboard1.component';
 import { EditDialogComponent } from './Admin/Employee/edit-dialog/edit-dialog.component';
 import { EmployeesLeaveComponent } from './Admin/employees-leave/employees-leave.component';
 import { EmployeesReviewComponent } from './Admin/employees-review/employees-review.component';
+import { ImagesliderManageComponent } from './Admin/imageslider-manage/imageslider-manage.component';
+import { AboutManageComponent } from './Admin/about-manage/about-manage.component';
+import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
-//import { AdminModuleModule } from './Admin/admin-module/admin-module.module';
+//////
+import * as echarts from 'echarts';
+import 'echarts-gl';
+import 'echarts/theme/macarons.js';
+import 'echarts/dist/extension/bmap.min.js';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
+////
+// Import the echarts core module, which provides the necessary interfaces for using echarts.
+// import * as echarts from 'echarts/core';
+// // Import bar charts, all with Chart suffix
+// import { BarChart } from 'echarts/charts';
+// import { TitleComponent, TooltipComponent, GridComponent } from 'echarts/components';
+// // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
+// import { CanvasRenderer } from 'echarts/renderers';
+// import 'echarts/theme/macarons.js';
+//////
 
 @NgModule({
   declarations: [
@@ -75,11 +92,15 @@ import { AdminReviewComponent } from './Admin/admin-review/admin-review.componen
     HolidaysSearchComponent,
     ContactusComponent,
     TestimonialManageComponent,
+    ImagesliderManageComponent,
+    AboutManageComponent,
+    CellmanageComponent
     Dashboard1Component,
     EditDialogComponent,
     EmployeesLeaveComponent,
     EmployeesReviewComponent,
     AdminReviewComponent,
+    FlowerChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +124,7 @@ import { AdminReviewComponent } from './Admin/admin-review/admin-review.componen
     MatSlideToggleModule,
     FormsModule,
     MatSortModule,
+    NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
   ],
   entryComponents:[],
   providers: [
