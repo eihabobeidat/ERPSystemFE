@@ -55,6 +55,9 @@ import 'echarts/theme/macarons.js';
 import 'echarts/dist/extension/bmap.min.js';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
+import { HrLeaveComponent } from './Hr/hr-leave/hr-leave.component';
+import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
+import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
 ////
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
@@ -100,6 +103,9 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
     EmployeesReviewComponent,
     AdminReviewComponent,
     FlowerChartComponent,
+    HrLeaveComponent,
+    HrReviewComponent,
+    HrRegisterEmployeeComponent,
   ],
   imports: [
     BrowserModule,

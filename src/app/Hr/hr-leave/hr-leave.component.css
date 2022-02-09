@@ -1,0 +1,37 @@
+.mat-table{    
+    border-radius: 12px;
+    overflow:hidden !important;
+  }
+  
+  
+  table {
+      width: 91%;
+      background-color: rgb(73, 68, 68);
+      border-collapse:collapse;
+      border-radius: 5em;
+    }
+  
+    .sameh {
+      margin-left: 3.333333% !important;
+  }
+    table tr:last-child td /*To remove the last border*/
+    {
+      border-bottom:0 solid
+    }
+  
+    td{
+        color: white;
+    }
+  
+    th{
+      color: black;
+      background-color: #18d26e;
+      
+    }
+    table[_ngcontent-cpq-c245] {
+      width: 91%;
+      background-color: rgb(73, 68, 68);
+      border-collapse: collapse;
+      border-radius: 5em;
+  }
+    
