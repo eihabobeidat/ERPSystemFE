@@ -16,6 +16,21 @@ export class EmployeesReviewComponent implements OnInit {
   competency?:number;
   constructor(private dialog:MatDialog, @Inject(MAT_DIALOG_DATA)public data:{id:number}, private service:ReviewService) { }
   
+  getStaticId(){
+    if(localStorage.getItem('role') === 'admin' || localStorage.getItem('role') === 'Admin')
+    {
+      return '82';
+    }
+    else if (localStorage.getItem('role') === 'HR' || localStorage.getItem('role') === 'Hr')
+    {
+      return '145';
+    }
+    else
+    {
+      return '150';
+    }
+  }
+
   getRate(rate:number, stars:any){
     if(stars === 'value') {this.isValueSubmit = true; this.value=rate;}
     if(stars === 'objective') {this.isObjectiveSubmit = true; this.objective=rate;}
@@ -27,7 +42,7 @@ export class EmployeesReviewComponent implements OnInit {
       let temp = localStorage.getItem('id');
       let form = {
         id:this.data.id,
-        reviewedby:parseInt(temp? temp: "82"),
+        reviewedby:parseInt(temp? temp: this.getStaticId()),
         value:this.value,
         objective:this.objective,
         competency:this.competency,

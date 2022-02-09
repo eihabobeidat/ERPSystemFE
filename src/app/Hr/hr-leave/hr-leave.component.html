@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+  <button  id="export1" (click)="exportToCSV('employeesLeaves.csv')" class="btn btn-primary mx-3">CSV</button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+
+<br><br><br>
+
+
+<div id="example">
+<table mat-table [dataSource]="this.service.vacations" class="mat-elevation-z8 sameh offset-1" id="tableData">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Leave Id </th>
+        <td mat-cell *matCellDef="let vacation"> {{vacation.id}} </td>
+      </ng-container>
+    
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef> Duration </th>
+      <td mat-cell *matCellDef="let vacation"> {{getDifferenceInDays(vacation.starttime,vacation.endtime)}} </td>
+    </ng-container>
+  
+   
+    <ng-container matColumnDef="employeeName">
+      <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+      <td mat-cell *matCellDef="let vacation"> {{vacation.employeeName}} </td>
+    </ng-container>
+  
+      <ng-container matColumnDef="starttime">
+        <th mat-header-cell *matHeaderCellDef> Start Time  </th>
+        <td mat-cell *matCellDef="let vacation"> {{vacation.starttime}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endtime">
+        <th mat-header-cell *matHeaderCellDef> End Time  </th>
+        <td mat-cell *matCellDef="let vacation"> {{vacation.endtime}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Vacation Type  </th>
+        <td mat-cell *matCellDef="let vacation">
+          <div *ngIf="vacation.type === 1; else elsBlock">
+              <span>Annual Leave</span>
+          </div>
+          <ng-template #elsBlock>
+            <div *ngIf="vacation.type === 21; else LastElseBlock">
+              <span>Sick Leave</span>
+            </div>
+
+            <ng-template #LastElseBlock>
+              <span>Other</span>
+            </ng-template>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let vacation">
+            <div *ngIf="vacation.status === 0 && vacation.reviewedby === 4">
+                <span>Pending</span>
+            </div>
+            <div *ngIf="vacation.status === 0 && vacation.reviewedby === 5">
+                <span>Approved</span>
+            </div>
+            <div *ngIf="vacation.status === 2">
+                <span>Rejected</span>
+            </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="comments">
+        <th mat-header-cell *matHeaderCellDef> Comments  </th>
+        <td mat-cell *matCellDef="let vacation"> {{vacation.comments}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Approve">
+        <th mat-header-cell *matHeaderCellDef>Approve</th>
+        <td mat-cell *matCellDef="let vacation">
+            <div *ngIf="vacation.status === 0 && vacation.reviewedby === 4; else elseBlock">
+
+                <button (click)="Approve(vacation,0)" 
+                class="btn btn-success">Approve</button>
+                <button (click)="Approve(vacation,2)" 
+                class="btn btn-danger sameh" style="width: 84px;">Reject</button>
+            </div>
+            <ng-template #elseBlock>
+                <div *ngIf="vacation.status === 0 && vacation.reviewedby === 5; else elseBlock">
+                    <span>Approved</span>
+                </div>
+                <ng-template #elseBlock>
+                    <span>Rejected</span>
+                </ng-template>
+            </ng-template>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+</div>
