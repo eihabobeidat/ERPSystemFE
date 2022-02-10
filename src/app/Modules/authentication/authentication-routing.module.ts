@@ -10,11 +10,12 @@ const routes: Routes = [
       (m) => m.AdminModuleModule),
   },
   {
-    path:'hr',component:HrDashboardComponent
+    path:'hr',component:EmployeeDashboardComponent
   },
   {
-    path:'employee',component:EmployeeDashboardComponent
-  }
+    path:'employee',loadChildren: () => import('../../Employee/employee-module/employee-module.module').then(
+      (m) => m.EmployeeModuleModule)
+  },
 ];
 
 @NgModule({

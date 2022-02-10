@@ -55,6 +55,10 @@ import 'echarts/theme/macarons.js';
 import 'echarts/dist/extension/bmap.min.js';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
+import { EmployeeNavComponent } from './Employee/employee-nav/employee-nav.component';
+import { EmployeeHolidaysSearchComponent } from './Employee/employee-holidays-search/employee-holidays-search.component';
+import { EmployeeProfileComponent } from './Employee/employee-profile/employee-profile.component';
+import { CardsComponent } from './Employee/employee-dashboard/cards/cards.component';
 ////
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
@@ -100,6 +104,10 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
     EmployeesReviewComponent,
     AdminReviewComponent,
     FlowerChartComponent,
+    EmployeeNavComponent,
+    EmployeeHolidaysSearchComponent,
+    EmployeeProfileComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
