@@ -58,6 +58,7 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
 import { HrLeaveComponent } from './Hr/hr-leave/hr-leave.component';
 import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
 import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
+import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 ////
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
@@ -106,6 +107,7 @@ import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-regist
     HrLeaveComponent,
     HrReviewComponent,
     HrRegisterEmployeeComponent,
+    HrNavComponent,
   ],
   imports: [
     BrowserModule,

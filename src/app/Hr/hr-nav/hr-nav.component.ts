@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-admin-nav',
-  templateUrl: './admin-nav.component.html',
-  styleUrls: ['./admin-nav.component.css']
+  selector: 'app-hr-nav',
+  templateUrl: './hr-nav.component.html',
+  styleUrls: ['./hr-nav.component.css']
 })
-export class AdminNavComponent implements OnInit {
+export class HrNavComponent implements OnInit {
+
   hideList:boolean=true;
   oldItem:any
   constructor(private router:Router) { }
@@ -34,9 +36,11 @@ export class AdminNavComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['']);
   }
+  
 
   showList()
   {
     this.hideList=!this.hideList
   }
+
 }
