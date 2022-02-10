@@ -67,6 +67,7 @@ import { HrLeaveComponent } from './Hr/hr-leave/hr-leave.component';
 import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
 import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
 import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
+import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -124,6 +125,7 @@ import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
     HrReviewComponent,
     HrRegisterEmployeeComponent,
     HrNavComponent,
+    EmpReviewComponent,
   ],
   imports: [
     BrowserModule,

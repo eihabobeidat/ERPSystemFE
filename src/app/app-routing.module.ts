@@ -19,36 +19,15 @@ const routes: Routes = [
     path:'',component:MainNavbarComponentComponent 
   },
   {
-    path:'aaa',component:ListComponent
-  },
-  {
-    path:'eee',component:EmployeeDashboardComponent
-  },
-  {
-    path:'iii',component:TakeLeaveComponent
-  },
-  {
-    path:'fff',component:TakeAttendenceComponent
-
-  },
-  {
-    path:'ccc',component:MyLeaveComponent
-
-  }, 
-
-  
-  {
     path: 'home', loadChildren: () => import('../app/Modules/homemodule/homemodule.module').then(
       (m) => m.HomemoduleModule,
     )
   },
-  
   {
     path: 'app', loadChildren: () => import('../app/Modules/authentication/authentication.module').then(
       (m) => m.AuthenticationModule,
     )
-  },
-  
+  }, 
 ];
 
 @NgModule({

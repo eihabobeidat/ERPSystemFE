@@ -27,33 +27,39 @@
             <li #employeeli class="nav-item" (click)="active(employeeli)">
               <a class="nav-link" [routerLink]="'profile'">
                 <i class="material-icons">person</i>
-                <p>Employee Managment</p>
+                <p>Profile</p>
               </a>
             </li> <!--done-->
             <li #attendanceli class="nav-item " (click)="active(attendanceli)">
-              <a class="nav-link" [routerLink]="''" > 
+              <a class="nav-link" [routerLink]="'attendence'" > 
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <p>Attendance</p>
               </a>
               </li> <!--done-->
               <li #leavereportli class="nav-item " (click)="active(leavereportli)">
-                  <a class="nav-link" [routerLink]="'holidays'">
+                  <a class="nav-link" [routerLink]="'leave'">
                       <i class="fa fa-file" aria-hidden="true"></i>
-                    <p>Leaves Report</p>
+                    <p>Leaves Request</p>
                   </a>
-            </li> <!--almost done-->
+              </li> <!--almost done-->
             <li #leaveRequestli class="nav-item " (click)="active(leaveRequestli)" >
-              <a class="nav-link" [routerLink]="''">
+              <a class="nav-link" [routerLink]="'leavelist'">
                 <i class="material-icons">library_books</i>
-                <p>Leave Request</p>
+                <p>Leave History</p>
               </a>
             </li> <!--done-->
             <li #evaluationli class="nav-item " (click)="active(evaluationli)" >
-              <a class="nav-link" [routerLink]="''">
+              <a class="nav-link" [routerLink]="'holidays'">
                 <i class="fa fa-star-half-empty"></i>
-                <p>Evaluation</p>
+                <p>Leave Report</p>
               </a>
             </li> 
+            <li #evaluation class="nav-item" (click)="active(evaluation)">
+              <a class="nav-link" [routerLink]="'evaluation'">
+                <i class="material-icons">person</i>
+                <p>Evaluation</p>
+              </a>
+            </li> <!--done-->
             
           </ul>
         </div>
