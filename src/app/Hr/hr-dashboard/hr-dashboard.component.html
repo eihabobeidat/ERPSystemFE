@@ -1,11 +1,61 @@
-<app-hr-review></app-hr-review>
-<br>
-<br>
-<br>
-<br>
-<app-hr-leave></app-hr-leave>
-<br>
-<br>
-<br>
-<br>
-<app-hr-register-employee></app-hr-register-employee>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <p class="card-category">Employees</p>
+                        <h3 class="card-title">
+                            {{employeeCount.employeeCount}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 ">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="fas fa-business-time"></i>
+                        </div>
+                        <p class="card-category">vacations</p>
+                        <h3 class="card-title">
+                            {{vacationCount.vacationCount}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-7 col-md-6 col-sm-6 ">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-dollar"></i>
+                        </div>
+                        <p class="card-category">Salary Rate Summation</p>
+                        <h3 class="card-title">
+                            {{salarySummation.salarySummation}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-flower-chart></app-flower-chart>
