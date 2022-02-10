@@ -59,6 +59,10 @@ import { EmployeeNavComponent } from './Employee/employee-nav/employee-nav.compo
 import { EmployeeHolidaysSearchComponent } from './Employee/employee-holidays-search/employee-holidays-search.component';
 import { EmployeeProfileComponent } from './Employee/employee-profile/employee-profile.component';
 import { CardsComponent } from './Employee/employee-dashboard/cards/cards.component';
+import { HrLeaveComponent } from './Hr/hr-leave/hr-leave.component';
+import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
+import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
+import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 ////
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
@@ -108,6 +112,10 @@ import { CardsComponent } from './Employee/employee-dashboard/cards/cards.compon
     EmployeeHolidaysSearchComponent,
     EmployeeProfileComponent,
     CardsComponent,
+    HrLeaveComponent,
+    HrReviewComponent,
+    HrRegisterEmployeeComponent,
+    HrNavComponent,
   ],
   imports: [
     BrowserModule,

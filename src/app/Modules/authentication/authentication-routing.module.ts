@@ -10,7 +10,10 @@ const routes: Routes = [
       (m) => m.AdminModuleModule),
   },
   {
-    path:'hr',component:EmployeeDashboardComponent
+
+    path:'hr',loadChildren: () => import('../../Hr/hr-module/hr-module.module').then(
+      (m) => m.HrModuleModule),
+
   },
   {
     path:'employee',loadChildren: () => import('../../Employee/employee-module/employee-module.module').then(
