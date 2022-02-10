@@ -49,13 +49,16 @@ import { AboutManageComponent } from './Admin/about-manage/about-manage.componen
 import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
 //////
+import { TakeAttendenceComponent } from './Employee/take-attendence/take-attendence.component';
 import * as echarts from 'echarts';
 import 'echarts-gl';
 import 'echarts/theme/macarons.js';
 import 'echarts/dist/extension/bmap.min.js';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
-////
+import { TakeLeaveComponent } from './Employee/take-leave/take-leave.component';
+import { MyLeaveComponent } from './Employee/my-leave/my-leave.component';
+import { CardEmployeeInfComponent } from './Employee/take-attendence/card-employee-inf/card-employee-inf.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -100,6 +103,12 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
     EmployeesReviewComponent,
     AdminReviewComponent,
     FlowerChartComponent,
+    TakeLeaveComponent,
+    MyLeaveComponent,
+    CardComponent,
+    CardEmployeeInfComponent,
+    TakeAttendenceComponent
+    
   ],
   imports: [
     BrowserModule,
