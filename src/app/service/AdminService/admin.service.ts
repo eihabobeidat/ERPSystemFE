@@ -13,7 +13,7 @@ export class AdminService {
   vacationSearch:any[]=[]
   ContactUs:any[]=[]
   Testimonial:any=[]
-  constructor(private http: HttpClient,private toaster:ToastrService) { }
+  constructor(private http: HttpClient,private toaster:ToastrService ) { }
 
 
  HolidyasSearch(form:any)

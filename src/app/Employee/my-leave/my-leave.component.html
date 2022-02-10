@@ -1,0 +1,16 @@
+<div class="timeline">
+    <div class="outer" *ngFor="let item of this.service.MyLeaves">
+      <div class="card">
+        <div class="info">
+            <h3 class="title" style="color: red;">Start In : {{item.starttime}}</h3>
+            <h3  style="color: green;">End In : {{item.starttime}}</h3>
+            <p>{{item.type}},{{item.status}}</p>
+            
+            <p> {{item.comments}}</p>
+            <p><a href="../../../assets/FileLeave/{{item.filepath}}" >download</a>
+            </p>
+        </div>
+      </div>
+     
+    </div>
+  </div>

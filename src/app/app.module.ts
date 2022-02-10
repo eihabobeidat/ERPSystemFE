@@ -49,12 +49,16 @@ import { AboutManageComponent } from './Admin/about-manage/about-manage.componen
 import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
 //////
+import { TakeAttendenceComponent } from './Employee/take-attendence/take-attendence.component';
 import * as echarts from 'echarts';
 import 'echarts-gl';
 import 'echarts/theme/macarons.js';
 import 'echarts/dist/extension/bmap.min.js';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flower-chart.component';
+import { TakeLeaveComponent } from './Employee/take-leave/take-leave.component';
+import { MyLeaveComponent } from './Employee/my-leave/my-leave.component';
+import { CardEmployeeInfComponent } from './Employee/take-attendence/card-employee-inf/card-employee-inf.component';
 import { EmployeeNavComponent } from './Employee/employee-nav/employee-nav.component';
 import { EmployeeHolidaysSearchComponent } from './Employee/employee-holidays-search/employee-holidays-search.component';
 import { EmployeeProfileComponent } from './Employee/employee-profile/employee-profile.component';
@@ -63,7 +67,6 @@ import { HrLeaveComponent } from './Hr/hr-leave/hr-leave.component';
 import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
 import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
 import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
-////
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -108,6 +111,11 @@ import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
     EmployeesReviewComponent,
     AdminReviewComponent,
     FlowerChartComponent,
+    TakeLeaveComponent,
+    MyLeaveComponent,
+    CardComponent,
+    CardEmployeeInfComponent,
+    TakeAttendenceComponent,
     EmployeeNavComponent,
     EmployeeHolidaysSearchComponent,
     EmployeeProfileComponent,

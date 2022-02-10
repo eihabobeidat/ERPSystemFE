@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-dashboard.component.css']
 })
 export class EmployeeDashboardComponent implements OnInit {
-
-  constructor() { }
-
+  constructor() {
+    
+   }
   ngOnInit(): void {
   }
-
+ 
 }
