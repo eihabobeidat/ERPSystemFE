@@ -62,7 +62,6 @@ export class EmployeeProfileComponent implements OnInit {
       imagepath:this.imagePath.value,
       salary:this.salary.value
     }
-    console.log(object);
     
     this.service.UpdateEmployeeProfile(object)
   }
@@ -101,7 +100,7 @@ export class EmployeeProfileComponent implements OnInit {
 
   upload(file:any)
   {
-    // console.log(file);
+    
     let uploadfile=<File> file[0]
     let formdata=new FormData()
     formdata.append('file',uploadfile,uploadfile.name)

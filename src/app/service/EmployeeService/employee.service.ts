@@ -49,7 +49,6 @@ export class EmployeeService {
 
  UpdateEmployeeProfile(form:any)
  {
-   console.log(form);
    
   const header={
     'Content-Type':'application/json',
@@ -60,7 +59,7 @@ export class EmployeeService {
   }
 
   this.http.put('https://localhost:44333/api/Employee/updateemployee',form,requestoption).subscribe((result)=>{
-
+    this.toastr.success(form.firstname +" profile successfully updated","Update")    
   })
  }
 
