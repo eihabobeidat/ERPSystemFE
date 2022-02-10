@@ -1,0 +1,71 @@
+<div class="form-container sign-up-container">
+
+    <form class="example-form" (submit)="register()" [formGroup]="registerForm">
+        <h2 class="mb-3">Register New Employee</h2>
+        <!-- image submission -->
+        <!-- <div class="form-group">
+            <div class="input-group col-xs-12">
+                <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>
+            </div>
+        </div> -->
+        <!-- First Name -->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput formControlName="firstName">
+            <mat-error *ngIf="registerForm.controls['firstName'].hasError('required')">
+                First name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- Last Name -->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lastName">
+            <mat-error *ngIf="registerForm.controls['lastName'].hasError('required')">
+                Last Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- Email -->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email">
+            <mat-error *ngIf="registerForm.controls['email'].hasError('email')">
+                Enter a valid e-mail
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- Address -->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Address</mat-label>
+            <input type="text" matInput formControlName="address">
+            <mat-error *ngIf="registerForm.controls['address'].hasError('required')">
+                Address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- mobile -->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Mobile</mat-label>
+            <input type="tel" matInput formControlName="mobile">
+            <mat-error *ngIf="registerForm.controls['mobile'].hasError('required')">
+                Phone Number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- password -->
+        <mat-form-field class="w-100" appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button class="border-0 hide-password" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('minlength')">
+                Password must be at least 8 character
+            </mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!formValidation()" class="btn btn-outline-success">Register</button>
+    </form>
+</div>

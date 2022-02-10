@@ -36,7 +36,7 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetCards()
-   this.http.get<IEmployee[]>('https://localhost:44333/api/Employee').subscribe((res:IEmployee[]) => {
+   this.http.get<IEmployee[]>('https://localhost:44333/api/Employee/employeelist').subscribe((res:IEmployee[]) => {
   let data:any[] = [["Salary","HRate","EI","Address","Expertise"]];
   res.forEach(employee => {
     data.push([employee.salary, this.getRate(employee.salary), employee.id, employee.address, this.getExpert(employee.salary)])

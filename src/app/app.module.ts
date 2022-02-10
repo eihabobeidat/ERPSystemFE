@@ -59,6 +59,14 @@ import { FlowerChartComponent } from './Admin/admin-dashboard/flower-chart/flowe
 import { TakeLeaveComponent } from './Employee/take-leave/take-leave.component';
 import { MyLeaveComponent } from './Employee/my-leave/my-leave.component';
 import { CardEmployeeInfComponent } from './Employee/take-attendence/card-employee-inf/card-employee-inf.component';
+import { EmployeeNavComponent } from './Employee/employee-nav/employee-nav.component';
+import { EmployeeHolidaysSearchComponent } from './Employee/employee-holidays-search/employee-holidays-search.component';
+import { EmployeeProfileComponent } from './Employee/employee-profile/employee-profile.component';
+import { CardsComponent } from './Employee/employee-dashboard/cards/cards.component';
+import { HrLeaveComponent } from './Hr/hr-leave/hr-leave.component';
+import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
+import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
+import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -107,8 +115,15 @@ import { CardEmployeeInfComponent } from './Employee/take-attendence/card-employ
     MyLeaveComponent,
     CardComponent,
     CardEmployeeInfComponent,
-    TakeAttendenceComponent
-    
+    TakeAttendenceComponent,
+    EmployeeNavComponent,
+    EmployeeHolidaysSearchComponent,
+    EmployeeProfileComponent,
+    CardsComponent,
+    HrLeaveComponent,
+    HrReviewComponent,
+    HrRegisterEmployeeComponent,
+    HrNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -124,7 +139,7 @@ import { CardEmployeeInfComponent } from './Employee/take-attendence/card-employ
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatFormFieldModule, 
     NgImageSliderModule,
     NgbModule,
     MatIconModule,
