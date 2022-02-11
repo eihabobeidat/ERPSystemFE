@@ -4,15 +4,15 @@ import { FormControl, Validators } from '@angular/forms';
 import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
 
 export interface IEmployee{
-    email:string,
-    password:string,
-    firstname:string,
-    roleid:number,
-    lastname:string,
-    mobile:string,
-    address:string,
-    imagepath:string,
-    salary:number,
+  email:string,
+  password:string,
+  firstname:string,
+  roleid:number,
+  lastname:string,
+  mobile:string,
+  address:string,
+  imagepath:string,
+  salary:number,
 }
 
 
