@@ -1,7 +1,7 @@
 <div class="form-container sign-up-container">
 
-    <form class="example-form" (submit)="register()" [formGroup]="registerForm">
-        <h1 class="mb-3">Sign up</h1>
+    <form class="example-form" (submit)="forgotPassword()" [formGroup]="registerForm">
+        <h1 class="mb-3">Forgot Password!</h1>
         <!-- image submission -->
         <!-- <div class="form-group">
             <div class="input-group col-xs-12">
@@ -9,6 +9,9 @@
             </div>
         </div> -->
         <!-- First Name -->
+        <p>Don't Worry, enter your information</p>
+        <br>
+        <br>
         <mat-form-field class="example-full-width w-100" appearance="legacy">
             <mat-label>First Name</mat-label>
             <input type="text" matInput formControlName="firstName">
@@ -36,23 +39,23 @@
             </mat-error>
         </mat-form-field>
         <!-- Address -->
-        <mat-form-field class="example-full-width w-100" appearance="legacy">
+        <!-- <mat-form-field class="example-full-width w-100" appearance="legacy">
             <mat-label>Address</mat-label>
             <input type="text" matInput formControlName="address">
             <mat-error *ngIf="registerForm.controls['address'].hasError('required')">
                 Address is <strong>required</strong>
             </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
         <!-- mobile -->
-        <mat-form-field class="example-full-width w-100" appearance="legacy">
+        <!-- <mat-form-field class="example-full-width w-100" appearance="legacy">
             <mat-label>Mobile</mat-label>
             <input type="tel" matInput formControlName="mobile">
             <mat-error *ngIf="registerForm.controls['mobile'].hasError('required')">
                 Phone Number is <strong>required</strong>
             </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
         <!-- password -->
-        <mat-form-field class="w-100" appearance="legacy">
+        <!-- <mat-form-field class="w-100" appearance="legacy">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
             <button class="border-0 hide-password" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -64,7 +67,7 @@
             <mat-error *ngIf="registerForm.controls['password'].hasError('minlength')">
                 Password must be at least 8 character
             </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <button [disabled]="!formValidation()" class="btn btn-outline-danger">Register</button>
     </form>

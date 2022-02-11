@@ -26,7 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import {MatIconModule} from '@angular/material/icon';
-import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
@@ -70,6 +70,9 @@ import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
 import { HrProfileComponent } from './Hr/hr-profile/hr-profile.component';
 import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.component';
+import { QualificationComponent } from './Employee/qualification/qualification.component';
+import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
+import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -79,6 +82,8 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
 //////
+import { AngularFileUploaderModule } from "angular-file-uploader";
+
 
 @NgModule({
   declarations: [
@@ -128,8 +133,14 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
     HrRegisterEmployeeComponent,
     HrNavComponent,
     EmpReviewComponent,
+
     HrProfileComponent,
     AdminProfileComponent,
+
+    QualificationComponent,
+    AdminEmailComponent,
+    ChatBoxComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -154,6 +165,7 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
+    AngularFileUploaderModule
   ],
   entryComponents:[],
   providers: [
@@ -168,11 +180,11 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
               //scope: 'profile email'
             })
           }
-          //,
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('clientId')
-          // }
+          ,
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1097438861006456')
+          }
         ]
       } as SocialAuthServiceConfig,
     }

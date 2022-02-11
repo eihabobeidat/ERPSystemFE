@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
+import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
+
 
 
 export interface IEmployee{
@@ -23,12 +26,14 @@ export interface IEmployee{
 export class AdminNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
+
   imagename:any = this.service.ReloadImage()
   
   constructor(private router:Router, private http:HttpClient,private service:AdminService) 
   { 
 
   }
+  constructor(private router:Router, private dialog:MatDialog) { }
 
   ngOnInit(): void {
 
@@ -37,6 +42,10 @@ export class AdminNavComponent implements OnInit {
     //  })
   }
   
+
+  openMessages(){
+    this.dialog.open(ChatBoxComponent, {data:{}});
+  }
 
   active(item:any)
   {

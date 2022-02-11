@@ -1,0 +1,33 @@
+<p>qualification works!</p>
+
+<form (ngSubmit)="NewQualfication(fileinput.files)" >
+    <input type="text" placeholder="Title" [formControl]="title">
+    <input type="file" #fileinput >
+    <button class="btn btn-success">Upload</button>
+
+    
+</form>
+
+<table class="table table-bordered table-hover table-sm table-striped"
+style="width: 80%; color: antiquewhite; text-align: center;">
+    <tr>
+        <th>Title</th>
+        
+        <th>Time</th>
+        <th>File</th>
+    </tr>
+    <tr *ngFor="let item of this.service.qual">
+        <td>{{item.title}}</td>
+        <td>{{item.time}}</td>
+        <td> <p><a href="../../../assets/EmployeeQualification/{{item.filepath}}">download</a></td>
+    </tr>
+</table>
+
+
+
+<div class="container-fluid">
+    
+  <br><br><br>
+  
+  <div id="example">
+ 
