@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 import { AboutManageComponent } from '../about-manage/about-manage.component';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from '../admin-nav/admin-nav.component';
@@ -47,9 +48,9 @@ const routes: Routes = [
       {
         path:'slider', component: ImagesliderManageComponent
       },
-
-      
-      
+      {
+        path:'chat', component: ChatBoxComponent
+      },
     ]
   }
 ];

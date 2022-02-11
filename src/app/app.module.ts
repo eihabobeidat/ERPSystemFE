@@ -69,6 +69,7 @@ import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-regist
 import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
+import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -128,6 +129,7 @@ import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
     HrNavComponent,
     EmpReviewComponent,
     AdminEmailComponent,
+    ChatBoxComponent,
   ],
   imports: [
     BrowserModule,

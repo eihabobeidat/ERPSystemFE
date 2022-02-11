@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { takeLast } from 'rxjs';
+import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 import { EmpReviewComponent } from '../emp-review/emp-review.component';
 import { EmployeeDashboardComponent } from '../employee-dashboard/employee-dashboard.component';
 import { EmployeeHolidaysSearchComponent } from '../employee-holidays-search/employee-holidays-search.component';
@@ -36,7 +37,10 @@ const routes: Routes = [
       },
       {
         path:'evaluation',component:EmpReviewComponent
-      }
+      },
+      {
+        path:'chat', component: ChatBoxComponent
+      },
     ]
   }
 ];
