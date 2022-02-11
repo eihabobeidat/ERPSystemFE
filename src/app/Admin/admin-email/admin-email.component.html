@@ -1,0 +1,36 @@
+<div class="form-container sign-up-container">
+
+    <form class="example-form" (submit)="sendReply()" [formGroup]="emailForm">
+        <h1 class="mb-3">Reply Email</h1>
+
+        <br>
+        <br>
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Client Name</mat-label>
+            <input type="text" matInput formControlName="recieverName">
+            <mat-error *ngIf="emailForm.controls['recieverName'].hasError('required')">
+                reciever name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Email Subject-->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Email Subject</mat-label>
+            <input type="text" matInput formControlName="subject">
+            <mat-error *ngIf="emailForm.controls['subject'].hasError('required')">
+                email subject is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Email Body -->
+        <mat-form-field class="example-full-width w-100" appearance="legacy">
+            <mat-label>Email Body</mat-label>
+            <input type="text" matInput formControlName="body">
+            <mat-error *ngIf="emailForm.controls['body'].hasError('required')">
+                email body is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!formValidation()" class="btn btn-outline-primary">Send</button>
+    </form>
+</div>
