@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 
 @Component({
   selector: 'app-admin-nav',
@@ -9,9 +11,13 @@ import { Router } from '@angular/router';
 export class AdminNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
-  constructor(private router:Router) { }
+  constructor(private router:Router, private dialog:MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openMessages(){
+    this.dialog.open(ChatBoxComponent, {data:{}});
   }
 
   active(item:any)

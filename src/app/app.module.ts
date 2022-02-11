@@ -71,6 +71,7 @@ import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
 import { QualificationComponent } from './Employee/qualification/qualification.component';
 
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
+import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -133,6 +134,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     EmpReviewComponent,
     QualificationComponent,
     AdminEmailComponent,
+    ChatBoxComponent,
   ],
   imports: [
     BrowserModule,
