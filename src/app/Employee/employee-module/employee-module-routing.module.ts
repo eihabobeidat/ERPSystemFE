@@ -8,6 +8,7 @@ import { EmployeeHolidaysSearchComponent } from '../employee-holidays-search/emp
 import { EmployeeNavComponent } from '../employee-nav/employee-nav.component';
 import { EmployeeProfileComponent } from '../employee-profile/employee-profile.component';
 import { MyLeaveComponent } from '../my-leave/my-leave.component';
+import { QualificationComponent } from '../qualification/qualification.component';
 import { TakeAttendenceComponent } from '../take-attendence/take-attendence.component';
 import { TakeLeaveComponent } from '../take-leave/take-leave.component';
 
@@ -40,6 +41,9 @@ const routes: Routes = [
       },
       {
         path:'chat', component: ChatBoxComponent
+      },
+      {
+        path:'qualification',component:QualificationComponent
       },
     ]
   }

@@ -1,0 +1,9 @@
+table{
+    border: 3px white solid;
+    border-radius: 12%;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+th{
+    background-color: rgb(2, 54, 15);
+}
