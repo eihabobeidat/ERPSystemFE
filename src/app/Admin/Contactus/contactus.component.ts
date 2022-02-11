@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
+import { AdminEmailComponent } from '../admin-email/admin-email.component';
 
 export interface IContactList{
 
@@ -27,10 +29,10 @@ declare const printTable: any;
 export class ContactusComponent implements OnInit {
 
   public list_product:any = new MatTableDataSource<any>([]);
-  displayedColumns: string[] = ['email', 'description', 'time'];
+  displayedColumns: string[] = ['email', 'description', 'time','reply'];
   @ViewChild(MatPaginator) private paginator: MatPaginator;
 
-  constructor(public admin:AdminService) 
+  constructor(public admin:AdminService, private dialog:MatDialog) 
   { 
     this.admin.GetContactUs()
     
@@ -41,7 +43,9 @@ export class ContactusComponent implements OnInit {
     // this.list_product=this.admin.GetContactUs() 
   }
 
- 
+  sendEmail(email:string){
+    this.dialog.open(AdminEmailComponent, {data:{email:email}});
+  }
 
   exportToCSV(fileName: string) {
     exportTableToCSV(fileName);

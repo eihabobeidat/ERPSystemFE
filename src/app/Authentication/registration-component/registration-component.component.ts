@@ -10,14 +10,14 @@ import { AuthenticationService } from 'src/app/service/AuthenticationService/aut
 export class RegistrationComponentComponent implements OnInit {
   hide:boolean=false;
   registerForm = new FormGroup({
-    roleId: new FormControl(4),
+    //roleId: new FormControl(4),
     firstName: new FormControl('',[Validators.required]),
     lastName: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email]),
-    password: new FormControl('',[Validators.required, Validators.minLength(8)]),
-    address: new FormControl('',[Validators.required]),
-    mobile: new FormControl('',[Validators.required]),
-    imagePath: new FormControl('')
+    // password: new FormControl('',[Validators.required, Validators.minLength(8)]),
+    // address: new FormControl('',[Validators.required]),
+    // mobile: new FormControl('',[Validators.required]),
+    // imagePath: new FormControl('')
   });
 
   formValidation() {
@@ -34,7 +34,11 @@ export class RegistrationComponentComponent implements OnInit {
 
   register()
   {
-    this.service.postUser(this.registerForm.value);
+    //this.service.postUser(this.registerForm.value);
+  }
+
+  forgotPassword(){
+    this.service.sendPassword(this.registerForm.value);
   }
 
   ngOnInit(): void

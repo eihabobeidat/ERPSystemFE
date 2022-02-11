@@ -285,3 +285,8 @@ mat-label{
         transform: translate3d(-2000px, 0, 0);
     }
 } */
+button.btn.btn-outline-primary.facebookButton{
+    padding-inline: 56px;
+    background-color: #4040c1f7;
+    border-color: #2121e7a1;
+}

@@ -43,8 +43,7 @@ export class EmpReviewComponent implements OnInit {
     });
   }
   TakeReview(){
-        this.reviewExist=false;
-   
+      this.reviewExist=false;
       this.dialog.open(EmployeesReviewComponent, {data:{id:this.reviewself.id}});
    
   }

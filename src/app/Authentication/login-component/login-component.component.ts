@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckboxControlValueAccessor, FormControl, FormGroup, Validators } from '@angular/forms';
-import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 import { AuthenticationService } from 'src/app/service/AuthenticationService/authentication.service';
 
@@ -12,8 +12,11 @@ import { AuthenticationService } from 'src/app/service/AuthenticationService/aut
 export class LoginComponentComponent implements OnInit {
   hide:boolean = true;
   dataRetreived:boolean = false;
+  faceRetreived = false;
   user?: SocialUser;
+  faceUser?:any;
   userTemp:any;
+  faceTemp:any;
   
   loginForm = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -46,7 +49,29 @@ export class LoginComponentComponent implements OnInit {
     } else {
       this.service.checkUser(this.userTemp);
     }
-    
+  }
+
+  facebookLogin(){
+    if(!this.faceRetreived){
+      this.authService.initState.subscribe(res => {
+        let temp:any = this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((response:SocialUser) => {
+          this.faceUser = response;
+          this.faceRetreived = (response != null);
+          this.faceTemp = {
+            roleId: 4,
+            firstName: response.firstName,
+            lastName: response.lastName,
+            email: response.email,
+            password: 'FaceBook temporary password',
+            address: response.provider,
+            mobile: '',
+            imagePath: response.photoUrl
+          }
+        }, err => {console.log(err);});
+      });
+    } else {
+      this.service.checkUser(this.faceTemp);
+    }
   }
 
   login() 

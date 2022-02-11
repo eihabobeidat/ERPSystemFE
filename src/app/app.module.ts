@@ -26,7 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import {MatIconModule} from '@angular/material/icon';
-import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
@@ -69,6 +69,8 @@ import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-regist
 import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
 import { QualificationComponent } from './Employee/qualification/qualification.component';
+
+import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -130,6 +132,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     HrNavComponent,
     EmpReviewComponent,
     QualificationComponent,
+    AdminEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -169,11 +172,11 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
               //scope: 'profile email'
             })
           }
-          //,
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('clientId')
-          // }
+          ,
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1097438861006456')
+          }
         ]
       } as SocialAuthServiceConfig,
     }
