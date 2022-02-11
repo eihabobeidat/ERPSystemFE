@@ -23,6 +23,6 @@ export class ContactUsFormComponent implements OnInit {
 
   onSubmit() {
     this.service.submitMessage(this.contactForm.value);
-    this.contactForm.reset()
+    this.contactForm.reset();
   }
 }

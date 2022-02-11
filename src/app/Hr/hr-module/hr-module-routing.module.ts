@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HrDashboardComponent } from '../hr-dashboard/hr-dashboard.component';
 import { HrLeaveComponent } from '../hr-leave/hr-leave.component';
 import { HrNavComponent } from '../hr-nav/hr-nav.component';
+import { HrProfileComponent } from '../hr-profile/hr-profile.component';
 import { HrRegisterEmployeeComponent } from '../hr-register-employee/hr-register-employee.component';
 import { HrReviewComponent } from '../hr-review/hr-review.component';
 
@@ -21,6 +22,9 @@ const routes: Routes = [
       },
       {
         path:'employee', component: HrRegisterEmployeeComponent
+      },
+      {
+        path:'profile', component: HrProfileComponent
       }
     ]
   }

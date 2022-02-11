@@ -68,6 +68,8 @@ import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
 import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
 import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
+import { HrProfileComponent } from './Hr/hr-profile/hr-profile.component';
+import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -126,6 +128,8 @@ import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
     HrRegisterEmployeeComponent,
     HrNavComponent,
     EmpReviewComponent,
+    HrProfileComponent,
+    AdminProfileComponent,
   ],
   imports: [
     BrowserModule,

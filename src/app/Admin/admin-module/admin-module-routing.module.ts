@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutManageComponent } from '../about-manage/about-manage.component';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from '../admin-nav/admin-nav.component';
+import { AdminProfileComponent } from '../admin-profile/admin-profile.component';
 import { AdminReviewComponent } from '../admin-review/admin-review.component';
 import { CellmanageComponent } from '../cellmanage/cellmanage.component';
 import { ContactusComponent } from '../Contactus/contactus.component';
@@ -47,8 +48,9 @@ const routes: Routes = [
       {
         path:'slider', component: ImagesliderManageComponent
       },
-
-      
+      {
+        path:'profile', component: AdminProfileComponent
+      }     
       
     ]
   }
