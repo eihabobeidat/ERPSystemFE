@@ -68,6 +68,8 @@ import { HrReviewComponent } from './Hr/hr-review/hr-review.component';
 import { HrRegisterEmployeeComponent } from './Hr/hr-register-employee/hr-register-employee.component';
 import { HrNavComponent } from './Hr/hr-nav/hr-nav.component';
 import { EmpReviewComponent } from './Employee/emp-review/emp-review.component';
+import { QualificationComponent } from './Employee/qualification/qualification.component';
+
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
@@ -78,6 +80,8 @@ import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
 //////
+import { AngularFileUploaderModule } from "angular-file-uploader";
+
 
 @NgModule({
   declarations: [
@@ -127,6 +131,7 @@ import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
     HrRegisterEmployeeComponent,
     HrNavComponent,
     EmpReviewComponent,
+    QualificationComponent,
     AdminEmailComponent,
   ],
   imports: [
@@ -152,6 +157,7 @@ import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
+    AngularFileUploaderModule
   ],
   entryComponents:[],
   providers: [
