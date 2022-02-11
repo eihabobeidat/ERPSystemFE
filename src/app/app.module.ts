@@ -26,7 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationComponentngComponent } from './Authentication/authentication-componentng/authentication-componentng.component';
 import {MatIconModule} from '@angular/material/icon';
-import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { TestimonialComponent } from './Home/testimonial/testimonial.component';
 import { SpinnerComponent } from './Shared/spinner/spinner.component';
 import{MatSlideToggleModule} from '@angular/material/slide-toggle'
@@ -166,11 +166,11 @@ import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
               //scope: 'profile email'
             })
           }
-          //,
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('clientId')
-          // }
+          ,
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1097438861006456')
+          }
         ]
       } as SocialAuthServiceConfig,
     }
