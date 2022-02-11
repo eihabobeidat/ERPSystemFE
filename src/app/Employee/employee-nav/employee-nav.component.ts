@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-nav',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
-  constructor() { }
+  imagename:string = localStorage.getItem('imagename') as string;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    
+    
   }
 
   active(item:any)
@@ -23,6 +27,12 @@ export class EmployeeNavComponent implements OnInit {
     }
     this.oldItem=item
   }
+
+  logoutUser(){
+    localStorage.clear();
+    this.router.navigate(['']);
+  }
+  
   
   showList()
   {

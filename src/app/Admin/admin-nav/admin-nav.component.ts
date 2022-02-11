@@ -1,8 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/service/AdminService/admin.service';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 
+
+
+export interface IEmployee{
+  email:string,
+  password:string,
+  firstname:string,
+  roleid:number,
+  lastname:string,
+  mobile:string,
+  address:string,
+  imagepath:string,
+  salary:number,
+}
 @Component({
   selector: 'app-admin-nav',
   templateUrl: './admin-nav.component.html',
@@ -11,10 +26,22 @@ import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 export class AdminNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
+
+  imagename:any = this.service.ReloadImage()
+  
+  constructor(private router:Router, private http:HttpClient,private service:AdminService) 
+  { 
+
+  }
   constructor(private router:Router, private dialog:MatDialog) { }
 
   ngOnInit(): void {
+
+    // this.http.get<any>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
+    //   this.imagename=result.imagepath
+    //  })
   }
+  
 
   openMessages(){
     this.dialog.open(ChatBoxComponent, {data:{}});

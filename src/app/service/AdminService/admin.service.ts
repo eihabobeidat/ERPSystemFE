@@ -36,7 +36,10 @@ console.log(this.vacationSearch);
 // this.toaster.success('Data Retrieved successfully','Retrieve');
 })
 }
-    
+
+ReloadImage(){
+ return localStorage.getItem('imagename') as string;
+}
 
 GetContactUs()
 {

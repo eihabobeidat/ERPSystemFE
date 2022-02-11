@@ -11,6 +11,7 @@ export class HrNavComponent implements OnInit {
 
   hideList:boolean=true;
   oldItem:any
+  imagename:string = localStorage.getItem('imagename') as string;
   constructor(private router:Router) { }
 
   ngOnInit(): void {

@@ -35,7 +35,9 @@
         <th mat-header-cell *matHeaderCellDef> Status </th>
         <td mat-cell *matCellDef="let ITestimonialList"> 
            
-        <input type="checkbox" (click)="StatusCheck($event.target,ITestimonialList.id)" [checked]="ITestimonialList.status">
+        <!-- <mat-slide-toggle (click)="StatusCheck($event.target,ITestimonialList.id)" [checked]="ITestimonialList.status"></mat-slide-toggle> -->
+        <input type="checkbox" name="checkbox" class="cm-toggle" 
+        (click)="StatusCheck($event.target,ITestimonialList.id)" [checked]="ITestimonialList.status">
             
         </td>
       </ng-container>

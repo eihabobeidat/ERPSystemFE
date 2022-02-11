@@ -116,6 +116,9 @@ export class AuthenticationService {
       localStorage.setItem('id', token.id);
       localStorage.setItem('role', token.role);
       localStorage.setItem('email', token.email);
+      localStorage.setItem('imagename',token.imagename)
+      
+      
       if(token.role === 'Admin'){
         this.router.navigate(['app/admin']);
       }
