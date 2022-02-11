@@ -8,6 +8,7 @@ import { timestamp } from 'rxjs';
 })
 export class UserService {
   MyLeaves:any=[{}]
+  qual:any[]=[];
 
  
   
@@ -73,6 +74,21 @@ export class UserService {
      });
 
 
+   }
+   NewQualfication(form:FormData)
+   {
+     this.http.post('https://localhost:44333/api/Qualification/insertnewqualfication',form).subscribe((result)=>{
+       console.log(result);
+
+     });
+
+   }
+   GetMyQual(){
+     this.http.get<any[]>('https://localhost:44333/api/Qualification/qetallqualwithnamebyid/'+localStorage.getItem('id')).subscribe((result)=>
+     {
+       this.qual=result;
+
+     });
    }
 
   
