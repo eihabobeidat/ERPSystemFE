@@ -49,7 +49,7 @@
     <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef>Status</th>
         <td mat-cell *matCellDef="let review">
-            <div *ngIf="review.reviewedBy === 'HR'; else elseBlock">
+            <div *ngIf="review.reviewedBy === 'HR' && (review.value+review.competency+review.objective) >= 3; else elseBlock">
                 <span>Closed</span>
             </div>
             <ng-template #elseBlock>

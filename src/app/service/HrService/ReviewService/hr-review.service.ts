@@ -15,7 +15,7 @@ export class HrReviewService {
 
   getHrReviews(){
     this.http.get<IReview[]>('https://localhost:44333/api/Review/getAllReview').subscribe(res => {
-      this.reviews = res.filter(x => x.reviewedBy === 'HR' || x.reviewedBy === 'Employee');
+      this.reviews = res.filter(x => ((x.reviewedBy === 'Employee' && (x.competency + x.objective + x.value) >= 3)) || x.reviewedBy === 'HR');
     }, err => {
       this.toaster.error('Can\'t connect to ERP server','Connectivity Issue');
     })
