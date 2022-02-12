@@ -27,16 +27,15 @@ export class AdminNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
 
-  imagename:any = this.service.ReloadImage()
+  imagename:any = this.service.userimage;
   
-  constructor(private router:Router, private http:HttpClient,private service:AdminService) 
-  { 
-
-  }
-  constructor(private router:Router, private dialog:MatDialog) { }
+  constructor(private router:Router, private http:HttpClient,public service:AdminService,private dialog:MatDialog) 
+  {   }
+  
 
   ngOnInit(): void {
 
+    this.service.ReloadImage()
     // this.http.get<any>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
     //   this.imagename=result.imagepath
     //  })

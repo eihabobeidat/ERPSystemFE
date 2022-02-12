@@ -82,7 +82,7 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
 //////
-import { AngularFileUploaderModule } from "angular-file-uploader";
+//import { AngularFileUploaderModule } from "angular-file-uploader";
 
 
 @NgModule({
@@ -133,10 +133,8 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     HrRegisterEmployeeComponent,
     HrNavComponent,
     EmpReviewComponent,
-
     HrProfileComponent,
     AdminProfileComponent,
-
     QualificationComponent,
     AdminEmailComponent,
     ChatBoxComponent,
@@ -165,7 +163,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
-    AngularFileUploaderModule
+    //AngularFileUploaderModule,
   ],
   entryComponents:[],
   providers: [

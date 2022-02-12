@@ -27,8 +27,6 @@ const routes: Routes = [
       {
         path:'profile', component: HrProfileComponent
       }
-        path:'chat', component: ChatBoxComponent
-      },
     ]
   }
 ];
