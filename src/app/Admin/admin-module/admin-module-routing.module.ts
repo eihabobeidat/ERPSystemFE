@@ -52,8 +52,7 @@ const routes: Routes = [
       {
         path:'profile', component: AdminProfileComponent
       }   
-        path:'chat', component: ChatBoxComponent
-      },
+       
     ]
   }
 ];

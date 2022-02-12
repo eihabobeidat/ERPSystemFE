@@ -24,6 +24,7 @@ export interface IEmployee{
 })
 export class AdminProfileComponent implements OnInit {
 
+  roleName:string
   id=new FormControl(parseInt (localStorage.getItem('id') as string),[Validators.required])
   employeeEmail=new FormControl('',[Validators.required,Validators.email])
   password=new FormControl('',[Validators.required,Validators.minLength(8)])
@@ -94,10 +95,24 @@ export class AdminProfileComponent implements OnInit {
       this.address.patchValue(result.address)
       this.salary.patchValue(result.salary)
       this.imagePath.patchValue(result.imagepath);
-        
-        localStorage.setItem('imagename',this.imagePath.value) 
+      if(result.roleid === 4)
+      {
+        this.roleName="Employee"
+      }
+      else if(result.roleid === 5)
+      {
+        this.roleName="HR"        
+      }
+      else 
+      {
+        this.roleName="Admin"        
+      }
         setTimeout(() => {
-          this.service2.ReloadImage()  
+          localStorage.setItem('imagename',this.imagePath.value) 
+          setTimeout(() => {
+            this.service2.ReloadImage()  
+          }, 0);
+          
         }, 3000);
             
       
