@@ -73,6 +73,8 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
 import { QualificationComponent } from './Employee/qualification/qualification.component';
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
+import { FeedbackComponent } from './Employee/feedback/feedback.component';
+//import { DatePipe } from '@angular/common';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -138,6 +140,7 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
     QualificationComponent,
     AdminEmailComponent,
     ChatBoxComponent,
+    FeedbackComponent,
 
   ],
   imports: [
@@ -163,6 +166,7 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
+   // DatePipe,
     //AngularFileUploaderModule,
   ],
   entryComponents:[],

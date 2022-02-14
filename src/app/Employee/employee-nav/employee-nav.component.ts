@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
 
 @Component({
   selector: 'app-employee-nav',
@@ -9,11 +10,11 @@ import { Router } from '@angular/router';
 export class EmployeeNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
-  imagename:string = localStorage.getItem('imagename') as string;
-  constructor(private router:Router) { }
+  imagename:any = this.service.userimage;
+  constructor(private router:Router,public service:EmployeeService) { }
 
   ngOnInit(): void {
-    
+    this.service.ReloadImage()
     
   }
 
