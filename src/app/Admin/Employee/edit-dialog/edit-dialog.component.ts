@@ -24,9 +24,10 @@ export class EditDialogComponent implements OnInit {
     public matdialog: MatDialog ,@Inject(MAT_DIALOG_DATA)public data:{id:number}) {
     
    
+        console.log(this.EditEmployee.controls['email'].value);
 
-    this.service1.id=data.id;
-    this.service1.GetEmployeeInf(data.id);
+    
+
 
 
 

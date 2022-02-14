@@ -20,6 +20,7 @@ export class EmployeeService {
     this.http.get<Employee>('https://localhost:44333/api/Employee/GetById/'+ id).
     subscribe((result)=> 
    { 
+     
       this.oneEmployee=result
   });
   
