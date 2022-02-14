@@ -82,7 +82,7 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
 //////
-//import { AngularFileUploaderModule } from "angular-file-uploader";
+
 
 
 @NgModule({
@@ -163,7 +163,6 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
-    //AngularFileUploaderModule,
   ],
   entryComponents:[],
   providers: [
