@@ -14,30 +14,43 @@ declare const printTable: any;
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./style.scss']
 })
 export class ListComponent implements OnInit ,AfterViewInit{
   
   fileToUpload: File | null = null;
   fileForm = new FormGroup({
-  file: new FormControl('',[Validators.required])
+  file: new FormControl('',[Validators.required])});
     
-  })
-  displayedColumns: string[] = ['imagepath','firstname', 'email', 'mobile','address','salary','Action'];
+  
+  displayedColumns: string[] = ['imagepath','firstname', 'email', 'mobile','adress','salary','action'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  dataSource:any;
 
- 
+
 
   constructor(public service:EmployeeService,public matdialog: MatDialog  ) {
     // Create 100 users
     // Assign the data to the data source for the table to render
     
     this.service.getEmployee();
+    this.dataSource = new MatTableDataSource(this.service.EmployeeList);
+
     
 
   }
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
   
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    // if (this.service.EmployeeList.paginator) {
+    //   this.dataSource.paginator.firstPage();
+    // }
+  }
+ 
+ 
   exportToCSV(fileName: string) {
     exportTableToCSV(fileName);
   }
@@ -52,11 +65,23 @@ export class ListComponent implements OnInit ,AfterViewInit{
  
   openDialog(id:number){
 
-    this.matdialog.open(EditDialogComponent,{data:{id:id}});
+      this.service.GetEmployeeInf(id);
+  
+    setTimeout(() => {
+      this.matdialog.open(EditDialogComponent,{data:{id:id}});
+
+    }, 2000);
+
     
 
 
   }
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+
+    this.dataSource.paginator = this.paginator;
+  }
+  
   openDialogDelete(id:number){
 
   }
@@ -72,15 +97,14 @@ export class ListComponent implements OnInit ,AfterViewInit{
   ngOnInit() {
 
   }
+  
+
  
   
   
   
 
-  ngAfterViewInit() {
-    
-
-  }
+  
 
   
 }

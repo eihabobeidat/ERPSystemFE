@@ -1,62 +1,57 @@
-<div class="container">
-    <div class="chatbox">
-      <div class="top-bar">
-        <div class="avatar"><p>V</p></div>
-        <div class="name">Voldemort</div>
-        <div class="icons">
-          <i class="fas fa-phone"></i>
-          <i class="fas fa-video"></i>
-        </div>
-        <div class="menu">
-          <div class="dots"></div>
-        </div>
-      </div>
-      <div class="middle">
-        <div class="voldemort">
-          <div class="incoming">
-            <div class="bubble">Hey, Father's Day is coming up..</div>
-            <div class="bubble">What are you getting.. Oh, oops sorry dude.</div>
+<section  class="avenue-messenger">
+  <div class="menu">
+   <div class="items"><span>
+     <a href="#" title="Minimize">&mdash;</a><br>
+<!--     
+     <a href="">enter email</a><br>
+     <a href="">email transcript</a><br>-->
+     <a href="#" title="End Chat">&#10005;</a>
+     
+     </span></div>
+    <div class="button">...</div>
+  </div>
+  <div class="agent-face">
+    <div class="half">
+     <img class="agent circle" src="https://loginet.gr/wp-content/uploads/2021/09/ERP-SYSTEM-GRANAZI-1024x1024.png" alt="Jesse Tino"></div>
+  </div>
+<div class="chat">
+  <div class="chat-title">
+    <h1>ERP System</h1>
+    <h2>Group Chat</h2>
+   <!-- <figure class="avatar">
+      <img src="http://askavenue.com/img/17.jpg" /></figure> -->
+  </div>
+  <!-- <div style="overflow:auto; width: inherit; height: 100%;"> -->
+    <div class="messages">
+      <div class="messages-content mCustomScrollbar _mCS_1" style="overflow:auto">
+        
+        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
+          <div  *ngFor="let message of messages;" id="mCSB_1_container" class="mCSB_container" style="position: relative; top: -483px; left: 0px;" dir="ltr">
+            <!-- messages -->
+            <div class="message message-personal new" *ngIf="message.sender === id; else recievedMessage">{{message.text}}</div>
+            <ng-template class="incoming" #recievedMessage>
+              <div class="message new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>{{message.text}}</div>
+            </ng-template>
           </div>
-          <div class="outgoing">
-            <div class="bubble lower">Nah, it's cool.</div>
-            <div class="bubble">Well you should get your Dad a cologne. Here smell it. Oh wait! ...</div>
+          <!-- <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
+            <div class="mCSB_draggerContainer">
+              <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 64px; display: block; height: 16px; max-height: 84px;" oncontextmenu="return false;">
+                <div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div>
+                <div class="mCSB_draggerRail"></div>
+              </div>
+            </div> -->
           </div>
-          <div class="typing">
-            <div class="bubble">
-              <div class="ellipsis one"></div>
-              <div class="ellipsis two"></div>
-              <div class="ellipsis three"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bottom-bar">
-        <div class="chat">
-          <input type="text" placeholder="Type a message..." />
-          <button type="submit"><i class="fas fa-paper-plane"></i></button>
-        </div>
+
       </div>
     </div>
-    <!-- <div class="messages"></div> -->
-    <!-- <div class="profile">
-      <div class="avatar"><p>H</p></div>
-      <div class="name2">Harry<p class="email">Harry@potter.com</p></div>
-    </div> -->
-    <!-- <ul class="people">
-      <li class="person focus">
-        <span class="title">Voldemort </span>
-        <span class="time">2:50pm</span><br>
-        <span class="preview">What are you getting... Oh, oops...</span>
-      </li>
-       <li class="person">
-        <span class="title">Ron</span>
-        <span class="time">2:25pm</span><br>
-        <span class="preview">Meet me at Hogsmeade and bring...</span>
-      </li>
-      <li class="person">
-        <span class="title">Hermione</span>
-        <span class="time">2:12pm</span><br>
-        <span class="preview">Have you and Ron done your hom...</span>
-      </li>
-    </ul> -->
+  <!-- </div> -->
+  
+  <div class="message-box">
+    <textarea type="text" #newMessageItem class="message-input" placeholder="Type message..."></textarea>
+    <button type="submit" (click)="sendMessage(newMessageItem)" class="message-submit">Send</button>
   </div>
+</div>
+<!--<div class="bg"></div>-->
+
+
+

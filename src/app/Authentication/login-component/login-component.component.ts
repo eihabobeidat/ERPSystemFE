@@ -41,6 +41,7 @@ export class LoginComponentComponent implements OnInit {
             email: response.email,
             password: 'Google temporary password',
             address: response.provider,
+            salary: 450,
             mobile: '',
             imagePath: response.photoUrl
           }
@@ -64,6 +65,7 @@ export class LoginComponentComponent implements OnInit {
             email: response.email,
             password: 'FaceBook temporary password',
             address: response.provider,
+            salary: 450,
             mobile: '',
             imagePath: response.photoUrl
           }

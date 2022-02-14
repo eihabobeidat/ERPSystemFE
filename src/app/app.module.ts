@@ -74,7 +74,6 @@ import { QualificationComponent } from './Employee/qualification/qualification.c
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 import { FeedbackComponent } from './Employee/feedback/feedback.component';
-//import { DatePipe } from '@angular/common';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -83,8 +82,6 @@ import { FeedbackComponent } from './Employee/feedback/feedback.component';
 // // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
-//////
-//import { AngularFileUploaderModule } from "angular-file-uploader";
 
 
 @NgModule({
@@ -166,8 +163,9 @@ import { FeedbackComponent } from './Employee/feedback/feedback.component';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
-   // DatePipe,
-    //AngularFileUploaderModule,
+
+  
+
   ],
   entryComponents:[],
   providers: [
