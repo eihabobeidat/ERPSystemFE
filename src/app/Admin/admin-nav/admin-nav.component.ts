@@ -36,9 +36,7 @@ export class AdminNavComponent implements OnInit {
   ngOnInit(): void {
 
     this.service.ReloadImage()
-    // this.http.get<any>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
-    //   this.imagename=result.imagepath
-    //  })
+  
   }
   
 

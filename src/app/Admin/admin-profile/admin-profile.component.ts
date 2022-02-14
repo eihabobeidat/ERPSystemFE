@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
 import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
 
@@ -24,6 +25,8 @@ export interface IEmployee{
 })
 export class AdminProfileComponent implements OnInit {
 
+  newpassword=new FormControl('',[Validators.required,Validators.minLength(8)])
+
   roleName:string
   id=new FormControl(parseInt (localStorage.getItem('id') as string),[Validators.required])
   employeeEmail=new FormControl('',[Validators.required,Validators.email])
@@ -38,7 +41,8 @@ export class AdminProfileComponent implements OnInit {
 
   employeeId:number=parseInt(localStorage.getItem('id') as string)
   
-  constructor(public service:EmployeeService, private http:HttpClient,private service2:AdminService) 
+  constructor(public service:EmployeeService, private http:HttpClient,private service2:AdminService,
+    private toastr:ToastrService) 
   { 
  
   }
@@ -51,22 +55,30 @@ export class AdminProfileComponent implements OnInit {
 
   Update()
   {
-    let object={
-      id:this.employeeId,
-      email:this.employeeEmail.value,
-      password:this.password.value,
-      roleid:this.roleid.value,
-      firstname:this.firstname.value,
-      lastname:this.lastname.value,
-      mobile:this.mobile.value,
-      address:this.address.value,
-      imagepath:this.imagePath.value,
-      salary:this.salary.value
-    }
     
-    this.service.UpdateEmployeeProfile(object)
+    if(this.newpassword.value === '' || this.password.value === this.newpassword.value)
+    {
+      let object={
+        id:this.employeeId,
+        email:this.employeeEmail.value,
+        password:this.password.value,
+        roleid:this.roleid.value,
+        firstname:this.firstname.value,
+        lastname:this.lastname.value,
+        mobile:this.mobile.value,
+        address:this.address.value,
+        imagepath:this.imagePath.value,
+        salary:this.salary.value
+      }
+      
+      this.service.UpdateEmployeeProfile(object)
+    }
+    else
+    {
+      this.toastr.error("Password and confirmation does not match","Update")
+    }
+   
   }
-
 
   Validation()
   {

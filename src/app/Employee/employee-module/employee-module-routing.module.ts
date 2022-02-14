@@ -7,10 +7,12 @@ import { EmployeeDashboardComponent } from '../employee-dashboard/employee-dashb
 import { EmployeeHolidaysSearchComponent } from '../employee-holidays-search/employee-holidays-search.component';
 import { EmployeeNavComponent } from '../employee-nav/employee-nav.component';
 import { EmployeeProfileComponent } from '../employee-profile/employee-profile.component';
+import { FeedbackComponent } from '../feedback/feedback.component';
 import { MyLeaveComponent } from '../my-leave/my-leave.component';
 import { QualificationComponent } from '../qualification/qualification.component';
 import { TakeAttendenceComponent } from '../take-attendence/take-attendence.component';
 import { TakeLeaveComponent } from '../take-leave/take-leave.component';
+
 
 const routes: Routes = [
   {
@@ -45,6 +47,9 @@ const routes: Routes = [
       {
         path:'qualification',component:QualificationComponent
       },
+      {
+        path:'feedback', component:FeedbackComponent
+      }
     ]
   }
 ];

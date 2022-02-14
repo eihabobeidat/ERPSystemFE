@@ -5,10 +5,18 @@
   
   
   table {
-      width: 91%;
-      background-color: rgb(73, 68, 68);
+      width: 93%;
+      background-color: rgb(236, 229, 229);
+      /* background-color: rgb(73, 68, 68); */
       border-collapse:collapse;
       border-radius: 5em;
+    }
+
+    th ,td{
+      
+      width: auto;
+      justify-content: center;
+
     }
   
     .sameh {
@@ -20,12 +28,13 @@
     }
   
     td{
-        color: white;
+        color: black;
     }
   
     th{
-      color: black;
-      background-color: #18d26e;
+      color: white;
+      background-color: #d70926;
+     
       
     }
     table[_ngcontent-cpq-c245] {
@@ -41,18 +50,11 @@
      
   }
   
-  /* .btn-success {
-      color: white;
-      background-color: #18d26e;
-      border-color: #020202;
-  } */
   
-  mat-label{
-    color: rgb(255, 255, 255);
-  }
+  
   
   input {
-    color: white;
+    color: black !important;
   }
   
   

@@ -11,6 +11,7 @@ export class EmployeeService {
   employeeRecord:any={}
   employeeId:number=parseInt(localStorage.getItem('id') as string)
   imagename:string
+  userimage:string
   constructor(private http:HttpClient,private toastr:ToastrService) { }
 
   HolidyasSearch(form:any)
@@ -32,7 +33,7 @@ export class EmployeeService {
  
    this.http.post<any[]>('https://localhost:44333/api/Vacation/ByIdAndDate',temp,requestOption).subscribe((result)=>{
      this.vacationSearch=result
-     console.log(this.vacationSearch);
+     
 
  })
  }
@@ -85,5 +86,24 @@ export class EmployeeService {
   })
 
   }
+  ReloadImage(){
+    this.userimage= localStorage.getItem('imagename') as string;
+  }
 
+  InsertTestimonial(form:any)
+  {
+     
+   const header = {
+    "Content-Type":'application/json',
+    "Accept":'Application/json'
+  }
+  const requestOption = {
+    headers:new HttpHeaders(header),
+  }
+
+  this.http.post<any[]>('https://localhost:44333/api/Testimonial',form,requestOption).subscribe((result)=>{
+    this.vacationSearch=result
+    this.toastr.success("Feedback inserted successfully","Insert")
+  })
+}
 }

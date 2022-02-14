@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
 
 export interface IEmployee{
@@ -23,6 +24,8 @@ export interface IEmployee{
 })
 export class EmployeeProfileComponent implements OnInit {
   
+  newpassword=new FormControl('',[Validators.required,Validators.minLength(8)])
+  roleName:string
   id=new FormControl(parseInt (localStorage.getItem('id') as string),[Validators.required])
   employeeEmail=new FormControl('',[Validators.required,Validators.email])
   password=new FormControl('',[Validators.required,Validators.minLength(8)])
@@ -36,7 +39,7 @@ export class EmployeeProfileComponent implements OnInit {
 
   employeeId:number=parseInt(localStorage.getItem('id') as string)
 
-  constructor(public service:EmployeeService, private http:HttpClient) {
+  constructor(public service:EmployeeService, private http:HttpClient, private toastr:ToastrService) {
     
     
     
@@ -45,25 +48,35 @@ export class EmployeeProfileComponent implements OnInit {
   ngOnInit(): void {
     
     this.GetEmployeebyId()
+    
   }
 
 
   Update()
   {
-    let object={
-      id:this.employeeId,
-      email:this.employeeEmail.value,
-      password:this.password.value,
-      roleid:this.roleid.value,
-      firstname:this.firstname.value,
-      lastname:this.lastname.value,
-      mobile:this.mobile.value,
-      address:this.address.value,
-      imagepath:this.imagePath.value,
-      salary:this.salary.value
-    }
     
-    this.service.UpdateEmployeeProfile(object)
+    if(this.newpassword.value === '' || this.password.value === this.newpassword.value)
+    {
+      let object={
+        id:this.employeeId,
+        email:this.employeeEmail.value,
+        password:this.password.value,
+        roleid:this.roleid.value,
+        firstname:this.firstname.value,
+        lastname:this.lastname.value,
+        mobile:this.mobile.value,
+        address:this.address.value,
+        imagepath:this.imagePath.value,
+        salary:this.salary.value
+      }
+      
+      this.service.UpdateEmployeeProfile(object)
+    }
+    else
+    {
+      this.toastr.error("Password and confirmation does not match","Update")
+    }
+   
   }
 
 
@@ -83,8 +96,7 @@ export class EmployeeProfileComponent implements OnInit {
 
   GetEmployeebyId()
   {
-    
-      this.http.get<IEmployee>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
+    this.http.get<IEmployee>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
       this.employeeEmail.patchValue(result.email)  
       this.password.patchValue(result.password)
       this.firstname.patchValue(result.firstname)
@@ -93,8 +105,28 @@ export class EmployeeProfileComponent implements OnInit {
       this.mobile.patchValue(result.mobile)
       this.address.patchValue(result.address)
       this.salary.patchValue(result.salary)
-      this.imagePath.patchValue(result.imagepath) 
-       
+      this.imagePath.patchValue(result.imagepath);
+      if(result.roleid === 4)
+      {
+        this.roleName="Employee"
+      }
+      else if(result.roleid === 5)
+      {
+        this.roleName="HR"        
+      }
+      else 
+      {
+        this.roleName="Admin"        
+      }
+        setTimeout(() => {
+          localStorage.setItem('imagename',this.imagePath.value) 
+          setTimeout(() => {
+            this.service.ReloadImage()  
+          }, 0);
+          
+        }, 3000);
+            
+      
        })
   }
 

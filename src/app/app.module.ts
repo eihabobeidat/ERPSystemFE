@@ -73,6 +73,7 @@ import { AdminProfileComponent } from './Admin/admin-profile/admin-profile.compo
 import { QualificationComponent } from './Employee/qualification/qualification.component';
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
+import { FeedbackComponent } from './Employee/feedback/feedback.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -81,7 +82,6 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 // // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
-//////
 
 
 @NgModule({
@@ -137,6 +137,7 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
     QualificationComponent,
     AdminEmailComponent,
     ChatBoxComponent,
+    FeedbackComponent,
 
   ],
   imports: [
@@ -162,6 +163,9 @@ import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
+
+  
+
   ],
   entryComponents:[],
   providers: [

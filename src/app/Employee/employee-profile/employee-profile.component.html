@@ -1,4 +1,4 @@
-<br>
+<br><br><br>
 <div class="content">
     <div class="container-fluid">
       <div class="row">
@@ -33,26 +33,23 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Email</label>
-                      <input type="text" class="form-control"  [formControl]="employeeEmail">
-                      <mat-error *ngIf="employeeEmail.hasError('required')">
-                       Email is <strong>required</strong>
-                    </mat-error>
-                    <mat-error *ngIf="employeeEmail.hasError('email')">
-                      Enter a valid email address
+                      <label class="bmd-label-floating">Password</label>
+                      <input type="password" class="form-control" [formControl]="password">
+                      <mat-error *ngIf="password.hasError('required')">
+                        Password is <strong>required</strong>
+                     </mat-error>
+                     <mat-error *ngIf="password.hasError('minlength')">
+                      Password length must be at least <strong>8 characters</strong>
                    </mat-error>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Password</label>
-                      <input type="text" class="form-control" [formControl]="password">
-                      <mat-error *ngIf="password.hasError('required')">
-                        Password is <strong>required</strong>
+                      <label class="bmd-label-floating">Confirm Password</label>
+                      <input type="password" class="form-control" [formControl]="newpassword">
+                      <mat-error *ngIf="newpassword.hasError('minlength')">
+                        Password length must be at least <strong>8 characters</strong>
                      </mat-error>
-                     <mat-error *ngIf="password.hasError('minlength')">
-                      Password length must be <strong>8 characters</strong>
-                   </mat-error>
                     </div>
                   </div>
                 </div>
@@ -77,8 +74,8 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Role Id</label>
-                      <input type="text" class="form-control"  [formControl]="roleid" Disabled>
+                      <label class="bmd-label-floating">Role Name</label>
+                      <input type="text" class="form-control"  value="{{roleName}}" Disabled>
                     </div>
                   </div>
                 </div>
@@ -97,15 +94,9 @@
               </a>
             </div>
             <div class="card-body">
-              <div *ngIf="roleid.value === 4">
-                <h6 class="card-category">Developer</h6>
-              </div>
-              <div *ngIf="roleid.value === 5">
-                  <h6 class="card-category">Human Resources</h6>
-              </div>
-              <div *ngIf="roleid.value === 6">
-                  <h6 class="card-category">Admin</h6>
-              </div>
+             
+                  <h6 class="card-category">{{roleName}}</h6>
+             
               <h4 class="card-title">{{firstname.value +" "+ lastname.value}}</h4>
               <p class="card-description">
                 “The way to get started is to quit talking and begin doing.”

@@ -1,0 +1,38 @@
+<br><br>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-md-2 col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title">Add FeedBack</h4>
+                        <p class="card-category">Complete your FeedBack info</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Message</label>
+                                    <textarea class="form-control"  [formControl]="message"> </textarea>
+                                    <mat-error *ngIf="message.hasError('required')">
+                                        FeedBack is <strong>required</strong>
+                                     </mat-error>
+                                     <mat-error *ngIf="message.hasError('minlength')">
+                                        Message <strong>must be more</strong> than 12 characters
+                                    </mat-error>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-5 col-md-2">
+                                <button type="submit" class="btn btn-success" (click)="sendtestimonial()"
+                                [disabled]="!formValidationCheck()" style="text-align:center">Add</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
