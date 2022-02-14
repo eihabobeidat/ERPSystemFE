@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 
 @Component({
   selector: 'app-employee-nav',
@@ -8,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
+
+  openMessages(){
+    this.dialog.open(ChatBoxComponent, {data:{}});
+  }
 
   ngOnInit(): void {
   }
