@@ -34,6 +34,7 @@ export class TakeLeaveComponent implements OnInit {
     formdata.append("comments",this.LeaveForm.controls['Comment'].value)
 
      this.service.TakeLeave(formdata);
+     this.LeaveForm.reset();
 
   }
 

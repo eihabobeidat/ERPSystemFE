@@ -13,6 +13,7 @@ export class AdminService {
   vacationSearch:any[]=[]
   ContactUs:any[]=[]
   Testimonial:any=[]
+  userimage:string
   constructor(private http: HttpClient,private toaster:ToastrService ) { }
 
 
@@ -36,7 +37,10 @@ console.log(this.vacationSearch);
 // this.toaster.success('Data Retrieved successfully','Retrieve');
 })
 }
-    
+
+ReloadImage(){
+  this.userimage= localStorage.getItem('imagename') as string;
+}
 
 GetContactUs()
 {
