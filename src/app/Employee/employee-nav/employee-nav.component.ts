@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +10,14 @@ import { Router } from '@angular/router';
 })
 export class EmployeeNavComponent implements OnInit {
   hideList:boolean=true;
-  oldItem:any
   imagename:string = localStorage.getItem('imagename') as string;
-  constructor(private router:Router) { }
+  oldItem:any
+  constructor(private dialog:MatDialog, private router:Router) { }
+
+  openMessages(){
+    this.dialog.open(ChatBoxComponent, {data:{}});
+  }
+
 
   ngOnInit(): void {
     
