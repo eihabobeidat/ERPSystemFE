@@ -179,12 +179,14 @@ body {
 --------------------------------------------------------------*/
 #header {
   transition: all 0.5s;
-  z-index: 997;
-  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  position: sticky;
+  /* background: rgba(0, 0, 0, 0.9); */
   height: 80px;
 }
 #header.header-transparent {
-  background: black;
+  background: transparent ;
+  /*transparent*/
 }
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.9);

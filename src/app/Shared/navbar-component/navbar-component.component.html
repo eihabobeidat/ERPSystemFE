@@ -2,9 +2,6 @@
     <header  id="header"  class="fixed-top d-flex align-items-center header-transparent">
         <div class="container-fluid" >
 
-
-
-
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-11 d-flex align-items-center justify-content-between">
                     <h1 class="logo"><a routerLink="/home">ERP System </a></h1>
@@ -26,17 +23,13 @@
         </div>
 
     </header>
-    <body [ngClass]="{darkTheme: app.isDark}">
-        
-
-
-    
+    <body [ngClass]="{darkTheme: app.isDark}" style="position: relative;top:-81px">
  
-		<div class='col-12' class="carousel-inner" >  
-			<ngb-carousel >  
+		<div class='col-12' class="carousel-inner" style="z-index: 1;">  
+			<ngb-carousel [maxWidth]="'100%'" [slideHeight]="'100%'" [pauseOnHover]="true">  
 				<ng-template ngbSlide *ngFor= "let item of service.sliderImage;let i=index; first as isFirst" >  
-					<img  src="../../../assets/SliderImage/{{item.image}}"
-					class="d-block w-100" style="width: 100%; height: 100vh">  
+					<img  src="../../../assets/SliderImage/{{item.image}}" style="height: 630px; width: 100%;">
+					<!-- class="d-block w-100" style="height: 100vh">   -->
 					
 				</ng-template>  
 				 
