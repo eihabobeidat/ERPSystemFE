@@ -10,6 +10,13 @@ interface IMessage {
   time:Date
 }
 
+interface IChatMessage {
+  firstName: string
+  text: string
+  imagePath:string
+  sender:number
+}
+
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
@@ -17,25 +24,30 @@ interface IMessage {
 })
 export class ChatBoxComponent implements OnInit {
   id:number= parseInt(localStorage.getItem('id') as string);
-  messages:IMessage[];
+  update:number = 0;
+  messages:IChatMessage[] = [];
   constructor(private dialog:MatDialog, @Inject(MAT_DIALOG_DATA)public data:{}, private http:HttpClient) { }
 
   ngOnInit(): void {
     this.getMessages();
+    this.realTimeUpdate();
   }
 
   getMessages(){
-    //assume they are sorted from database and contains sender name name
-    this.http.get<IMessage[]>('https://localhost:44333/api/Message/GetAll')
-    .subscribe((res:IMessage[])=>{
-      this.messages = res;
-      console.log(this.messages);
+    this.http.get<IChatMessage[]>('https://localhost:44333/api/Message/GetAll')
+    .subscribe((res:IChatMessage[])=>{
+      if(this.messages.length !== res.length){
+        this.messages = res;
+        this.update = 0;
+        this.scrollDown();
+      } else {
+        this.update++;
+      }
     })
   }
 
   sendMessage(input:any){
     let temp:string=input.value;
-    console.log(temp.length)
     if(temp.length > 0){
       let newMessage:IMessage = {
         text:temp,
@@ -48,5 +60,21 @@ export class ChatBoxComponent implements OnInit {
         input.value = '';
       })
     }
+  }
+
+  realTimeUpdate(){
+    setTimeout(async () => {
+      await this.getMessages();
+      setTimeout(async () => {
+        await this.realTimeUpdate();
+      }, 1000 + (this.update*250));
+    }, 1000 + (this.update*100));
+  }
+
+  scrollDown(){
+    // let div = document.getElementById('MessagesDivScroll') as HTMLElement;
+    // div.scrollTop = div.scrollHeight - 1;
+    // console.log(div.scrollTop);
+    // console.log(div.scrollHeight);
   }
 }

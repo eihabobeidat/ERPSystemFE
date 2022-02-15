@@ -23,14 +23,14 @@
   </div>
   <!-- <div style="overflow:auto; width: inherit; height: 100%;"> -->
     <div class="messages">
-      <div class="messages-content mCustomScrollbar _mCS_1" style="overflow:auto">
+      <div class="messages-content mCustomScrollbar _mCS_1" id="MessagesDivScroll" #MessagesDivScroll [scrollTop]="MessagesDivScroll.scrollHeight" style="overflow:scroll">
         
         <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0">
           <div  *ngFor="let message of messages;" id="mCSB_1_container" class="mCSB_container" style="position: relative; top: -483px; left: 0px;" dir="ltr">
             <!-- messages -->
             <div class="message message-personal new" *ngIf="message.sender === id; else recievedMessage">{{message.text}}</div>
             <ng-template class="incoming" #recievedMessage>
-              <div class="message new"><figure class="avatar"><img src="http://askavenue.com/img/17.jpg" /></figure>{{message.text}}</div>
+              <div class="message new"><figure class="avatar"><img src="/assets/EmployeeImg/{{message.imagePath}}" /></figure><span style="color: brown; font-weight: bold;">{{message.firstName}}</span><br>{{message.text}}</div>
             </ng-template>
           </div>
           <!-- <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">

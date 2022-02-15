@@ -14825,7 +14825,7 @@ h2.title {
 .dropdown-menu a:focus,
 .dropdown-menu a:active {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
-  background-color: #9c27b0;
+  background-color: black;
   color: #FFFFFF;
 }
 
@@ -15172,7 +15172,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar[data-background-color="black"] {
-  background-color: #191919;
+  background-color: white !important;
 }
 
 .sidebar .sidebar-wrapper {
@@ -15440,7 +15440,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
 .sidebar[data-color="green"] li.active>a {
   background-color: #4caf50;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 !important
 }
 
 .sidebar[data-color="orange"] li.active>a {
@@ -19555,8 +19555,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition {
-  background-color: #1a2035;
-  overflow: auto;
+  background-color: white !important;
+  /* overflow: auto; */
 }
 
 .dark-edition .btn,
@@ -20416,8 +20416,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .sidebar[data-color="green"] li.active>a {
-  background: linear-gradient(60deg, #288c6c, #4ea752);
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(180deg,#d70926 0,#b20820 54%,#a7081e 100%) !important;
+  box-shadow: 0 !important
 }
 
 .dark-edition .sidebar[data-color="orange"] li.active>a {
@@ -20440,7 +20440,7 @@ Copyright (c) 2015 Daniel Eden
 
 .dark-edition .sidebar .sidebar-background:after,
 .dark-edition .sidebar {
-  background: #1f283e;
+  background: none !important;
   opacity: .94;
 }
 
@@ -20488,7 +20488,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .navbar .notification {
-  background: linear-gradient(60deg, #2b8866, #479c52);
+  background: linear-gradient(180deg,#d70926 0,#b20820 54%,#a7081e 100%) !important;
   border: 0;
   height: 18px;
   min-width: 18px;
@@ -20597,7 +20597,7 @@ Copyright (c) 2015 Daniel Eden
 .dark-edition .card.bg-success,
 .dark-edition .card.card-rotate.bg-success .front,
 .dark-edition .card.card-rotate.bg-success .back {
-  background: linear-gradient(60deg, #288c6c, #4ea752);
+  background: linear-gradient(180deg,#d70926 0,#b20820 54%,#a7081e 100%) !important;
 }
 
 .dark-edition .card .card-header-danger .card-icon,
@@ -21946,7 +21946,7 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control,
 .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu li>a:active {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
   /* background: linear-gradient(60deg, #7b1fa2, #913f9e); */
-  background: linear-gradient(60deg, #2b8866, #479c52) !important;;
+  background: linear-gradient(180deg,#d70926 0,#b20820 54%,#a7081e 100%) !important;
   color: #fff;
 }
 
@@ -22019,7 +22019,7 @@ fieldset[disabled][disabled] .dark-edition .has-error .form-control,
 }
 
 .dark-edition .alert.alert-success {
-  background: linear-gradient(60deg, #288c6c, #4ea752);
+  background: linear-gradient(180deg,#d70926 0,#b20820 54%,#a7081e 100%) !important;
   background-color: unset;
 }
 

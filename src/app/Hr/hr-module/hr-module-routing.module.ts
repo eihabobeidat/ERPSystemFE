@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EmployeeProfileComponent } from 'src/app/Employee/employee-profile/employee-profile.component';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 import { HrDashboardComponent } from '../hr-dashboard/hr-dashboard.component';
 import { HrLeaveComponent } from '../hr-leave/hr-leave.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
         path:'employee', component: HrRegisterEmployeeComponent
       },
       {
-        path:'profile', component: HrProfileComponent
+        path:'profile', component: EmployeeProfileComponent
       }
     ]
   }
