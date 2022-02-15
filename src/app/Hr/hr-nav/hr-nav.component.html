@@ -33,6 +33,12 @@
               <p>New Employee</p>
             </a>
           </li> <!--done-->
+          <li #employeesalary class="nav-item" (click)="active(employeesalary)">
+            <a class="nav-link" [routerLink]="'salary'">
+              <i class="fa fa-usd"></i>
+              <p>Employee Salary</p>
+            </a>
+          </li> <!--done-->
           <!-- <li #attendanceli class="nav-item " (click)="active(attendanceli)">
             <a class="nav-link" [routerLink]="'dashboard'" > 
               <i class="fa fa-clock-o" aria-hidden="true"></i>
