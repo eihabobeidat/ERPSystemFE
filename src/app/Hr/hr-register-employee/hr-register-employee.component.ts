@@ -17,7 +17,8 @@ export class HrRegisterEmployeeComponent implements OnInit {
     password: new FormControl('',[Validators.required, Validators.minLength(8)]),
     address: new FormControl('',[Validators.required]),
     mobile: new FormControl('',[Validators.required]),
-    imagePath: new FormControl('')
+    imagePath: new FormControl('person-three.jpg'),
+    salary: new FormControl(400),
   });
 
   formValidation() {
@@ -34,7 +35,10 @@ export class HrRegisterEmployeeComponent implements OnInit {
 
   register()
   {
-    this.service.postUser(this.registerForm.value);
+    console.log(this.registerForm.value)
+    if(this.formValidation()){
+      this.service.postUser(this.registerForm.value);
+    }
   }
 
   ngOnInit(): void
