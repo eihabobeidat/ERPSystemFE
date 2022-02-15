@@ -5,7 +5,7 @@
 
 
 table {
-    width: 50%;
+    width: 93%;
     background-color: rgb(236, 229, 229);
     /* background-color: rgb(73, 68, 68); */
     border-collapse:collapse;
@@ -15,11 +15,12 @@ table {
   th ,td{
     
     width: auto;
+    justify-content: center;
 
   }
 
   .sameh {
-    margin-left: 12.333333% !important;
+    margin-left: 3.333333% !important;
 }
   table tr:last-child td /*To remove the last border*/
   {
@@ -37,7 +38,7 @@ table {
     
   }
   table[_ngcontent-cpq-c245] {
-    width: 50%;
+    width: 91%;
     background-color: rgb(73, 68, 68);
     border-collapse: collapse;
     border-radius: 5em;
@@ -57,12 +58,20 @@ input {
 }
 
 
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-     color: white;
-  }
+.mat-form-field-appearance-outline .mat-form-field-outline {
+color: white;
+}
  
-  .mat-hint, input, ::placeholder, .mat-form-field-label {
-        color: white;
-     }
-  
+.mat-hint, input, ::placeholder, .mat-form-field-label {
+ color: white;
+}
 
+
+td, th {
+text-align: center !important;
+vertical-align: middle !important;
+}
+
+.mat-sort-header-container {
+justify-content: center !important;
+}
