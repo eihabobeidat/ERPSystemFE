@@ -12,6 +12,7 @@ import { ListComponent } from '../Employee/list/list.component';
 import { EmployeesLeaveComponent } from '../employees-leave/employees-leave.component';
 import { HolidaysSearchComponent } from '../holidays-search/holidays-search.component';
 import { ImagesliderManageComponent } from '../imageslider-manage/imageslider-manage.component';
+import { SalaryListComponent } from '../Salary/salary-list/salary-list.component';
 import { TestimonialManageComponent } from '../testimonial-manage/testimonial-manage.component';
 
 const routes: Routes = [
@@ -51,7 +52,10 @@ const routes: Routes = [
       },
       {
         path:'profile', component: AdminProfileComponent
-      }   
+      },
+      {
+        path:'salary',component:SalaryListComponent
+      }
        
     ]
   }

@@ -5,7 +5,7 @@
 
 
 table {
-    width: 93%;
+    width: 50%;
     background-color: rgb(236, 229, 229);
     /* background-color: rgb(73, 68, 68); */
     border-collapse:collapse;
@@ -15,12 +15,11 @@ table {
   th ,td{
     
     width: auto;
-    justify-content: center;
 
   }
 
   .sameh {
-    margin-left: 3.333333% !important;
+    margin-left: 12.333333% !important;
 }
   table tr:last-child td /*To remove the last border*/
   {
@@ -38,7 +37,7 @@ table {
     
   }
   table[_ngcontent-cpq-c245] {
-    width: 91%;
+    width: 50%;
     background-color: rgb(73, 68, 68);
     border-collapse: collapse;
     border-radius: 5em;
@@ -66,10 +65,4 @@ input {
         color: white;
      }
   
-   .mat-sort-header-container {
-  justify-content: center !important;
-  }
-  td, th {
-    text-align: center !important;
-    vertical-align: middle !important;
-  }
+

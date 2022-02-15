@@ -1,0 +1,48 @@
+<button style="float: right; background: transparent;border: none;"  (click)="closeDialogBox()"> 
+
+  <img src="../../../../assets/OtherImage/close.png" style="float: right; width: 30px; height: 30px;">
+  </button>   
+  <h1 style="text-align: center;">Salary History For {{this.name}} </h1>
+  
+  <div id="example">
+    <table mat-table [dataSource]="this.service.SalaryChanges" class="mat-elevation-z8 sameh offset-1"  id="tableData">
+      
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef> Em.No </th>
+        <td mat-cell *matCellDef="let item">00{{item.employeeId}} </td>
+      </ng-container>
+        
+        <ng-container matColumnDef="comments">
+          <th mat-header-cell *matHeaderCellDef> comments </th>
+          <td mat-cell *matCellDef="let item">{{item.comments}} </td>
+        </ng-container>
+      
+       
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let item"> {{item.time}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="doneBy">
+            <th mat-header-cell *matHeaderCellDef> done By </th>
+            <td mat-cell *matCellDef="let item"> 00{{item.doneBy}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> Change </th>
+            <td mat-cell *matCellDef="let item"> {{item.value}} </td>
+          </ng-container>
+  
+        
+    
+          
+    
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    
+    
+     

@@ -1,0 +1,14 @@
+<button style="float: right; background: transparent;border: none;"  (click)="closeDialogBox()"> 
+
+    <img src="../../../../assets/OtherImage/close.png" style="float: right; width: 30px; height: 30px;">
+    </button>   
+    <h1 style="text-align: center;">Edit For {{this.name}} </h1>
+<form (ngSubmit)="EditSalary()" [formGroup]="salaryChange">
+
+    <input class="form-control" type="number" placeholder="Changes Value" formControlName="value">
+    <br><br>
+    <input class="form-control" type="text" placeholder="Comment" formControlName="Comment" >
+    <br>
+    <button style="margin-left: 45%;" class="btn btn-success">Edit</button>
+    
+</form>

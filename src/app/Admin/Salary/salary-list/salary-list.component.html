@@ -1,0 +1,48 @@
+
+<button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+    <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
+    <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+  
+  <br><br><br>
+  <div id="example">
+  <table mat-table [dataSource]="this.service.allEmployeeSalary" class="mat-elevation-z8 sameh offset-1"  id="tableData">
+    
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Em.No </th>
+      <td mat-cell *matCellDef="let item">00{{item.id}} </td>
+    </ng-container>
+      
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+        <td mat-cell *matCellDef="let item">{{item.firstname + " " + item.lastname}} </td>
+      </ng-container>
+    
+     
+      <ng-container matColumnDef="Salary">
+        <th mat-header-cell *matHeaderCellDef> Salary </th>
+        <td mat-cell *matCellDef="let item"> {{item.salary}} </td>
+      </ng-container>
+
+      
+    
+      
+
+      <ng-container matColumnDef="Edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let item" > 
+        <button  class="btn btn-secondary" (click)="EditSalaty(item.id,item.firstname,item.lastname);">Edit</button>  
+        |{{" "}}<button class="btn btn-info" (click)="detailsSalary(item.id,item.firstname,item.lastname);">Details</button>  
+
+        </td>
+      </ng-container>
+  
+        
+  
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+  
+   

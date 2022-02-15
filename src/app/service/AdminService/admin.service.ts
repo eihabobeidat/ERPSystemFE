@@ -14,6 +14,9 @@ export class AdminService {
   ContactUs:any[]=[]
   Testimonial:any=[]
   userimage:string
+  allEmployeeSalary:any=[{}]
+  SalaryChanges:any=[{}]
+  imageSlider:any=[{}]
   constructor(private http: HttpClient,private toaster:ToastrService ) { }
 
 
@@ -118,6 +121,43 @@ UpdateCell(formdata:FormData)
    
   });
 
+}
+getAllSalary(){
+  this.http.get('https://localhost:44333/api/Employee/employeelist').subscribe((result)=>{
+
+  this.allEmployeeSalary=result;
+
+  });
+}
+GetSalaryChangesById(id:number){
+  console.log(id);
+  this.http.get('https://localhost:44333/api/SalaryChanges/GetByEmployeeId/'+id).subscribe((result)=>{
+
+  this.SalaryChanges=result;
+
+  });
+}
+EditSalary(obj:any)
+{
+  const header={
+    'Content-Type':'application/json'
+  }
+  const requestoption={
+    headers:new HttpHeaders(header)
+  }
+  console.log(obj);
+  this.http.post<any>('https://localhost:44333/api/SalaryChanges/Insert',obj).
+  subscribe((result)=>{
+    this.toaster.success('Salary Changed','Done !');
+  });
+}
+
+GetAllImage(){
+  this.http.get('https://localhost:44333/api/Slider/getallimage').subscribe((result)=>{
+    this.imageSlider=result;
+    
+
+  });
 }
 
 }
