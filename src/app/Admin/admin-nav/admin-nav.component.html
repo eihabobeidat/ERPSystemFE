@@ -1,6 +1,6 @@
 
 
-<head>
+<head >
   <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/dashboard/assets/img/apple-icon.png">
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -15,12 +15,12 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+      <div class="logo" style="background-color: #f2f2f3 !important;"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
           ERP System
         </a></div>
-      <div class="sidebar-wrapper">
+      <div class="sidebar-wrapper" style="background-color: #f2f2f3 !important;">
         <ul class="nav">
-          <li #dashboardli class="nav-item "  (click)="active(dashboardli)">
+          <li #dashboardli class="nav-item "   (click)="active(dashboardli)">
             <a class="nav-link" routerLink="/app/admin">
               <i class="fa fa-area-chart"></i>
               <p>Dashboard</p>
@@ -56,6 +56,16 @@
               <p>Evaluation</p>
             </a>
           </li> <!--done-->
+          <li #salary class="nav-item " (click)="active(salary)" >
+            <a class="nav-link" [routerLink]="'salary'">
+              <i class="fa fa-star-half-empty"></i>
+              <p>Salary</p>
+            </a>
+          </li> 
+          
+
+
+
           <li #systemmanagmentli class="nav-item " (click)="active(systemmanagmentli)">
             <a class="nav-link" (click)="showList()">
                 <i class="fa fa-desktop" aria-hidden="true"></i>
@@ -111,7 +121,7 @@
     <div class="main-panel" data-background-color="black">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color: #f2f2f3 !important;margin-top: -10px;">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:void(0)"></a>
           </div>
@@ -158,14 +168,14 @@
       </nav>
       <!-- End Navbar -->
       <!-- start here: Body starts here tameem, sameh, malek, eihab-->
-      <div style="margin-top: 50px; margin-left: 12px; " >
+      <div style="margin-top: 50px; margin-left: 12px; background-color: white; " >
         <br>
           <router-outlet></router-outlet>
           
         <br>
       </div>
       <!-- end here: Body Ends here tameem, sameh, malek, eihab-->
-      <footer class="footer">
+      <footer class="footer" style="background-color:white">
         <!-- <div class="container-fluid">
           <nav class="float-left">
             <ul>

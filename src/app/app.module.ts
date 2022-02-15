@@ -74,6 +74,9 @@ import { QualificationComponent } from './Employee/qualification/qualification.c
 import { AdminEmailComponent } from './Admin/admin-email/admin-email.component';
 import { ChatBoxComponent } from './Shared/chat-box/chat-box.component';
 import { FeedbackComponent } from './Employee/feedback/feedback.component';
+import { SalaryListComponent } from './Admin/Salary/salary-list/salary-list.component';
+import { EditSalaryComponent } from './Admin/Salary/edit-salary/edit-salary.component';
+import { InfoSalaryComponent } from './Admin/Salary/info-salary/info-salary.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -138,6 +141,9 @@ import { FeedbackComponent } from './Employee/feedback/feedback.component';
     AdminEmailComponent,
     ChatBoxComponent,
     FeedbackComponent,
+    SalaryListComponent,
+    EditSalaryComponent,
+    InfoSalaryComponent,
 
   ],
   imports: [
