@@ -28,7 +28,7 @@ export class FeedbackComponent implements OnInit {
     let object={
       employeeid:parseInt(localStorage.getItem('id') as string),
       message:this.message.value,
-      time:now.toISOString() ,
+      time:now.toISOString(),
       status:0
     }
     this.srevice.InsertTestimonial(object)

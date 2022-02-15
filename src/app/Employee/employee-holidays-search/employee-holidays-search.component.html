@@ -1,5 +1,6 @@
+<br><br>
 <div class="container-fluid">
-    <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+    <button  id="export" (click)="exportToExcel()" class="btn text-white" style="background-color: green;">Excel</button>
     <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
     <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
   
@@ -36,7 +37,7 @@
    
       
       <ng-container matColumnDef="employeeid">
-        <th mat-header-cell *matHeaderCellDef> Employee Id </th>
+        <th mat-header-cell *matHeaderCellDef> Employee No. </th>
         <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.employeeid}} </td>
       </ng-container>
     
@@ -89,10 +90,10 @@
               <span>Pending</span>
           </div>
           <div *ngIf="IVacationList.status === 1">
-              <span >Approved</span>
+              <span style="color: rgb(49, 179, 49)">Approved</span>
           </div>
           <div *ngIf="IVacationList.status === 2">
-              <span >Rejected</span>
+              <span style="color: red">Rejected</span>
           </div>
            </td>
         </ng-container>
