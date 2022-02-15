@@ -8,7 +8,7 @@ import { UserService } from 'src/app/service/User/user.service';
   styleUrls: ['./take-leave.component.css']
 })
 export class TakeLeaveComponent implements OnInit {
-  LeaveForm=new FormGroup({
+    LeaveForm=new FormGroup({
     startTime:new FormControl('',Validators.required),
     endTime:new FormControl('',Validators.required),
     Type:new FormControl('',Validators.required),
@@ -20,8 +20,22 @@ export class TakeLeaveComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  Valdiation(){
+
+    if(this.LeaveForm.status === "VALID")
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+
   TakeLeave(form:any)
   {
+   console.log(form);
     const x:any=localStorage.getItem('id');
     let uploadfile=<File> form[0]
     let formdata=new FormData()

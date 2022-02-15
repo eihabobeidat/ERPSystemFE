@@ -1,15 +1,80 @@
-<br><br>
-<h1 style="text-align: center;">Leave Request</h1>
-<br>
-<div class="card pmd-card single-col-form " style=" background: linear-gradient(
-    90deg,
-    rgba(226, 21, 21, 0) 100%,
-    rgba(255, 255, 255, 0.2) 25%,
-    rgba(255, 255, 255, 0.2) 75%,
-    rgba(12, 214, 130, 0) 100%
-  ); margin-left: 30px; margin-right: 30px; border: white 3px solid;border-radius: 4%;">
-            <form style="color:burlywood;" (ngSubmit)="TakeLeave(inputfile.files)" [formGroup]="LeaveForm"   novalidate="novalidate">
-                <div class="card-body">
+
+<br><br><br>
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-2 col-md-8">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Leave Form</h4>
+              <p class="card-category">Complete your Leave Information</p>
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="TakeLeave(inputfile.files)" [formGroup]="LeaveForm">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Leave Type</label>
+                      <select type="text" class="form-control"  formControlName="Type">
+                        <option></option>
+                        <option value="1">Annual</option>
+                        <option value="21">Stick</option>
+                        <option value="41">Others</option>
+                      </select>
+                      <mat-error *ngIf="LeaveForm.controls['Type'].hasError('required')">
+                        The type is <strong>required</strong>
+                    </mat-error>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Start Time</label>
+                      <input type="datetime-local" class="form-control" formControlName="startTime">
+                      <mat-error *ngIf="LeaveForm.controls['startTime'].hasError('required')">
+                        Start time is <strong>required</strong>
+                     </mat-error>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">End Time</label>
+                      <input type="datetime-local" class="form-control" formControlName="endTime" >
+                      <mat-error *ngIf="LeaveForm.controls['endTime'].hasError('required')">
+                        End time is <strong>required</strong>
+                     </mat-error>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Comment</label>
+                      <textarea type="text" class="form-control" formControlName="Comment"></textarea>
+                      <mat-error *ngIf="LeaveForm.controls['Comment'].hasError('required')">
+                        Comment is <strong>required</strong>
+                     </mat-error>
+                    </div>
+                  </div>
+                  </div>
+                  <input type="file" class="form-control"  #inputfile  accept="application/pdf" id="inputfile" hidden>
+                <label class="btn btn-success btn-round" for="inputfile">Upload Report</label>
+                <button type="submit" class="btn btn-success pull-right" name="applyleave" 
+                [disabled]="!Valdiation()">Send</button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+
+
+<!-- <form (ngSubmit)="TakeLeave(inputfile.files)" [formGroup]="LeaveForm" >
+     <div class="card-body">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group pmd-textfield pmd-textfield-floating-label ">
@@ -60,8 +125,8 @@
                     <button type="submit"
                     style="margin-left:43%;" class="btn btn-primary pmd-ripple-effect pmd-btn-raised" name="applyleave" value="Apply Leave">Apply Leave</button>
                 </div>
-            </form>
-        </div>
+</form> -->
+    
       
 
 

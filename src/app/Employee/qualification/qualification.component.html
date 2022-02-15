@@ -1,18 +1,57 @@
-<!-- <p>qualification works!</p> -->
+<br><br><br>
 
-<form (ngSubmit)="NewQualfication(fileinput.files)" >
-    <input type="text" placeholder="Title" [formControl]="title">
-    <input type="file" #fileinput >
-    <button class="btn btn-success">Upload</button>
+<form  [formGroup]="qulfication" (ngSubmit)="NewQualfication(fileinput.files)" >
+    <div style="display:flex;flex-direction: row; flex-wrap: wrap;">
+        <mat-form-field class="example-full-width w-60 offset-1"  appearance="outline" >
+            <mat-label>Qulfication Title</mat-label>
+            <input type="text" matInput formControlName="title" placeholder="Title">
+            <mat-error *ngIf="qulfication.controls['title'].hasError('required')">
+                Title is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
 
+           <input type="file" #fileinput hidden id="fileinput">
+           <label class="btn btn-success pull-right" for="fileinput"
+           style="height: 40px; position: relative;top: 15px;" 
+           class="btn btn-success offset-1" >Upload Qualification</label>
+       
+         <button type="submit" style="height: 40px; position: relative;top: 15px;" 
+         class="btn btn-success offset-1">Submit</button>
+    </div>
     
 </form>
+<br>
+<div id="example">
+    <table mat-table [dataSource]="service.qual" class="mat-elevation-z8 sameh offset-1"  id="tableData">
+     
+        
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let IQulafication"> {{IQulafication.title}} </td>
+        </ng-container>
+      
+       
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Time </th>
+          <td mat-cell *matCellDef="let IQulafication"> {{IQulafication.time}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="filepath">
+          <th mat-header-cell *matHeaderCellDef> File </th>
+          <td mat-cell *matCellDef="let IQulafication"> <a href="../../../assets/EmployeeQualification/{{IQulafication.filepath}}">download</a> </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+     </div>
 
-<table class="table table-bordered table-hover table-sm table-striped"
+<!-- <div class="row">
+<table class="table table-bordered table-hover table-sm table-striped sameh offset-1"
 style="width: 80%; color: antiquewhite; text-align: center;">
     <tr>
         <th>Title</th>
-        
         <th>Time</th>
         <th>File</th>
     </tr>
@@ -22,6 +61,7 @@ style="width: 80%; color: antiquewhite; text-align: center;">
         <td> <p><a href="../../../assets/EmployeeQualification/{{item.filepath}}">download</a></td>
     </tr>
 </table>
+</div>
 
 
 
@@ -29,5 +69,5 @@ style="width: 80%; color: antiquewhite; text-align: center;">
     
   <br><br><br>
   
-  <div id="example">
+  <div id="example"> -->
  
