@@ -1,6 +1,4 @@
-
-
-<head >
+<head>
   <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/dashboard/assets/img/apple-icon.png">
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -9,15 +7,19 @@
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="green" data-background-color="black"  data-image="../assets/img/sidebar-2.jpg">
+    <div class="sidebar" data-color="green"  data-image="../assets/img/sidebar-2.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo" style="background-color: #f2f2f3 !important;"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          ERP System
-        </a></div>
+      <div class="logo" style="background-color: whitesmoke;">
+        <!-- <img src="../../../assets/img/tahaluf_logo.png"  style="width: 150px; height: 50px;"> -->
+        <a class="simple-text logo-normal" >
+           <img src="../../../assets/img/111.png"  style="width: 50px;"> 
+           <span style="font-weight: bold; font-size: x-large;"> ERP System</span> 
+        </a>
+      </div>
       <div class="sidebar-wrapper" style="background-color: #f2f2f3 !important;">
         <ul class="nav">
           <li #dashboardli class="nav-item "   (click)="active(dashboardli)">
@@ -37,91 +39,82 @@
               <i class="fa fa-clock-o" aria-hidden="true"></i>
               <p>Attendance</p>
             </a>
-            </li> <!--done-->
+            </li> <!--almost done-->
             <li #leavereportli class="nav-item " (click)="active(leavereportli)">
-                <a class="nav-link" [routerLink]="'holidays'">
-                    <i class="fa fa-file" aria-hidden="true"></i>
-                  <p>Leaves Report</p>
-                </a>
-          </li> <!--almost done-->
-          <li #leaveRequestli class="nav-item " (click)="active(leaveRequestli)" >
-            <a class="nav-link" [routerLink]="'leave'">
-              <i class="material-icons">library_books</i>
-              <p>Leave Request</p>
-            </a>
-          </li> <!--done-->
-          <li #evaluationli class="nav-item " (click)="active(evaluationli)" >
-            <a class="nav-link" [routerLink]="'review'">
-              <i class="fa fa-star-half-empty"></i>
-              <p>Evaluation</p>
-            </a>
-          </li> <!--done-->
-          <li #salary class="nav-item " (click)="active(salary)" >
-            <a class="nav-link" [routerLink]="'salary'">
-              <i class="fa fa-star-half-empty"></i>
-              <p>Salary</p>
-            </a>
-          </li> 
+              <a class="nav-link" [routerLink]="'holidays'">
+                  <i class="fa fa-file" aria-hidden="true"></i>
+                <p>Leaves Report</p>
+              </a>
+        </li> <!--done-->
+        <li #leaveRequestli class="nav-item " (click)="active(leaveRequestli)" >
+          <a class="nav-link" [routerLink]="'leave'">
+            <i class="material-icons">library_books</i>
+            <p>Leave Request</p>
+          </a>
+        </li>
+        <li #evaluationli class="nav-item " (click)="active(evaluationli)" >
+          <a class="nav-link" [routerLink]="'review'">
+            <i class="fa fa-star-half-empty"></i>
+            <p>Evaluation</p>
+          </a>
+        </li>  <!--done-->
+        <li #salary class="nav-item " (click)="active(salary)" >
+          <a class="nav-link" [routerLink]="'salary'">
+            <i class="fa fa-star-half-empty"></i>
+            <p>Salary</p>
+          </a>
+        </li>  <!--done-->
+        <li #systemmanagmentli class="nav-item " (click)="active(systemmanagmentli)">
+          <a class="nav-link" (click)="showList()">
+              <i class="fa fa-desktop" aria-hidden="true"></i>
+            <p>System Managment</p>
+          </a>
+        </li> <!--almost done-->
+
+      <ul [hidden]="hideList" id="systemmanagmentlist">
+          <li #imagesliderli class="nav-item" (click)="active(imagesliderli)">
+              <a class="nav-link" [routerLink]="'slider'">
+                  <i class="fas fa-images"></i>
+                <p>Image Slider</p>
+              </a>
+            </li>
+  
+            <li #cellimageli class="nav-item" (click)="active(cellimageli)">
+              <a class="nav-link" [routerLink]= "'cell'" >
+                  <i class="fas fa-images"></i>
+                <p>Cell Image</p>
+              </a>
+            </li>
+  
+            <li #testimonialli class="nav-item" (click)="active(testimonialli)">
+              <a class="nav-link" [routerLink]="'testimonial'">
+                <i class="fa fa-quote-right" aria-hidden="true"></i>
+                <p>Testimonial</p>
+              </a>
+            </li>
+  
+            <li #contactusli class="nav-item" (click)="active(contactusli)">
+              <a class="nav-link" [routerLink]="'feedback'">
+                  <i class="fas fa-id-card"></i>
+                <p>Contact Us</p>
+              </a>
+            </li>
+  
+            <li #aboutusli class="nav-item" (click)="active(aboutusli)">
+              <a class="nav-link" [routerLink]="'about'">
+                  <i class="fas fa-info-circle"></i>
+                <p>About Us</p>
+              </a>
+            </li>
+      </ul> <!--done-->
           
-
-
-
-          <li #systemmanagmentli class="nav-item " (click)="active(systemmanagmentli)">
-            <a class="nav-link" (click)="showList()">
-                <i class="fa fa-desktop" aria-hidden="true"></i>
-              <p>System Managment</p>
-            </a>
-          </li> <!--almost done-->
-
-        <ul [hidden]="hideList" id="systemmanagmentlist">
-            <li #imagesliderli class="nav-item" (click)="active(imagesliderli)">
-                <a class="nav-link" [routerLink]="'slider'">
-                    <i class="fas fa-images"></i>
-                  <p>Image Slider</p>
-                </a>
-              </li>
-    
-              <li #cellimageli class="nav-item" (click)="active(cellimageli)">
-                <a class="nav-link" [routerLink]= "'cell'" >
-                    <i class="fas fa-images"></i>
-                  <p>Cell Image</p>
-                </a>
-              </li>
-    
-              <li #testimonialli class="nav-item" (click)="active(testimonialli)">
-                <a class="nav-link" [routerLink]="'testimonial'">
-                  <i class="fa fa-quote-right" aria-hidden="true"></i>
-                  <p>Testimonial</p>
-                </a>
-              </li>
-    
-              <li #contactusli class="nav-item" (click)="active(contactusli)">
-                <a class="nav-link" [routerLink]="'feedback'">
-                    <i class="fas fa-id-card"></i>
-                  <p>Contact Us</p>
-                </a>
-              </li>
-    
-              <li #aboutusli class="nav-item" (click)="active(aboutusli)">
-                <a class="nav-link" [routerLink]="'about'">
-                    <i class="fas fa-info-circle"></i>
-                  <p>About Us</p>
-                </a>
-              </li>
-        </ul>
-          <!-- <li class="nav-item active-pro ">
-                <a class="nav-link" href="./upgrade.html">
-                    <i class="material-icons">unarchive</i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li> -->
         </ul>
       </div>
     </div>
     <div class="main-panel" data-background-color="black">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
-        <div class="container-fluid" style="background-color: #f2f2f3 !important;margin-top: -10px;">
+        <div class="container-fluid" style="background-color: #f2f2f3; margin-top: -10px;">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:void(0)"></a>
           </div>
@@ -146,7 +139,7 @@
                   <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
                   <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
                   <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                  <a class="dropdown-item" (click)="openMessages()" href="javascript:void(0)"><strong>More Messages</strong></a>
+                  <a class="dropdown-item" (click)="openMessages()" href="javascript:void(0)">Another One</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -168,10 +161,9 @@
       </nav>
       <!-- End Navbar -->
       <!-- start here: Body starts here tameem, sameh, malek, eihab-->
-      <div style="margin-top: 50px; margin-left: 12px; background-color: white; " >
+      <div style="margin-top: 50px; margin-left: 12px;" style="background-color:white" >
         <br>
           <router-outlet></router-outlet>
-          
         <br>
       </div>
       <!-- end here: Body Ends here tameem, sameh, malek, eihab-->
