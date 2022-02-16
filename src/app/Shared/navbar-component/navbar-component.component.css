@@ -1,6 +1,6 @@
 
 ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
-  background-color: #18d26e; /*replace with your color*/
+  background-color: #d70926; /*replace with your color*/
 }
 
 ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
@@ -78,13 +78,13 @@ body {
   }
   
   a {
-    color: #18d26e;
+    color: #d70926;
     transition: 0.5s;
     text-decoration: none;
   }
   
   a:hover, a:active, a:focus {
-    color: #18d36e;
+    color: #d70926;
     outline: none;
     text-decoration: none;
   }
@@ -111,7 +111,7 @@ body {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #18d26e;
+  background: #d70926;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -149,7 +149,7 @@ body {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #f2f2f2;
-  border-top: 6px solid #18d26e;
+  border-top: 6px solid #d70926;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -201,7 +201,7 @@ body {
   font-weight: 700;
   letter-spacing: 3px;
   padding-left: 10px;
-  border-left: 4px solid #18d26e;
+  border-left: 4px solid #d70926;
 }
 #header .logo a {
   color: #fff;
@@ -253,7 +253,7 @@ body {
   margin-left: 5px;
 }
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #18d26e;
+  color: #d70926;
 }
 .navbar .dropdown ul {
   display: block;
@@ -281,7 +281,7 @@ body {
   font-size: 12px;
 }
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #18d26e;
+  color: #d70926;
 }
 .navbar .dropdown:hover > ul {
   opacity: 1;
@@ -363,7 +363,7 @@ body {
   color: #333333;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #18d26e;
+  color: #d70926;
 }
 .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
   margin: 15px;
@@ -389,7 +389,7 @@ body {
   font-size: 12px;
 }
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: #18d26e;
+  color: #d70926;
 }
 .navbar-mobile .dropdown > .dropdown-active {
   display: block;
@@ -511,11 +511,11 @@ body {
   transition: 0.5s;
   margin: 10px;
   color: #fff;
-  background: #18d26e;
+  background: #d70926;
 }
 #hero .btn-get-started:hover {
   background: #fff;
-  color: #18d26e;
+  color: #d70926;
 }
 
 /*--------------------------------------------------------------
@@ -552,7 +552,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #18d26e;
+  background: #d70926;
   bottom: 0;
   left: calc(50% - 20px);
 }
