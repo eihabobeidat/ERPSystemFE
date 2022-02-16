@@ -60,10 +60,10 @@
                 <span>Pending</span>
             </div>
             <div *ngIf="vacation.status === 0 && vacation.reviewedby === 5">
-                <span>Approved</span>
+              <span style="color: rgb(49, 179, 49)">Approved</span>
             </div>
             <div *ngIf="vacation.status === 2">
-                <span>Rejected</span>
+                <span style="color: red">Rejected</span>
             </div>
         </td>
       </ng-container>
@@ -85,10 +85,10 @@
             </div>
             <ng-template #elseBlock>
                 <div *ngIf="vacation.status === 0 && vacation.reviewedby === 5; else elseBlock">
-                    <span>Approved</span>
+                  <span style="color: rgb(49, 179, 49)">Approved</span>
                 </div>
                 <ng-template #elseBlock>
-                    <span>Rejected</span>
+                  <span style="color: red">Rejected</span>
                 </ng-template>
             </ng-template>
         </td>
