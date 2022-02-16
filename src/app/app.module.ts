@@ -77,6 +77,7 @@ import { FeedbackComponent } from './Employee/feedback/feedback.component';
 import { SalaryListComponent } from './Admin/Salary/salary-list/salary-list.component';
 import { EditSalaryComponent } from './Admin/Salary/edit-salary/edit-salary.component';
 import { InfoSalaryComponent } from './Admin/Salary/info-salary/info-salary.component';
+import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dialog.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -144,6 +145,7 @@ import { InfoSalaryComponent } from './Admin/Salary/info-salary/info-salary.comp
     SalaryListComponent,
     EditSalaryComponent,
     InfoSalaryComponent,
+    DeleteDialogComponent,
 
   ],
   imports: [

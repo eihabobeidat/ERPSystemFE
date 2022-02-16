@@ -106,4 +106,10 @@ export class EmployeeService {
     this.toastr.success("Feedback inserted successfully","Insert")
   })
 }
+DeleteEmployee(id:number)
+{
+  this.http.delete('https://localhost:44333/api/Employee/'+id).subscribe((result)=>{
+    this.toastr.success("Employee Deleted successfully","Delete")
+});
+}
 }

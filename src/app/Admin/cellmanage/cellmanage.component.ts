@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
 
 @Component({
@@ -20,13 +21,14 @@ export class CellmanageComponent implements OnInit {
 
   });
 
-  constructor(public service:AdminService) { }
+  constructor(public service:AdminService,private toast:ToastrService) { }
 
   ngOnInit(): void {
   }
   
   UpdateCell(file:any){
-    console.log(file);
+    if(file.length==7){
+
     let formdata = new FormData();
 
    
@@ -46,10 +48,12 @@ export class CellmanageComponent implements OnInit {
     formdata.append('img5' ,uploadfile5,uploadfile5.name);
     formdata.append('img6' ,uploadfile6,uploadfile6.name);
     formdata.append('img7' ,uploadfile7,uploadfile7.name);
-    console.log(formdata)
 
       this.service.UpdateCell(formdata);
-
+    }
+    else{
+      this.toast.error("Chose Just 7 !","Error")
+    }
     
 
   }

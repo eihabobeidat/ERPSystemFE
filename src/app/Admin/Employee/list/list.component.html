@@ -1,98 +1,72 @@
+<div class="container-fluid">
+  <button  id="export" (click)="exportToExcel()" class="btn btn-success text-white ">Excel</button>
+  <button  id="export1" (click)="exportToCSV('employeesLeaves.csv')" class="btn btn-primary mx-3">CSV</button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+
+<br><br><br>
 
 
-  <div class="col col-8 col-xs-12">
-    <div class="all" style="margin-left: -100px;">
+<div id="example">
 
-      <div class="center" (click)="exportToExcel()">
-        <div class="explainer" ><span>Hover me</span></div>
-        <div class="text" >Excel</div>
-      </div>
-      <div class="right" (click)="exportToCSV('members.csv')">
-        <div class="text">CSV</div>
-      </div>
-      <div class="righter" (click)="printBtn()">
-        <div class="text">Print</div>
-      </div>
-      <div class="righter1">
-        <div class="text"> <label for="fileinput">Import Excel</label>
-          <input #fileinput type="file" hidden id="fileinput"  (change)="upload(fileinput.files)" />
-        </div>
-      </div>
-    </div>
-  </div>
+<table mat-table [dataSource]="this.service.EmployeeList" 
+class="mat-elevation-z8 sameh offset-1" id="tableData">
 
-<mat-form-field appearance="standard">
-
-  
-  <mat-label>Filter</mat-label>
-  <input matInput  (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input >
-  
-</mat-form-field>
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort >
-
-    <ng-container matColumnDef="imagepath">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-    </ng-container>
-
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Emp.no </th>
+        <td mat-cell *matCellDef="let item"> 00{{item.id}} </td>
+      </ng-container>
+    
     <ng-container matColumnDef="firstname">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let row" > 
-        <img class="img" style="height: 50px;margin-left: -10px; width: 50px; margin-bottom: 10px;margin-top: 10px;"
-        src="../../../../assets/images/faces/{{row.imagepath}}">
-        {{row.firstname + " " + row.lastname}} </td>
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let item"> 
+        <img src="../../../../assets/EmployeeImg/{{item.imagepath}}" class="image">
+        {{item.firstname +" " + item.lastname}} </td>
     </ng-container>
-
+  
+   
     <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      <th mat-header-cell *matHeaderCellDef> E-mail </th>
+      <td mat-cell *matCellDef="let item"> {{item.email}} </td>
     </ng-container>
+  
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef> Phone Number  </th>
+        <td mat-cell *matCellDef="let item"> {{item.mobile}} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="mobile">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </th>
-      <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
-    </ng-container>
+      <ng-container matColumnDef="adress">
+        <th mat-header-cell *matHeaderCellDef> Address  </th>
+        <td mat-cell *matCellDef="let item"> {{item.address}} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="adress">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
-      <td mat-cell *matCellDef="let row"> {{row.address}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="salary">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Salary </th>
-      <td mat-cell *matCellDef="let row"> {{row.salary}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{"    "}} </th>
-      <td mat-cell *matCellDef="let row"> <ul class="action-list">
-        
       
-          <button type="submit" (click)="openDialog(row.id);" style="background-color: transparent;border: 0;"  >
-            <i class="fa fa-edit" for="btn" >
+      <ng-container matColumnDef="salary">
+        <th mat-header-cell *matHeaderCellDef> Salary  </th>
+        <td mat-cell *matCellDef="let item"> {{item.salary}} </td>
+      </ng-container>
 
-            </i></button>
+      
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef > {{"    "}} </th>
+        <td mat-cell *matCellDef="let item"> <ul class="action-list">
+          
+        
+            <button type="submit" (click)="openDialog(item.id);" style="background-color: transparent;border: 0;"  >
+              <i class="fa fa-edit" for="btn" >
+  
+              </i></button>
+         
+            <button type="submit" (click)="openDialogDelete(item.id);" style="background-color: transparent;border: 0;"  >
+              <i class="fa fa-trash"></i>
+            </button>
+            </ul>
        
-          <button type="submit" (click)="openDialog(row.id);" style="background-color: transparent;border: 0;"  >
-            <i class="fa fa-trash"></i>
-          </button>
-          </ul>
+      </ng-container>
      
-    </ng-container>
-
+  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-    <!-- Row shown when there is no matching data. -->
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="7">No data matching the filter "{{input.value}}"</td>
-    </tr>
   </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
 </div>
-
-  
-  
 

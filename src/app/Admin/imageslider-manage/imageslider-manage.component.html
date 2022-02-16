@@ -1,6 +1,6 @@
 
 <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
-<br><br><br>
+<br><br>
 <form >
     <input type="file" #fileinput  accept="image/*"  multiple style="margin-right: 12px;" />
     
@@ -8,8 +8,7 @@
     style="background-color: rgb(216, 13, 13); width: 130px;height: 30px;;"  (click)="UploadImageSlider(fileinput.files)">
 </form>
       
-        <body>
-          <p class="heading">Slider Gallery</p>
+        <body style="margin-top: -10px;">
           <div class="gallery-image">
             <div class="img-box" *ngFor="let item of this.service.imageSlider">
               <img src="../../../assets/SliderImage/{{item.image}}" alt="" />

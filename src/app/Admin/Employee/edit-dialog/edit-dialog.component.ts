@@ -11,7 +11,7 @@ import { EmployeeService } from 'src/app/service/Admin/Employee/employee.service
 export class EditDialogComponent implements OnInit {
   EditEmployee = new FormGroup({
     email: new FormControl(this.service1.oneEmployee.email,[Validators.required]),
-    phone: new FormControl(this.service1.oneEmployee.phone,[Validators.required]),
+    mobile: new FormControl(this.service1.oneEmployee.mobile,[Validators.required]),
     firstname: new FormControl(this.service1.oneEmployee.firstname,[Validators.required]),
     lastname: new FormControl(this.service1.oneEmployee.lastname,[Validators.required]),
     address: new FormControl(this.service1.oneEmployee.address,[Validators.required]),
@@ -19,12 +19,12 @@ export class EditDialogComponent implements OnInit {
      
     });
   
-  
+  userId:number;
   constructor(public service1:EmployeeService ,
     public matdialog: MatDialog ,@Inject(MAT_DIALOG_DATA)public data:{id:number}) {
     
    
-        console.log(this.EditEmployee.controls['email'].value);
+        this.userId=data.id;
 
     
 
@@ -45,16 +45,22 @@ export class EditDialogComponent implements OnInit {
   
   UpdateEmployee()
   {
+    
 
     let obj={
-      id:this.data.id,
-      email:this.EditEmployee.controls['Email'].value,
+      id:this.userId,
+      email:this.EditEmployee.controls['email'].value,
+      mobile:this.EditEmployee.controls['mobile'].value,
       password:this.EditEmployee.controls['password'].value,
-      address:this.EditEmployee.controls['Address'].value,
-      firstname:this.EditEmployee.controls['firstName'].value,
-      lastname:this.EditEmployee.controls['lastName'].value,
+      address:this.EditEmployee.controls['address'].value,
+      firstname:this.EditEmployee.controls['firstname'].value,
+      lastname:this.EditEmployee.controls['lastname'].value,
+      roleid:4,
+      salary:this.service1.oneEmployee.salary,
+      imagepath:this.service1.oneEmployee.imagepath
     }
-     this.service1.UpdateEmployee(obj);
+    this.service1.UpdateEmployee(obj);
+    this.matdialog.closeAll();
     
   }
   
