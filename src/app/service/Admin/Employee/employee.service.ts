@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ToastRef, ToastrService } from 'ngx-toastr';
 import { EditDialogComponent } from 'src/app/Admin/Employee/edit-dialog/edit-dialog.component';
 import { ListComponent } from 'src/app/Admin/Employee/list/list.component';
 import { InputFiles } from 'typescript';
@@ -15,7 +16,7 @@ export class EmployeeService {
   sss:any[]=[];
   oneEmployee:any={};
   id:number;
-  constructor(private http:HttpClient ) { }
+  constructor(private http:HttpClient , private toast:ToastrService ) { }
   GetEmployeeInf(id:number){
     this.http.get<Employee>('https://localhost:44333/api/Employee/GetById/'+ id).
     subscribe((result)=> 
@@ -28,9 +29,7 @@ export class EmployeeService {
   getEmployee(){
      this.http.get<Employee[]>('https://localhost:44333/api/Employee/employeelist').subscribe
      ((result)=>{
-       result.forEach((x) => {
-         this.EmployeeList.push(x);
-     });
+      this.EmployeeList=result;
        console.log(this.EmployeeList);
 
      })
@@ -62,7 +61,7 @@ UpdateEmployee(form:any)
 {
   console.log(form);
   this.http.put('https://localhost:44333/api/Employee/updateemployee',form).subscribe((result)=>{
-   console.log(result);
+   this.toast.success("Employee Update Succesfuly","Update")
   });
 }
 }

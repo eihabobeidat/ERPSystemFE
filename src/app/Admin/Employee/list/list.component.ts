@@ -1,12 +1,8 @@
-import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { inject } from '@angular/core/testing';
+import {  Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { Employee } from 'src/app/service/Admin/Employee';
 import { EmployeeService } from 'src/app/service/Admin/Employee/employee.service';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 declare const exportTableToCSV: any;
 declare const exportTableToExcel: any;
@@ -14,42 +10,35 @@ declare const printTable: any;
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./style.scss']
+  styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit ,AfterViewInit{
+export class ListComponent implements OnInit {
   
   fileToUpload: File | null = null;
   fileForm = new FormGroup({
   file: new FormControl('',[Validators.required])});
     
+  displayedColumns: string[] = ['id','firstname', 'email', 'mobile','adress','salary','action'];
+
+
+
+  constructor(public service:EmployeeService,public matdialog: MatDialog,public matdialog1: MatDialog  ) {
+        this.service.getEmployee();
+
+      
+
   
-  displayedColumns: string[] = ['imagepath','firstname', 'email', 'mobile','adress','salary','action'];
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  dataSource:any;
 
-
-
-  constructor(public service:EmployeeService,public matdialog: MatDialog  ) {
-    // Create 100 users
-    // Assign the data to the data source for the table to render
-    
-    this.service.getEmployee();
-    this.dataSource = new MatTableDataSource(this.service.EmployeeList);
 
     
 
   }
-  
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    // if (this.service.EmployeeList.paginator) {
-    //   this.dataSource.paginator.firstPage();
-    // }
+  
+  ngOnInit() {
+
   }
- 
+  
  
   exportToCSV(fileName: string) {
     exportTableToCSV(fileName);
@@ -76,13 +65,12 @@ export class ListComponent implements OnInit ,AfterViewInit{
 
 
   }
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-
-    this.dataSource.paginator = this.paginator;
-  }
+ 
   
   openDialogDelete(id:number){
+
+    this.matdialog1.open(DeleteDialogComponent,{data:{id:id}});
+
 
   }
   
@@ -93,9 +81,6 @@ export class ListComponent implements OnInit ,AfterViewInit{
     let formdata=new FormData()
     formdata.append('file',uploadfile,uploadfile.name)
     this.service.ImportExcel(formdata);
-  }
-  ngOnInit() {
-
   }
   
 

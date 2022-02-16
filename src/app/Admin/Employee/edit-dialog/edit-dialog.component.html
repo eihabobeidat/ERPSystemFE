@@ -3,35 +3,51 @@
 <img src="../../../../assets/OtherImage/close.png" style="float: right; width: 30px; height: 30px;">
 </button>   
 <h1 style="text-align: center;">Update Employee Information </h1>
-<br>
+<br><br>
 <mat-dialog-content>
   <form [formGroup]="EditEmployee" (ngSubmit)="UpdateEmployee()" class="contanier" >
     <div class="row">
       <div class="col-4">
-        <input  type="email"   formControlName="email"  class="form-control">
+        <label for="email">Email
+        <input  type="email" id="email"   formControlName="email"  class="form-control">
+      </label>
+      </div>
+      <div class="col-4">
+        <label for="phone">Phone Number
+
+        <input   type="text" id="phone" formControlName="mobile"    class="form-control">
+      </label>
 
       </div>
       <div class="col-4">
-        <input   type="number" formControlName="phone"    class="form-control">
+        <label for="firstname">First Name
 
-      </div>
-      <div class="col-4">
-        <input type="text"  formControlName="firstname" class="form-control">
+        <input type="text"  id="firstname" formControlName="firstname" class="form-control">
+      </label>
 
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-4">
-        <input type="text" formControlName="lastname"    class="form-control">
+        <label for="lastname">Last Name
+
+        <input type="text" id="lastname" formControlName="lastname"    class="form-control">
+      </label>
 
       </div>
       <div class="col-4">
-        <input  type="text"  formControlName="address"  class="form-control">
+        <label for="address">Address
+
+        <input  type="text" id="address"  formControlName="address"  class="form-control">
+      </label>
 
       </div>
       <div class="col-4">
-        <input  type="password" formControlName="password" class="form-control">
+        <label for="password">Password
+
+        <input  type="password" id="password" formControlName="password" class="form-control">
+      </label>
 
       </div>
     </div>

@@ -93,7 +93,7 @@ UploadImageSlider(form:FormData):any{
   }
   this.http.post('https://localhost:44333/api/Slider/postslider',form)
   .subscribe((result:any)=>{
-    console.log(result);
+    this.toaster.success("Slider Updated","Update");
 
  }
  , error=>{console.log(error);}
@@ -106,7 +106,7 @@ UpdateAbout(form:FormData)
 {
   this.http.put('https://localhost:44333/api/AboutService/updateabout',form).
   subscribe((result)=>{
-   
+   this.toaster.success("Updated Success","Update");
    
   });
 
@@ -117,7 +117,7 @@ UpdateCell(formdata:FormData)
     
   this.http.put('https://localhost:44333/api/Cell/putcell',formdata).
   subscribe((result)=>{
-   
+   this.toaster.success("Cell Image Updated","Update")
    
   });
 
