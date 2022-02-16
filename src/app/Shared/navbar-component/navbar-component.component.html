@@ -23,10 +23,11 @@
         </div>
 
     </header>
-    <body [ngClass]="{darkTheme: app.isDark}" style="position: relative;top:-81px">
+    <body [ngClass]="{darkTheme: app.isDark}">
  
 		<div class='col-12' class="carousel-inner" style="z-index: 1;">  
-			<ngb-carousel [maxWidth]="'100%'" [slideHeight]="'100%'" [pauseOnHover]="true">  
+			<ngb-carousel [maxWidth]="'100%'" [interval]="4000" [hideOverlay]="true" [pauseOnHover]="true"
+            [animationStart]="">  
 				<ng-template ngbSlide *ngFor= "let item of service.sliderImage;let i=index; first as isFirst" >  
 					<img  src="../../../assets/SliderImage/{{item.image}}" style="height: 630px; width: 100%;">
 					<!-- class="d-block w-100" style="height: 100vh">   -->

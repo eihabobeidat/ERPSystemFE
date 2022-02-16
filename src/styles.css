@@ -5,6 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .darkTheme {
     background-color:rgb(17, 16, 16);
     color: white;
+   
 }
 .darkTheme.h1{
     color: white;
