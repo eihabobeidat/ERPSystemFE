@@ -194,3 +194,9 @@ function printContent(el) {
     location.reload();
     
 }
+
+
+
+    
+  
+

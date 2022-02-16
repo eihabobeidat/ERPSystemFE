@@ -16,7 +16,7 @@ h1::after {
 	position: absolute;
 	margin: 0 auto;
 	height: 3px;
-	background: #18d26e;
+	background: #d70926;
 	left: 0;
 	right: 0;
 	bottom: -10px;
@@ -99,7 +99,7 @@ h1::after {
 	border: none;
 }
 .carousel-indicators li.active {		
-	background: #18d26e;		
+	background: #d70926;		
 }
 .center-text {
     top: 100%;
