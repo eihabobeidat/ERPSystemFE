@@ -9,6 +9,13 @@
 
 <table mat-table [dataSource]="this.service.reviews" class="mat-elevation-z8 sameh offset-1" id="tableData">
 
+    <ng-container matColumnDef="imagePath">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let review">
+            <img [src]="'/assets/EmployeeImg/' + review.imagePath" style="border-radius: 50%; height:35px">
+        </td>
+    </ng-container>
+
     <ng-container matColumnDef="firstName">
         <th mat-header-cell *matHeaderCellDef>First Name</th>
         <td mat-cell *matCellDef="let review"> {{review.firstName}} </td>
@@ -21,29 +28,43 @@
 
     <ng-container matColumnDef="value">
         <th mat-header-cell *matHeaderCellDef>Value Rate</th>
-        <td mat-cell *matCellDef="let review"> {{review.value}} </td>
+        <td mat-cell *matCellDef="let review">
+            <span *ngIf="review.value === 0">Need submition</span>
+            <span *ngIf="review.value === 1">Very bad</span>
+            <span *ngIf="review.value === 2">Bad</span>
+            <span *ngIf="review.value === 3">Good</span>
+            <span *ngIf="review.value === 4">Very good</span>
+            <span *ngIf="review.value === 5">Excellent</span>
+        </td>
     </ng-container>
 
     <ng-container matColumnDef="objective">
         <th mat-header-cell *matHeaderCellDef>Objective Rate</th>
-        <td mat-cell *matCellDef="let review"> {{review.objective}} </td>
+        <td mat-cell *matCellDef="let review">
+            <span *ngIf="review.objective === 0">Need submition</span>
+            <span *ngIf="review.objective === 1">Very bad</span>
+            <span *ngIf="review.objective === 2">Bad</span>
+            <span *ngIf="review.objective === 3">Good</span>
+            <span *ngIf="review.objective === 4">Very good</span>
+            <span *ngIf="review.objective === 5">Excellent</span>
+        </td>
     </ng-container>
 
     <ng-container matColumnDef="competency">
         <th mat-header-cell *matHeaderCellDef>Competency Rate</th>
-        <td mat-cell *matCellDef="let review"> {{review.competency}} </td>
+        <td mat-cell *matCellDef="let review">
+            <span *ngIf="review.competency === 0">Need submition</span>
+            <span *ngIf="review.competency === 1">Very bad</span>
+            <span *ngIf="review.competency === 2">Bad</span>
+            <span *ngIf="review.competency === 3">Good</span>
+            <span *ngIf="review.competency === 4">Very good</span>
+            <span *ngIf="review.competency === 5">Excellent</span>
+        </td>
     </ng-container>
 
     <ng-container matColumnDef="time">
         <th mat-header-cell *matHeaderCellDef>HR Submission</th>
-        <td mat-cell *matCellDef="let review"> {{review.time}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="imagePath">
-        <th mat-header-cell *matHeaderCellDef>Employee Picture</th>
-        <td mat-cell *matCellDef="let review">
-            <!-- <img [src]="'/src/assets/EmployeeImg/' + review.imagePath" style="border-radius: 50%; height:35px"> -->
-        </td>
+        <td mat-cell *matCellDef="let review"> {{review.time|date}} </td>
     </ng-container>
 
     <ng-container matColumnDef="status">
