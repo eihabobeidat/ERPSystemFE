@@ -1,9 +1,15 @@
+<app-camera (getPicture)="handleImage($event)"></app-camera>
 
-<br><br>
+<div class="webcam-image" *ngIf="webcamImage">
+  <img [src]="webcamImage.imageAsDataUrl" class="tc-center"/>
+</div>
+
+
+<!-- <br><br>
 <input type="submit" class="btn btn-success" (click)="TakeCheckIn()" value="Check In" >
 <br> <br>
 <input type="submit" class="btn btn-secondary" (click)="TakeCheckOut()" value="Check Out" >
-<app-card-employee-inf></app-card-employee-inf>
+<app-card-employee-inf></app-card-employee-inf> -->
 
 <!-- 
 <div class="wrapper" style="margin-left: -200px;">
