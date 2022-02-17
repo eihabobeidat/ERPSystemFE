@@ -33,6 +33,7 @@
     "jquery": "^3.6.0",
     "jwt-decode": "^3.1.2",
     "ng-image-slider": "^2.8.0",
+    "ngx-avatar": "^4.1.0",
     "ngx-bootstrap": "^8.0.0",
     "ngx-echarts": "^8.0.1",
     "ngx-spinner": "^13.0.0",
