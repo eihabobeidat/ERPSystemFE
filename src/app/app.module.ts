@@ -48,7 +48,7 @@ import { ImagesliderManageComponent } from './Admin/imageslider-manage/imageslid
 import { AboutManageComponent } from './Admin/about-manage/about-manage.component';
 import { CellmanageComponent } from './Admin/cellmanage/cellmanage.component';
 import { AdminReviewComponent } from './Admin/admin-review/admin-review.component';
-//////
+import {WebcamModule} from 'ngx-webcam';
 import { TakeAttendenceComponent } from './Employee/take-attendence/take-attendence.component';
 import * as echarts from 'echarts';
 import 'echarts-gl';
@@ -78,6 +78,7 @@ import { SalaryListComponent } from './Admin/Salary/salary-list/salary-list.comp
 import { EditSalaryComponent } from './Admin/Salary/edit-salary/edit-salary.component';
 import { InfoSalaryComponent } from './Admin/Salary/info-salary/info-salary.component';
 import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dialog.component';
+import { CameraComponent } from './Shared/camera/camera.component';
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 // import * as echarts from 'echarts/core';
 // // Import bar charts, all with Chart suffix
@@ -86,6 +87,7 @@ import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dia
 // // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
+import { AvatarModule } from 'ngx-avatar';
 
 
 @NgModule({
@@ -146,6 +148,7 @@ import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dia
     EditSalaryComponent,
     InfoSalaryComponent,
     DeleteDialogComponent,
+    CameraComponent,
 
   ],
   imports: [
@@ -171,9 +174,8 @@ import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dia
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
-
-  
-
+    AvatarModule
+    WebcamModule,
   ],
   entryComponents:[],
   providers: [
