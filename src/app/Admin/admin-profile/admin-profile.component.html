@@ -34,7 +34,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="bmd-label-floating">Password</label>
-                      <input type="text" class="form-control" [formControl]="password">
+                      <input type="password" class="form-control" [formControl]="password">
                       <mat-error *ngIf="password.hasError('required')">
                         Password is <strong>required</strong>
                      </mat-error>

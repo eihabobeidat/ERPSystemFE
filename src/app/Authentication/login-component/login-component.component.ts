@@ -43,7 +43,7 @@ export class LoginComponentComponent implements OnInit {
             address: response.provider,
             salary: 450,
             mobile: '',
-            imagePath: response.photoUrl
+            imagePath: 'defualt.jpg' //google defualt image
           }
         }, err => {console.log(err);});
       });
@@ -67,7 +67,7 @@ export class LoginComponentComponent implements OnInit {
             address: response.provider,
             salary: 450,
             mobile: '',
-            imagePath: response.photoUrl
+            imagePath: 'defualt.jpg' //facebook default image
           }
         }, err => {console.log(err);});
       });

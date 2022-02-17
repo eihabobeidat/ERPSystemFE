@@ -14,8 +14,8 @@ declare const printTable: any;
 })
 export class HrReviewComponent implements OnInit {
 
-  displayedColumns: string[] = ['firstName', 'lastName', 'value',
-  'objective', 'competency', 'time', 'imagePath', 'status'];
+  displayedColumns: string[] = ['imagePath','firstName', 'lastName', 'value',
+  'objective', 'competency', 'time', 'status'];
 
   constructor(public service:HrReviewService, private dialog:MatDialog) { }
 
