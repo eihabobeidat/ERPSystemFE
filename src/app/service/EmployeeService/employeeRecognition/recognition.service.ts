@@ -10,11 +10,13 @@ export class RecognitionService {
   constructor(private http:HttpClient) {
   }
 
-  faceRecognition(face:string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0XZzpl5eNQ2ISi_Xa_qFm0ZuGeRaERQrQPQ&usqp=CAU')
+  faceRecognition(face:string)
   {
-    this.http.post('https://localhost:44333/api/Attendance/DetectFace',{image:face})
-    .subscribe(res =>{
-      console.log('finished');
+    this.http.post<any>('https://localhost:44333/api/Attendance/DetectFace',{image:face})
+    .subscribe((res:any) =>{
+      
+      console.log(res.image,"Result String");
+
     })
   }
 }
