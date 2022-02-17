@@ -18,7 +18,7 @@ export class EmployeesLeaveComponent implements OnInit {
   //'reviewedby','approvedby',
   constructor(public service:LeaveService)
   { 
-    //this.service.getAllVacation();
+    
   }
 
   Approve(vacation:any,status:number) {

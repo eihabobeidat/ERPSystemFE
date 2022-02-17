@@ -26,9 +26,6 @@ declare const printTable: any;
 })
 export class TestimonialManageComponent implements OnInit {
   displayedColumns: string[] = ['firstName', 'lastName', 'message','time','status'];
-  // @ViewChild(MatPaginator) private paginator: MatPaginator;
-  // dataSource: MatTableDataSource<ITestimonialList>
-  //  list_product = new MatTableDataSource<any>(this.admin.Testimonial);
   
   constructor(public admin:AdminService)
   {
@@ -43,12 +40,6 @@ export class TestimonialManageComponent implements OnInit {
    
     
   }
-
-  // get_data(){
-  //   this.http.get<any[]>('https://localhost:44333/api/Testimonial/GetHomeTestimonial')
-  // .subscribe((result)=>{
-  //   this.list_product.data = result
-  // })}
     
 
   StatusCheck(status:any,Id:number)
@@ -88,21 +79,6 @@ export class TestimonialManageComponent implements OnInit {
   printBtn() {
     printTable();
   }
- 
-
-//   ngAfterViewInit(): void {
-//     this.list_product.paginator = this.paginator;
-// }
-
-
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
  
 
 

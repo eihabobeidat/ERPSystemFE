@@ -21,7 +21,6 @@ export class EmployeeService {
      startdate: form.startDate,
      enddate:form.endDate
    }
-   console.log(temp);
    
    const header = {
      "Content-Type":'application/json',
@@ -42,7 +41,6 @@ export class EmployeeService {
  {
    this.http.get('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result)=>{
      this.employeeRecord=result
-    console.log(this.employeeRecord);
     
     })
  }

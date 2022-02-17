@@ -22,7 +22,9 @@ export class TakeAttendenceComponent implements OnInit {
 
   handleImage(webcamImage: WebcamImage) {
     this.webcamImage = webcamImage;
-    this.recognition.faceRecognition(webcamImage);
+    // this.recognition.faceRecognition(webcamImage);
+    console.log(this.webcamImage);
+    
   }
 
   TakeCheckIn()

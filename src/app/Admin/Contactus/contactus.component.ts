@@ -40,7 +40,7 @@ export class ContactusComponent implements OnInit {
 
   ngOnInit(): void {
     this.get_data();
-    // this.list_product=this.admin.GetContactUs() 
+    
   }
 
   sendEmail(email:string){

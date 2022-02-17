@@ -72,9 +72,6 @@ export class ChatBoxComponent implements OnInit {
   }
 
   scrollDown(){
-    // let div = document.getElementById('MessagesDivScroll') as HTMLElement;
-    // div.scrollTop = div.scrollHeight - 1;
-    // console.log(div.scrollTop);
-    // console.log(div.scrollHeight);
+   
   }
 }

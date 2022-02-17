@@ -18,7 +18,7 @@
                       <select type="text" class="form-control"  formControlName="Type">
                         <option></option>
                         <option value="1">Annual</option>
-                        <option value="21">Stick</option>
+                        <option value="21">Sick</option>
                         <option value="41">Others</option>
                       </select>
                       <mat-error *ngIf="LeaveForm.controls['Type'].hasError('required')">
@@ -70,64 +70,3 @@
       </div>
     </div>
  </div>
-
-
-
-<!-- <form (ngSubmit)="TakeLeave(inputfile.files)" [formGroup]="LeaveForm" >
-     <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label ">
-                                <label for="leave-type">Leave Type</label>
-                                <select style="background: transparent; border: 2px solid whitesmoke; border-radius: 2%;"
-                                 formControlName="Type" name="leave-type" id="leave-type" class="form-control" title="Please select a Leave Type" required="">
-                                    <option></option>
-                                    <option value="1">Annual</option>
-                                    <option value="21">Stick</option>
-                                    <option value="41">Others</option>
-                                  
-                                </select><span class="pmd-textfield-focused"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label class="control-label" for="datepickerstart">Start Date</label>
-                                <input style="background: transparent; border: 2px solid whitesmoke; border-radius: 2%;" 
-                                formControlName="startTime" type="datetime-local" class="form-control" id="datepickerstart" name="datepickerstart"><span class="pmd-textfield-focused"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label class="control-label" for="datepickerend">End Date</label>
-                                <input style="background: transparent; border: 2px solid whitesmoke; border-radius: 2%;" 
-                                 formControlName="endTime"  type="datetime-local" class="form-control" id="datepickerend" name="datepickerend"><span class="pmd-textfield-focused"></span>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label>Reason</label>
-                                <textarea  style="background: transparent; border: 2px solid whitesmoke; border-radius: 2%;"
-                                type="text" formControlName="Comment" class="form-control" id="reason" name="reason"></textarea><span class="pmd-textfield-focused"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label>Report :</label>
-   
-                            <input  type="file" #inputfile style="margin-left: 9px; background: transparent; border: 2px solid whitesmoke; border-radius: 2%;"
-                                class="btn btn-danger" accept="application/pdf"   >
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card-footer">
-                    <button type="submit"
-                    style="margin-left:43%;" class="btn btn-primary pmd-ripple-effect pmd-btn-raised" name="applyleave" value="Apply Leave">Apply Leave</button>
-                </div>
-</form> -->
-    
-      
-
-
-         

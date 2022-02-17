@@ -23,7 +23,6 @@ export class AboutService {
     this.http.get<IPage>("https://localhost:44333/api/Page/GetById/"+id,this.requestOptions)
     .subscribe((result)=>{
     this.aboutValue = result.value;
-    console.log(this.aboutValue);
     },(error)=> {return error});
   }
   GetServices(){

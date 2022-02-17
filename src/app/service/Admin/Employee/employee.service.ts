@@ -30,7 +30,6 @@ export class EmployeeService {
      this.http.get<Employee[]>('https://localhost:44333/api/Employee/employeelist').subscribe
      ((result)=>{
       this.EmployeeList=result;
-       console.log(this.EmployeeList);
 
      })
       
@@ -48,7 +47,6 @@ export class EmployeeService {
     }
     this.http.post('https://localhost:44333/api/Employee/importexcel',form)
     .subscribe((result:any)=>{
-      console.log(result);
 
    }
    , error=>{console.log(error);}
