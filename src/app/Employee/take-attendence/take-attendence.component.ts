@@ -18,15 +18,12 @@ export class TakeAttendenceComponent{
   webcamImage: WebcamImage | undefined;
   
   constructor(public http:HttpClient, public service:UserService, private recognition:RecognitionService) { 
-
   }
 
+  ngOnInit(): void {
+    this.recognition.faceRecognition();
+  }
 
-
-
- 
-
-  
   handleImage(webcamImage: WebcamImage) {
     this.webcamImage = webcamImage;
     const httpOptions = {
