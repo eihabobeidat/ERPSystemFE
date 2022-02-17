@@ -21,8 +21,13 @@ class="mat-elevation-z8 sameh offset-1" id="tableData">
     <ng-container matColumnDef="firstname">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let item"> 
-        <img src="../../../../assets/EmployeeImg/{{item.imagepath}}" class="image">
-        {{item.firstname +" " + item.lastname}} </td>
+          <div style="display:inline-flex;">
+          <ngx-avatar  size="40" *ngIf="item.imagepath === 'default.jpg'||item.imagepath===null" name="{{item.firstname + ' ' +item.lastname}}"></ngx-avatar>
+          <img *ngIf="item.imagepath != null" src="../../../../assets/EmployeeImg/{{item.imagepath}}"  class="image">
+          <span>{{item.firstname +" " + item.lastname}}  </span>
+        </div>
+        </td>
+        
     </ng-container>
   
    

@@ -86,6 +86,7 @@ import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dia
 // // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
+import { AvatarModule } from 'ngx-avatar';
 
 
 @NgModule({
@@ -171,6 +172,7 @@ import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dia
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
+    AvatarModule
 
   
 
