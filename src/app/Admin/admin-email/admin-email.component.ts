@@ -41,7 +41,7 @@ export class AdminEmailComponent implements OnInit {
     this.http.post('https://localhost:44333/api/Vacation/Email',temp).subscribe(result => {
       this.dialog.closeAll();
     }, error =>{
-      //console.log(error);
+      
     })
   }
 }

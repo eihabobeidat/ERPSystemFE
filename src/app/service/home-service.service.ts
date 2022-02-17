@@ -21,11 +21,7 @@ sliderImage:any=[{}];
   {
     this.http.get<ImageSlider>('https://localhost:44333/api/Slider/getslider')
     .subscribe((result:any)=>{
-      this.sliderImage=result;
-      //console.log(this.sliderImage);
-      
-
-
+      this.sliderImage=result;    
       })
    
   }
@@ -33,7 +29,6 @@ sliderImage:any=[{}];
     this.http.get<ICells>('https://localhost:44333/api/Cell/Getimage')
     .subscribe((result:any)=>{
       this.cellsImage=result;
-     console.log(this.cellsImage);
 
       })
    
@@ -47,7 +42,6 @@ sliderImage:any=[{}];
         
       })
     })
-    //console.log(this.topTenEmployee);
   }
 
 

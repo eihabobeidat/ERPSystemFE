@@ -57,7 +57,7 @@ export class HrLeaveService {
         body: "Hope you are doing well, <br><br>" + message +".<br><br>Have a nice day<br>"
       }
       this.http.post('https://localhost:44333/api/Vacation/Email',temp).subscribe(result => {
-        //this.toaster.success(form.email,'Email sent to');
+        
       }, error =>{
         //console.log(error);
       })

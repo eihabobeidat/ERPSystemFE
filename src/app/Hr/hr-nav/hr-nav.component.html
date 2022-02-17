@@ -11,12 +11,11 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
+        Tip 2: you can also add an image using data-image tag -->
+        
       <div class="logo" style="background-color: whitesmoke;">
-        <!-- <img src="../../../assets/img/tahaluf_logo.png"  style="width: 150px; height: 50px;"> -->
         <a class="simple-text logo-normal" >
-          <img src="../../../assets/img/111.png"  style="width: 50px;"> 
+          <img src="../../../assets/OtherImage/111.png" style="width: 50px;"> 
           <span style="font-weight: bold; font-size: x-large;"> ERP System</span> 
        </a>
 
@@ -28,37 +27,25 @@
               <i class="fa fa-area-chart"></i>
               <p>Dashboard</p>
             </a>
-          </li> <!--done-->
+          </li> 
           <li #employeeli class="nav-item" (click)="active(employeeli)">
             <a class="nav-link" [routerLink]="'employee'">
               <i class="material-icons">person</i>
               <p>New Employee</p>
             </a>
-          </li> <!--done-->
+          </li>
           <li #employeesalary class="nav-item" (click)="active(employeesalary)">
             <a class="nav-link" [routerLink]="'salary'">
               <i class="fa fa-usd"></i>
               <p>Employee Salary</p>
             </a>
-          </li> <!--done-->
-          <!-- <li #attendanceli class="nav-item " (click)="active(attendanceli)">
-            <a class="nav-link" [routerLink]="'dashboard'" > 
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
-              <p>Attendance</p>
-            </a>
-            </li> done -->
-            <!-- <li #leavereportli class="nav-item " (click)="active(leavereportli)">
-                <a class="nav-link" [routerLink]="'holidays'">
-                    <i class="fa fa-file" aria-hidden="true"></i>
-                  <p>Leaves Report</p>
-                </a>
-          </li> almost done -->
+          </li> 
           <li #leaveRequestli class="nav-item " (click)="active(leaveRequestli)" >
             <a class="nav-link" [routerLink]="'leave'">
               <i class="material-icons">library_books</i>
               <p>Leave Request</p>
             </a>
-          </li> <!--done-->
+          </li> 
           <li #evaluationli class="nav-item " (click)="active(evaluationli)" >
             <a class="nav-link" [routerLink]="'review'">
               <i class="fa fa-star-half-empty"></i>
@@ -98,7 +85,7 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="../../../assets/EmployeeImg/{{service.userimage}}" style="width:50px;height:50px;border-radius:50%">
+                  <img [src]="'/assets/EmployeeImg/' + service.userimage" style="width:50px;height:50px;border-radius:50%">
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>
@@ -124,36 +111,7 @@
       </div>
       <!-- end here: Body Ends here tameem, sameh, malek, eihab-->
       <footer class="footer" style="background-color:white">
-        <!-- <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right" id="date">
-            , made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-          </div>
-        </div> -->
+      
       </footer>
       <script>
         const x = new Date().getFullYear();
@@ -162,73 +120,7 @@
       </script>
     </div>
   </div>
-  <!-- <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-      <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
-      </a>
-      <ul class="dropdown-menu">
-        <li class="header-title"> Sidebar Filters</li>
-        <li class="adjustments-line">
-          <a href="javascript:void(0)" class="switch-trigger active-color">
-            <div class="badge-colors ml-auto mr-auto">
-              <span class="badge filter badge-purple active" data-color="purple"></span>
-              <span class="badge filter badge-azure" data-color="azure"></span>
-              <span class="badge filter badge-green" data-color="green"></span>
-              <span class="badge filter badge-warning" data-color="orange"></span>
-              <span class="badge filter badge-danger" data-color="danger"></span>
-            </div>
-            <div class="clearfix"></div>
-          </a>
-        </li>
-        <li class="header-title">Images</li>
-        <li>
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../../../assets/dashboard/assets/img/sidebar-1.jpg" alt="">
-          </a>
-        </li>
-        <li class="active">
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../../../assets/dashboard/assets/img/sidebar-2.jpg" alt="">
-          </a>
-        </li>
-        <li>
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../../../assets/dashboard/assets/img/sidebar-3.jpg" alt="">
-          </a>
-        </li>
-        <li>
-          <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../../../assets/dashboard/assets/img/sidebar-4.jpg" alt="">
-          </a>
-        </li>
-        <li class="button-container">
-          <a href="https://www.creative-tim.com/product/material-dashboard-dark" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-        </li>
-        <!-- <li class="header-title">Want more components?</li>
-            <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
-                  Get the pro version
-                </a>
-            </li> 
-        <li class="button-container">
-          <a href="https://demos.creative-tim.com/material-dashboard-dark/docs/2.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
-            View Documentation
-          </a>
-        </li>
-        <li class="button-container github-star">
-          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard/tree/dark-edition" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-        </li>
-        <li class="header-title">Thank you for 95 shares!</li>
-        <li class="button-container text-center">
-          <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
-          <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
-          <br>
-          <br>
-        </li>
-      </ul>
-    </div>
-  </div> -->
+ 
   <!--   Core JS Files   -->
   <script src="../../../assets/dashboard/assets/js/core/jquery.min.js"></script>
   <script src="../../../assets/dashboard/assets/js/core/popper.min.js"></script>

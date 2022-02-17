@@ -11,19 +11,16 @@ export class NavbarComponentComponent implements OnInit {
 
  
   accountStatus: boolean = true;
-  constructor(public service:HomeServiceService , public app:AppComponent) //public userService: UserService, private router: Router)
+  constructor(public service:HomeServiceService , public app:AppComponent) 
    {
      service.getImageSlider();
   }
 
   async ngOnInit() {
-    // if (localStorage.getItem('token')) {
-    //   this.accountStatus = true;
-    // }
+    
   }
 
   logOut() {
-    //localStorage.clear();
-    //this.router.navigate(['/auth/login']);
+   
   }
 }
