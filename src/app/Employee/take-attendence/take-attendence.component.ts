@@ -18,11 +18,11 @@ export class TakeAttendenceComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.recognition.faceRecognition();
   }
 
   handleImage(webcamImage: WebcamImage) {
     this.webcamImage = webcamImage;
-    this.recognition.faceRecognition(webcamImage);
   }
 
   TakeCheckIn()
