@@ -174,7 +174,7 @@ import { AvatarModule } from 'ngx-avatar';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
-    AvatarModule
+    AvatarModule,
     WebcamModule,
   ],
   entryComponents:[],
