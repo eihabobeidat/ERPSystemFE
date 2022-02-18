@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import jwt_Decode from 'jwt-decode';
 import { Router } from '@angular/router';
 import { IToken } from './IToken';
+import { PermissionService } from '../AdminService/PermissionService/permission.service';
 
 interface IEmployee{
   email:string,
@@ -22,7 +23,7 @@ interface IEmployee{
 })
 export class AuthenticationService {
 
-  constructor(private toaster:ToastrService, private http:HttpClient,private router:Router) { }
+  constructor(private toaster:ToastrService, private http:HttpClient,private router:Router, private permission:PermissionService) { }
 
   sendPassword(form:any){
     let temp = {
@@ -66,15 +67,16 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
+    form.email = form.email.toString().ToLowerCase();
     this.http.post('https://localhost:44333/api/Employee',form, requestOption)
     .subscribe(res =>{
+      this.permission.insertPermission(form.email);
       if(checker !== 'google'){
-        this.toaster.success(`Thanks Mx ${form.lastName}, try to login`,'Registered Successfuly');
+        this.toaster.success(`Mx ${form.lastName} can login`,'Registered Successfuly');
       }
       else {
         this.validateUser(form);
       }
-      
     },err =>{
       this.toaster.error('Please try again later','Registeration failed');
     })
