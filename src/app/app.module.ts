@@ -80,6 +80,7 @@ import { InfoSalaryComponent } from './Admin/Salary/info-salary/info-salary.comp
 import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dialog.component';
 import { CameraComponent } from './Shared/camera/camera.component';
 import { AvatarModule } from 'ngx-avatar';
+import { PermissionsComponent } from './Admin/permissions/permissions.component';
 
 
 @NgModule({
@@ -141,6 +142,7 @@ import { AvatarModule } from 'ngx-avatar';
     InfoSalaryComponent,
     DeleteDialogComponent,
     CameraComponent,
+    PermissionsComponent,
 
   ],
   imports: [

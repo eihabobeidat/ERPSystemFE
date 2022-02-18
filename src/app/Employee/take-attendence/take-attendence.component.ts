@@ -24,12 +24,7 @@ export class TakeAttendenceComponent{
   }
 
   handleImage(webcamImage: WebcamImage) {
-    this.webcamImage = webcamImage;
-
-    // this.recognition.faceRecognition(webcamImage);
-    console.log(this.webcamImage);
-    
-
+    this.webcamImage = webcamImage;  
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: `Client-ID ${this.clientId}`
