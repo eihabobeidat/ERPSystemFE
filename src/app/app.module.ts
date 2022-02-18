@@ -88,6 +88,7 @@ import { CameraComponent } from './Shared/camera/camera.component';
 // // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 // import { CanvasRenderer } from 'echarts/renderers';
 // import 'echarts/theme/macarons.js';
+import { AvatarModule } from 'ngx-avatar';
 
 
 @NgModule({
@@ -174,6 +175,7 @@ import { CameraComponent } from './Shared/camera/camera.component';
     FormsModule,
     MatSortModule,
     NgxEchartsModule.forRoot({ echarts: () => import('echarts'), }),
+    AvatarModule,
     WebcamModule,
   ],
   entryComponents:[],
