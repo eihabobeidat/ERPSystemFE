@@ -19,6 +19,7 @@ export class HrNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.ReloadImage()
+    console.log(this.service.empname);
   }
 
   openMessages(){

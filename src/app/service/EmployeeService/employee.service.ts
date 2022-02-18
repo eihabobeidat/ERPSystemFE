@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { IEmployee } from 'src/app/Admin/admin-dashboard/admin-dashboard.component';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 export class EmployeeService {
 
   vacationSearch:any[]=[]
+  empname:string
   employeeRecord:any={}
   employeeId:number=parseInt(localStorage.getItem('id') as string)
   imagename:string
@@ -86,6 +88,15 @@ export class EmployeeService {
   }
   ReloadImage(){
     this.userimage= localStorage.getItem('imagename') as string;
+    
+    if(localStorage.getItem('imagename') == 'null')
+    {
+    this.http.get<IEmployee>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
+     this.empname=result.firstname +" "+ result.lastname     
+    })
+  }
+
+
   }
 
   InsertTestimonial(form:any)
