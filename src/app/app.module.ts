@@ -79,16 +79,8 @@ import { EditSalaryComponent } from './Admin/Salary/edit-salary/edit-salary.comp
 import { InfoSalaryComponent } from './Admin/Salary/info-salary/info-salary.component';
 import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dialog.component';
 import { CameraComponent } from './Shared/camera/camera.component';
-
-// Import the echarts core module, which provides the necessary interfaces for using echarts.
-// import * as echarts from 'echarts/core';
-// // Import bar charts, all with Chart suffix
-// import { BarChart } from 'echarts/charts';
-// import { TitleComponent, TooltipComponent, GridComponent } from 'echarts/components';
-// // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
-// import { CanvasRenderer } from 'echarts/renderers';
-// import 'echarts/theme/macarons.js';
 import { AvatarModule } from 'ngx-avatar';
+import { PermissionsComponent } from './Admin/permissions/permissions.component';
 
 
 @NgModule({
@@ -150,6 +142,7 @@ import { AvatarModule } from 'ngx-avatar';
     InfoSalaryComponent,
     DeleteDialogComponent,
     CameraComponent,
+    PermissionsComponent,
 
   ],
   imports: [

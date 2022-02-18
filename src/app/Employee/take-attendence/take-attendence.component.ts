@@ -21,11 +21,10 @@ export class TakeAttendenceComponent{
   }
 
   ngOnInit(): void {
-    this.recognition.faceRecognition();
   }
 
   handleImage(webcamImage: WebcamImage) {
-    this.webcamImage = webcamImage;
+    this.webcamImage = webcamImage;  
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: `Client-ID ${this.clientId}`
@@ -36,8 +35,13 @@ export class TakeAttendenceComponent{
     formData.append('image', this.webcamImage.imageAsBase64);
     this.http.post(`${this.IMGUR_UPLOAD_URL}`, formData, httpOptions).subscribe((result:any)=>{
       console.log(result.data.link);
+      this.recognition.faceRecognition(result.data.link);
+
     })
+
+    
        
+
   }
 
   TakeCheckIn()

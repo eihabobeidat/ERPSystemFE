@@ -7,7 +7,6 @@
 table {
     width: 93%;
     background-color: rgb(236, 229, 229);
-    /* background-color: rgb(73, 68, 68); */
     border-collapse:collapse;
     border-radius: 5em;
   }
@@ -81,11 +80,7 @@ input {
    
 }
 
-/* .btn-success {
-    color: white;
-    background-color: #18d26e;
-    border-color: #020202;
-} */
+
 
 input {
   color: black !important;
@@ -99,12 +94,6 @@ color: white;
 .mat-hint, input, ::placeholder, .mat-form-field-label {
  color: white;
 }
-/* 
-.btn-success.disabled, .btn-success:disabled {
-color: #fff;
-background-color: #d70926;
-border-color: #d70926;
-} */
 
 
 .btn-success {

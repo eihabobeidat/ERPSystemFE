@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Form } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { aboutClass } from 'src/app/Admin/about-manage/aboutClass';
+import { IEmployee } from 'src/app/Admin/admin-dashboard/admin-dashboard.component';
 // import { IVacationList } from './IVacationList';
 
 @Injectable({
@@ -17,6 +18,8 @@ export class AdminService {
   allEmployeeSalary:any=[{}]
   SalaryChanges:any=[{}]
   imageSlider:any=[{}]
+  employeeId:number=parseInt(localStorage.getItem('id') as string)
+  empname:string
   constructor(private http: HttpClient,private toaster:ToastrService ) { }
 
 
@@ -36,20 +39,26 @@ export class AdminService {
 
   this.http.post<any[]>('https://localhost:44333/api/Vacation/ByDate',temp,requestOption).subscribe((result)=>{
     this.vacationSearch=result
-console.log(this.vacationSearch);
-// this.toaster.success('Data Retrieved successfully','Retrieve');
+
 })
 }
 
 ReloadImage(){
   this.userimage= localStorage.getItem('imagename') as string;
+  if(localStorage.getItem('imagename') == 'null')
+    {
+    this.http.get<IEmployee>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
+     this.empname=result.firstname +" "+ result.lastname     
+    })
+  }
+
+  
 }
 
 GetContactUs()
 {
   this.http.get<any[]>('https://localhost:44333/api/ContactUs').subscribe((result)=>{
     this.ContactUs=result
-    //console.log(this.ContactUs);
     
     })
     

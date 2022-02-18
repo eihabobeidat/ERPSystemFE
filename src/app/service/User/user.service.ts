@@ -56,9 +56,7 @@ export class UserService {
        id:parseInt(x.toString())
      }
      this.http.post('https://localhost:44333/api/Vacation/ByEmployeeId', obj).subscribe((result)=>{
-        this.MyLeaves=result,
-       
-        console.log(result);
+        this.MyLeaves=result
 
      });
    }
@@ -68,7 +66,7 @@ export class UserService {
       id:parseInt(x.toString())
       }
     this.http.post('https://localhost:44333/api/Attendance/UpdateCheckOut', obj).subscribe((result)=>{
-        console.log(result);
+        
        
 
      });
@@ -78,7 +76,7 @@ export class UserService {
    NewQualfication(form:FormData)
    {
      this.http.post('https://localhost:44333/api/Qualification/insertnewqualfication',form).subscribe((result)=>{
-       console.log(result);
+       
 
      });
 

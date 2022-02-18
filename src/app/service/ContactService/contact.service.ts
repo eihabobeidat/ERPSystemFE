@@ -26,9 +26,9 @@ export class ContactService {
       headers:new HttpHeaders(header),
     }
     this.http.post('https://localhost:44333/api/Vacation/Email',temp,requestOption).subscribe(result => {
-      //this.toaster.success(form.email,'Email sent to');
+      
     }, error =>{
-      //console.log(error);
+      console.log(error);
     })
   }
 
