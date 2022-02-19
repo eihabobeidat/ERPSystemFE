@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/service/AdminService/admin.service';
+import { IPermissionBasic, PermissionService } from 'src/app/service/AdminService/PermissionService/permission.service';
 
 export interface IPermissionList{
-  employeeid:number
-  firstname:string 
-  lastname:string
-  imagepath:string
+  employeeId:number
+  firstName:string 
+  lastName:string
+  imagePath:string
   time:Date
-  salaryflag:number
-  employeeflag:number
+  salaryFlag:number
+  employFlag:number
   
 }
 
@@ -18,35 +19,70 @@ export interface IPermissionList{
   styleUrls: ['./permissions.component.css']
 })
 export class PermissionsComponent implements OnInit {
-  displayedColumns: string[] = ['employeeid', 'firstname', 'lastname','imagepath','time','salaryflag','employeeflag'];
+  displayedColumns: string[] = ['employeeId', 'firstName', 'lastName','imagePath','time','salaryFlag','employFlag'];
 
-  constructor(public admin:AdminService) { }
+  constructor(public perm:PermissionService) { }
 
   ngOnInit(): void {
+    this.perm.getAllPermissions()
   }
 
-  StatusCheck(status:any,Id:number)
-  {
+  StatusCheck(status:any,permession:any,flag:number)
+   {
 
     if(status.checked == true)
     {
-      let object={
-        id:Id,
-        status:1
+
+      let object:IPermissionBasic={
+        time:new Date,
+        salaryFlag:1,
+        employFlag:permession.employFlag,
+        employeeId:permession.employeeId
       }
-      this.admin.UpdateTestimonialStatus(object)
+      this.perm.updatePermission(object)
     }
 
     else
     {
-      let object={
-        id:Id,
-        status:0
+      let object:IPermissionBasic={
+        time:new Date,
+        salaryFlag:0,
+        employFlag:permession.employFlag,
+        employeeId:permession.employeeId
       }
-      this.admin.UpdateTestimonialStatus(object)
-    }
+      this.perm.updatePermission(object)
+  }
 
     
   }//end statuscheck
+
+
+  StatusCheck1(status:any,permession:any,flag:number)
+  {
+
+    if(status.checked == true)
+    {
+
+      let object:IPermissionBasic={
+        time:new Date,
+        salaryFlag:permession.salaryFlag,
+        employFlag:1,
+        employeeId:permession.employeeId
+      }
+      this.perm.updatePermission(object)
+    }
+
+    else
+    {
+      let object:IPermissionBasic={
+        time:new Date,
+        salaryFlag:permession.salaryFlag,
+        employFlag:0,
+        employeeId:permession.employeeId
+      }
+      this.perm.updatePermission(object)
+  }
+
+  }
 
 }

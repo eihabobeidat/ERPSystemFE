@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
+import { IPermission, PermissionService } from 'src/app/service/AdminService/PermissionService/permission.service';
 
 @Component({
   selector: 'app-employee-nav',
@@ -11,11 +12,11 @@ import { EmployeeService } from 'src/app/service/EmployeeService/employee.servic
 })
 export class EmployeeNavComponent implements OnInit {
   hideList:boolean=true;
-
   oldItem:any
   imagename:any = this.service.userimage;
   
-  constructor(private router:Router,public service:EmployeeService,private dialog:MatDialog) { }
+  constructor(private router:Router,public service:EmployeeService,private dialog:MatDialog,
+     public permissions:PermissionService) { }
   
   openMessages(){
     this.dialog.open(ChatBoxComponent, {data:{}});
@@ -25,6 +26,7 @@ export class EmployeeNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.ReloadImage()
+    this.permissions.getPermission(localStorage.getItem('id') as string)
     
   }
 
@@ -49,5 +51,8 @@ export class EmployeeNavComponent implements OnInit {
   {
     this.hideList=!this.hideList
   }
+
+     
+
 
 }

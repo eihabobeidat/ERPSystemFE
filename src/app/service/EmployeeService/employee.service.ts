@@ -89,7 +89,7 @@ export class EmployeeService {
   ReloadImage(){
     this.userimage= localStorage.getItem('imagename') as string;
     
-    if(localStorage.getItem('imagename') == 'null')
+    if(localStorage.getItem('imagename') === 'null' )
     {
     this.http.get<IEmployee>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
      this.empname=result.firstname +" "+ result.lastname     

@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
-interface IPermission{
+export interface IPermission{
   employeeId?:number
-  imagepath?:string
-  firstname?:string
-  lastname?:string
+  imagePath?:string
+  firstName?:string
+  lastName?:string
   time?:Date
   salaryFlag?:number
   employFlag?:number
@@ -17,6 +17,7 @@ export interface IPermissionBasic{
   time?:Date
   salaryFlag?:number
   employFlag?:number
+  
 }
 
 @Injectable({
@@ -24,21 +25,26 @@ export interface IPermissionBasic{
 })
 export class PermissionService {
 
+  data:any=[]
+  permission:IPermission
+
   constructor(private http:HttpClient, private toaster:ToastrService) { }
 
   getAllPermissions(){
     this.http.get<IPermission[]>('https://localhost:44333/api/Permission')
     .subscribe((res:IPermission[]) => {
-      //the permission list
-      //res
+      this.data=res
+
+      
     })
   }
 
   getPermission(id:number|string){
     this.http.get<IPermission>('https://localhost:44333/api/Permission/GetById/' + id)
     .subscribe((res:IPermission) => {
-      //the permission for specific employee
-      //res
+      this.permission=res
+      console.log(res);
+      
     })
   }
 
