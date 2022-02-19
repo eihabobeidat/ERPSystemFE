@@ -70,6 +70,29 @@
               </a>
             </li> <!--done-->
             
+            <li [hidden]="!permissions.permission.employFlag && !permissions.permission.salaryFlag"  #systemmanagmentli class="nav-item " (click)="active(systemmanagmentli)">
+              <a class="nav-link" (click)="showList()">
+                  <i class="fa fa-desktop" aria-hidden="true"></i>
+                <p>Permmission</p>
+              </a>
+            </li> <!--almost done-->
+    
+          <ul [hidden]="hideList" id="systemmanagmentlist">
+              <li [hidden]="!permissions.permission.salaryFlag" #imagesliderli class="nav-item" (click)="active(imagesliderli)">
+                  <a class="nav-link" [routerLink]="'Esalary'">
+                      <i class="fas fa-images"></i>
+                    <p>Salary Change</p>
+                  </a>
+                </li>
+      
+                <li [hidden]="!permissions.permission.employFlag" #cellimageli class="nav-item" (click)="active(cellimageli)">
+                  <a class="nav-link" [routerLink]= "'Eedit'" >
+                      <i class="fas fa-images"></i>
+                    <p>Add Employee</p>
+                  </a>
+                </li>
+          </ul> <!--done-->
+            
           </ul>
         </div>
       </div>

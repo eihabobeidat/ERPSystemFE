@@ -67,7 +67,7 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
-    form.email = form.email.toString().ToLowerCase();
+    form.email = form.email.toString().toLowerCase();
     this.http.post('https://localhost:44333/api/Employee',form, requestOption)
     .subscribe(res =>{
       this.permission.insertPermission(form.email);
