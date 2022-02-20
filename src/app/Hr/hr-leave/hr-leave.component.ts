@@ -20,7 +20,7 @@ export class HrLeaveComponent implements OnInit {
   constructor(public service:HrLeaveService, private http:HttpClient, private toaster: ToastrService) {}
 
   Approve(vacation:any,status:number) {
-    this.http.get<IVacation>('https://localhost:44333/api/Vacation' + vacation.id)
+    this.http.get<IVacation>('https://localhost:44333/api/Vacation/' + vacation.id)
     .subscribe(res => {
       //get employee id to fill both reviwed by and approved by
     let temp:string|null = localStorage.getItem('id');
