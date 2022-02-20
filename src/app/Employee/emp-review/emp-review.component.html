@@ -1,3 +1,20 @@
-<br><br>
-<button *ngIf="reviewExist" (click)="TakeReview()"> Take Evaluation</button>
-<p *ngIf="!reviewExist"> No new reviews , had been submitted</p>
+
+<div id="wrapper" style="margin-left: -125px;" *ngIf="reviewExist" (click)="TakeReview()">
+    <a  class="my-super-cool-btn">
+      <div class="dots-container" >
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <span style="color:#f3cf14;"><strong>Go!</strong></span>
+    </a>
+  </div>
+
+  <br><br>
+
+  <p *ngIf="!reviewExist"> No new reviews , had been submitted</p>
+<!-- <br><br>
+<button *ngIf="reviewExist" (click)="TakeReview()"
+style="margin-left: 40%; margin-top:20%"> Start Evaluation</button>
+ -->

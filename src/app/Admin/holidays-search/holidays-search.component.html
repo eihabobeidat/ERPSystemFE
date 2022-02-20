@@ -37,7 +37,7 @@
  
     
     <ng-container matColumnDef="employeeid">
-      <th mat-header-cell *matHeaderCellDef> Employee Id </th>
+      <th mat-header-cell *matHeaderCellDef> Employee No. </th>
       <td mat-cell *matCellDef="let IVacationList">00{{IVacationList.employeeid}} </td>
     </ng-container>
   
@@ -90,10 +90,10 @@
             <span>Pending</span>
         </div>
         <div *ngIf="IVacationList.status === 1">
-            <span >Approved</span>
+          <span style="color: rgb(49, 179, 49)">Approved</span>
         </div>
         <div *ngIf="IVacationList.status === 2">
-            <span >Rejected</span>
+          <span style="color: red">Rejected</span>
         </div>
          </td>
       </ng-container>

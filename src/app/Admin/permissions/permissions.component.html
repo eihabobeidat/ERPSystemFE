@@ -1,19 +1,19 @@
 <br><br><br>
 <table mat-table [dataSource]="perm.data" class="mat-elevation-z8 sameh offset-1" id="tableData">
 
-    <ng-container matColumnDef="imagePath">
+    <ng-container matColumnDef="imagepath">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let IPermissionList"> 
-            <div style="margin-left: 71px;">
-            <ngx-avatar  size="37"  *ngIf="IPermissionList.imagePath === 'default.jpg'||IPermissionList.imagePath===null" name="{{IPermissionList.firstName + ' ' +IPermissionList.lastName}}"></ngx-avatar>
+          <div style="margin-left: 82px;">
+            <ngx-avatar  size="37"  *ngIf="IPermissionList.imagepath === 'default.jpg'||IPermissionList.imagepath===null" name="{{IPermissionList.firstName + ' ' +IPermissionList.lastName}}"></ngx-avatar>
             </div>
-            <img *ngIf="IPermissionList.imagePath != null" [src]="'/assets/EmployeeImg/' + IPermissionList.imagePath" style="border-radius: 50%; height:35px">
-        </td>
+            <img *ngIf="IPermissionList.imagepath != null && IPermissionList.imagepath !== 'default.jpg'" [src]="'/assets/EmployeeImg/' + IPermissionList.imagepath" style="border-radius: 50%; height:35px">
+          </td>
      </ng-container>
 
     <ng-container matColumnDef="employeeId">
        <th mat-header-cell *matHeaderCellDef> Employee No. </th>
-       <td mat-cell *matCellDef="let IPermissionList"> {{IPermissionList.employeeId}} </td>
+       <td mat-cell *matCellDef="let IPermissionList"> 00{{IPermissionList.employeeId}} </td>
     </ng-container>
 
     <ng-container matColumnDef="firstName">

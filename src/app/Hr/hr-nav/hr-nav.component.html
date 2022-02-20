@@ -85,8 +85,8 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <ngx-avatar  size="40" *ngIf="service.userimage == 'default.jpg'|| service.userimage == 'null' " name="{{service.empname}}"></ngx-avatar>
-                  <img *ngIf="service.userimage !== 'null'" [src]="'/assets/EmployeeImg/' + service.userimage" style="width:50px;height:50px;border-radius:50%">
+                  <ngx-avatar  size="40" *ngIf="!service.userimage || service.userimage == 'null' " name="{{service.empname}}"></ngx-avatar>
+                  <img *ngIf="!(!service.userimage || service.userimage == 'null') " [src]="'/assets/EmployeeImg/' + service.userimage" style="width:50px;height:50px;border-radius:50%">
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>

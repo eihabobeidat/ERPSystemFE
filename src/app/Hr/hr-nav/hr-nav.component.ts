@@ -15,11 +15,14 @@ export class HrNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
   imagename:any = this.service.userimage;
-  constructor(private router:Router,public service:EmployeeService, private dialog:MatDialog) { }
+  constructor(private router:Router,public service:EmployeeService, private dialog:MatDialog) 
+  { 
+    this.service.ReloadImage()
+  }
 
   ngOnInit(): void {
-    this.service.ReloadImage()
-    console.log(this.service.empname);
+    
+    
   }
 
   openMessages(){

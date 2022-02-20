@@ -37,10 +37,8 @@ sliderImage:any=[{}];
   {
     this.http.get<ITopTenEmployee[]>('https://localhost:44333/api/Review/GetTopTenEmployee')
     .subscribe((result)=>{
-      result.forEach((x)=>{
-        this.topTenEmployee.push(x)
-        
-      })
+        this.topTenEmployee=result
+
     })
   }
 

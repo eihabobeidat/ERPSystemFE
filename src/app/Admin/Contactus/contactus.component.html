@@ -20,7 +20,7 @@
   
     <ng-container matColumnDef="time">
       <th mat-header-cell *matHeaderCellDef> Time </th>
-      <td mat-cell *matCellDef="let IContactList"> {{IContactList.time}} </td>
+      <td mat-cell *matCellDef="let IContactList"> {{IContactList.time|date}} </td>
     </ng-container>
 
     <ng-container matColumnDef="reply">

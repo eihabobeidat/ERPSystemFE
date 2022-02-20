@@ -30,12 +30,14 @@ export class AdminNavComponent implements OnInit {
   imagename:any = this.service.userimage;
   
   constructor(private router:Router, private http:HttpClient,public service:AdminService,private dialog:MatDialog) 
-  {   }
+  {  
+    this.service.ReloadImage()
+  }
   
 
   ngOnInit(): void {
 
-    this.service.ReloadImage()
+    
   
   }
   

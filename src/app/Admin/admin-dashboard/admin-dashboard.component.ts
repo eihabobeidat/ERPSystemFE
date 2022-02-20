@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { map, Observable } from 'rxjs';
+import { AdminService } from 'src/app/service/AdminService/admin.service';
 
 export interface IEmployee{
   id:number,
@@ -35,6 +36,7 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    
     this.GetCards()
    this.http.get<IEmployee[]>('https://localhost:44333/api/Employee/employeelist').subscribe((res:IEmployee[]) => {
   let data:any[] = [["Salary","HRate","EI","Address","Expertise"]];
