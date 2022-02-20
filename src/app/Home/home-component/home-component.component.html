@@ -1,107 +1,110 @@
-
 <app-navbar-component></app-navbar-component>
 
-<div [ngClass]="{darkTheme: app.isDark }" >
-    <br>
-<div class="team-area ">
+<div [ngClass]="{darkTheme: app.isDark }">
+  <br>
+  <div class="team-area ">
     <div class="container ">
-        <div class="row ">
-            <div class="col-md-12 ">
-                <div class="section-title text-center ">
-                    <h1><span>T</span><span style="color:#D91136">O</span><span style="color: #118C3C;">P</span>
-                         Employee</h1>
-                    <p>Meet Our most telented Team Member</p>
-                </div>
-            </div>
+      <div class="row ">
+        <div class="col-md-12 ">
+          <div class="section-title text-center ">
+            <h1><span>T</span><span style="color:#D91136">O</span><span style="color: #118C3C;">P</span>
+              Employee</h1>
+            <p>Meet Our most telented Team Member</p>
+          </div>
+        </div>
 
-             <!-- ======= Team Section ======= -->
-    <section id="team">
-        <div class="container" data-aos="fade-up">
-          <div class="row">
-            <div class="col-lg-3 col-md-6" *ngFor= "let item of service.topTenEmployee;let i=index; first as isFirst">
-              <div class="member" data-aos="fade-up" data-aos-delay="100">
-                <img src="../../../assets/EmployeeImg/{{item.imagepath}}" class="img-fluid">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>{{item.firstName +" " + item.lastName}}</h4>
-                    <span>{{item.name}}</span>
-                    <span *ngIf="((item.toP10/3) === 5 || (item.toP10/3) > 4) && (item.toP10/3) <= 5"
-                    style="display: inline-flex;">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </span>
+        <!-- ======= Team Section ======= -->
+        <section id="team" [ngClass]="{darkTheme: app.isDark}">
+          <div class="container" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-3 col-md-6" *ngFor="let item of service.topTenEmployee;let i=index; first as isFirst">
+                <div class="member" data-aos="fade-up" data-aos-delay="100">
+                  <img *ngIf="item.imagepath === null" src="../../../assets/EmployeeImg/default.jpg" style="height: 255px;">
+                  <img *ngIf="item.imagepath !== null" src="../../../assets/EmployeeImg/{{item.imagepath}}"
+                    class="img-fluid">
+                  <div class="member-info">
+                    <div class="member-info-content">
+                      <h4>{{item.firstName +" " + item.lastName}}</h4>
+                      <span>{{item.name}}</span>
+                      <span *ngIf="((item.toP10/3) === 5 || (item.toP10/3) > 4) && (item.toP10/3) <= 5"
+                        style="display: inline-flex;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                      </span>
 
-                    <span *ngIf="((item.toP10/3) === 4 || (item.toP10/3) > 3) && (item.toP10/3) <= 4"
-                    style="display: inline-flex;">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star "></span>
-                    </span>
+                      <span *ngIf="((item.toP10/3) === 4 || (item.toP10/3) > 3) && (item.toP10/3) <= 4"
+                        style="display: inline-flex;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                      </span>
 
-                    <span *ngIf="((item.toP10/3) === 3 || (item.toP10/3) > 2) && (item.toP10/3) <= 3"
-                    style="display: inline-flex;">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star "></span>
-                      <span class="fa fa-star "></span>
-                    </span>
+                      <span *ngIf="((item.toP10/3) === 3 || (item.toP10/3) > 2) && (item.toP10/3) <= 3"
+                        style="display: inline-flex;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                      </span>
 
-                    <span *ngIf="((item.toP10/3) === 2 || (item.toP10/3) > 1) && (item.toP10/3) <= 2"
-                    style="display: inline-flex;">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star "></span>
-                      <span class="fa fa-star "></span>
-                      <span class="fa fa-star "></span>
-                    </span>
+                      <span *ngIf="((item.toP10/3) === 2 || (item.toP10/3) > 1) && (item.toP10/3) <= 2"
+                        style="display: inline-flex;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                      </span>
 
-                    <span *ngIf="((item.toP10/3) === 1 || (item.toP10/3) > 0) && (item.toP10/3) <= 1"
-                    style="display: inline-flex;">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star "></span>
-                      <span class="fa fa-star "></span>
-                      <span class="fa fa-star "></span>
-                      <span class="fa fa-star "></span>
-                    </span>
-                   
+                      <span *ngIf="((item.toP10/3) === 1 || (item.toP10/3) > 0) && (item.toP10/3) <= 1"
+                        style="display: inline-flex;">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                      </span>
+
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section><!-- End Team Section -->
+        </section><!-- End Team Section -->
 
 
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<h1 >Gallery</h1>
-<body style="--n-rows: 3; --n-cols: 6" [ngClass]="{darkTheme: app.isDark }">
+  <h1>Gallery</h1>
 
-    <style>.hex-cell:nth-of-type(5n + 1) { grid-column-start: 2 }</style>
+  <body style="--n-rows: 3; --n-cols: 6" [ngClass]="{darkTheme: app.isDark }">
+
+    <style>
+      .hex-cell:nth-of-type(5n + 1) {
+        grid-column-start: 2
+      }
+    </style>
     <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img1}}"></div>
-    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img2}}"/></div>
-    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img3}}"/></div>
-    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img4}}"/></div>
-    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img5}}"/></div>
-    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img6}}"/></div>
-    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img7}}"/></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img2}}" /></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img3}}" /></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img4}}" /></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img5}}" /></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img6}}" /></div>
+    <div class="hex-cell"><img src="../../../assets/cellsImg/{{service.cellsImage.img7}}" /></div>
   </body>
-  
 
 
- <app-testimonial  [ngClass]="{darkTheme: app.isDark }">
-    </app-testimonial>
-    <br> 
-<app-footer-component></app-footer-component> 
-  
-  
 
+  <app-testimonial [ngClass]="{darkTheme: app.isDark }">
+  </app-testimonial>
+  <br>
+  <app-footer-component></app-footer-component>

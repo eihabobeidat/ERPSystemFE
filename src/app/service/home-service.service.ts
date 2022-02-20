@@ -45,11 +45,16 @@ sliderImage:any=[{}];
 
    getHomeTestimonial()
    {
+     this.testimonial=[]
      this.http.get<ITestimonial[]>('https://localhost:44333/api/Testimonial/GetHomeTestimonial')
      .subscribe((result)=>{
        result.forEach((x)=>{
          if(x.status==1)
          {
+           if(x.imagePath == null)
+           {
+            x.imagePath="defualt.jpg"
+           }
            this.testimonial.push(x)
          }
        })  

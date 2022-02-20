@@ -70,6 +70,9 @@
                       <mat-error *ngIf="mobile.hasError('required')">
                         Mobile is <strong>required</strong>
                      </mat-error>
+                     <mat-error *ngIf="mobile.hasError('maxlength')">
+                      Mobile length must be at most <strong>10 numbers</strong>
+                   </mat-error>
                     </div>
                   </div>
                   <div class="col-md-4">
