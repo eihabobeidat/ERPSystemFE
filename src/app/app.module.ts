@@ -81,6 +81,8 @@ import { DeleteDialogComponent } from './Admin/Employee/delete-dialog/delete-dia
 import { CameraComponent } from './Shared/camera/camera.component';
 import { AvatarModule } from 'ngx-avatar';
 import { PermissionsComponent } from './Admin/permissions/permissions.component';
+import { WeatherComponent } from './Shared/weather/weather.component';
+import { JokesComponent } from './Shared/jokes/jokes.component';
 
 
 @NgModule({
@@ -143,6 +145,8 @@ import { PermissionsComponent } from './Admin/permissions/permissions.component'
     DeleteDialogComponent,
     CameraComponent,
     PermissionsComponent,
+    WeatherComponent,
+    JokesComponent,
 
   ],
   imports: [
