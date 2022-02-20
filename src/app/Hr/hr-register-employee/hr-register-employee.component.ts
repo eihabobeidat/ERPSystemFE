@@ -17,7 +17,7 @@ export class HrRegisterEmployeeComponent implements OnInit {
     password: new FormControl('',[Validators.required, Validators.minLength(8)]),
     address: new FormControl('',[Validators.required]),
     mobile: new FormControl('',[Validators.required]),
-    imagePath: new FormControl('defualt.jpg'), //hr register default image
+    imagePath: new FormControl(''), //hr register default image
     salary: new FormControl(400),
   });
 

@@ -112,6 +112,7 @@ export class AuthenticationService {
         "Accept":'Application/json'
       }),
     }
+    form.email = form.email.toString().toLowerCase();
     this.http.post('https://localhost:44333/api/Jwt',form, requestOption)
     .subscribe(res =>{
       let token:IToken = jwt_Decode(res.toString());
