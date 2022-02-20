@@ -28,7 +28,12 @@
             <!-- messages -->
             <div class="message message-personal new" *ngIf="message.sender === id; else recievedMessage">{{message.text}}</div>
             <ng-template class="incoming" #recievedMessage>
-              <div class="message new"><figure class="avatar"><img src="/assets/EmployeeImg/{{message.imagePath}}" /></figure><span style="color: brown; font-weight: bold;">{{message.firstName}}</span><br>{{message.text}}</div>
+              <div class="message new"><figure class="avatar">
+                <ngx-avatar  size="27" *ngIf="message.imagePath===null" name="{{message.firstName}}"></ngx-avatar>
+                <img *ngIf="message.imagePath!== null && message.imagePath !== 'default.jpg'" src="/assets/EmployeeImg/{{message.imagePath}}" />
+              </figure>
+              <span style="color: brown; font-weight: bold;">{{message.firstName}}</span>
+              <br>{{message.text}}</div>
             </ng-template>
           </div>
           

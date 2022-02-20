@@ -68,6 +68,12 @@
     .mat-hint, input, ::placeholder, .mat-form-field-label {
           color: white;
        }
-    
+       .mat-sort-header-container {
+        justify-content: center !important;
+        }
+        td, th {
+          text-align: center !important;
+          vertical-align: middle !important;
+        }
   
   
