@@ -134,23 +134,20 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-comment"></i>
-                  <span class="notification" >5</span>
+                  <span class="notification" >1</span>
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                  <a class="dropdown-item" (click)="openMessages()" href="javascript:void(0)">Another One</a>
+                  <a class="dropdown-item" href="javascript:void(0)">Admin is done</a>
+                  <a class="dropdown-item" (click)="openMessages()" href="javascript:void(0)"><strong>More Messages</strong></a>
                 </div>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <ngx-avatar  size="40" *ngIf="service.userimage == 'defualt.jpg'|| service.userimage == 'null' " name="{{service.empname}}"></ngx-avatar>
-                  <img *ngIf="service.userimage !== 'null'" [src]="'/assets/EmployeeImg/' + service.userimage" style="width:50px;height:50px;border-radius:50%">
+                  <ngx-avatar  size="40" *ngIf="service.userimage === 'null' || !service.userimage " name="{{service.empname}}"></ngx-avatar>
+                  <img *ngIf="!(service.userimage === 'null' || !service.userimage)" [src]="'/assets/EmployeeImg/' + service.userimage" style="width:50px;height:50px;border-radius:50%">
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>

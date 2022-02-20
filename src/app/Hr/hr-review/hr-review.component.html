@@ -12,7 +12,10 @@
     <ng-container matColumnDef="imagePath">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let review">
-            <img [src]="'/assets/EmployeeImg/' + review.imagePath" style="border-radius: 50%; height:35px">
+            
+            <ngx-avatar  size="37"  *ngIf="review.imagePath === 'default.jpg'||review.imagePath===null" name="{{review.firstName + ' ' +review.lastName}}"></ngx-avatar>
+            
+            <img *ngIf="review.imagePath != null && review.imagePath !== 'default.jpg'"[src]="'/assets/EmployeeImg/' + review.imagePath" style="border-radius: 50%; height:35px">
         </td>
     </ng-container>
 

@@ -6,7 +6,7 @@ export interface IPermissionList{
   employeeId:number
   firstName:string 
   lastName:string
-  imagePath:string
+  imagepath:string
   time:Date
   salaryFlag:number
   employFlag:number
@@ -19,7 +19,7 @@ export interface IPermissionList{
   styleUrls: ['./permissions.component.css']
 })
 export class PermissionsComponent implements OnInit {
-  displayedColumns: string[] = ['employeeId', 'firstName', 'lastName','imagePath','time','salaryFlag','employFlag'];
+  displayedColumns: string[] = ['imagepath','employeeId', 'firstName', 'lastName','time','salaryFlag','employFlag'];
 
   constructor(public perm:PermissionService) { }
 

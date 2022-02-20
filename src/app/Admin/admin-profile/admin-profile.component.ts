@@ -72,6 +72,7 @@ export class AdminProfileComponent implements OnInit {
       }
       
       this.service.UpdateEmployeeProfile(object)
+      this.newpassword.reset()
     }
     else
     {

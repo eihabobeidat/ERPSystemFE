@@ -89,7 +89,7 @@
           <div class="card card-profile">
             <div class="card-avatar">
               <a>
-                <ngx-avatar  size="100" *ngIf="imagePath.value === 'default.jpg'||imagePath.value===null" name="{{firstname.value + ' ' +lastname.value}}"></ngx-avatar>
+                <ngx-avatar  size="100" *ngIf="imagePath.value===null" name="{{firstname.value + ' ' +lastname.value}}"></ngx-avatar>
                 <img *ngIf="imagePath.value != null" [src]="'/assets/EmployeeImg/' + imagePath.value"/>
               </a>
             </div>

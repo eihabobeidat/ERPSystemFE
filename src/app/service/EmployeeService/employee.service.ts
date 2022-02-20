@@ -9,7 +9,7 @@ import { IEmployee } from 'src/app/Admin/admin-dashboard/admin-dashboard.compone
 export class EmployeeService {
 
   vacationSearch:any[]=[]
-  empname:string
+  empname:string="sameh radad"
   employeeRecord:any={}
   employeeId:number=parseInt(localStorage.getItem('id') as string)
   imagename:string
@@ -87,9 +87,10 @@ export class EmployeeService {
 
   }
   ReloadImage(){
+    this.employeeId=parseInt(localStorage.getItem('id') as string)
     this.userimage= localStorage.getItem('imagename') as string;
     
-    if(localStorage.getItem('imagename') === 'null' )
+    if(localStorage.getItem('imagename') === 'null' || !localStorage.getItem('imagename') )
     {
     this.http.get<IEmployee>('https://localhost:44333/api/Employee/GetById/'+this.employeeId).subscribe((result:IEmployee)=>{
      this.empname=result.firstname +" "+ result.lastname     

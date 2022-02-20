@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export interface IPermission{
   employeeId?:number
-  imagePath?:string
+  imagepath?:string
   firstName?:string
   lastName?:string
   time?:Date
@@ -34,8 +34,6 @@ export class PermissionService {
     this.http.get<IPermission[]>('https://localhost:44333/api/Permission')
     .subscribe((res:IPermission[]) => {
       this.data=res
-
-      
     })
   }
 
