@@ -39,6 +39,7 @@ export class HrLeaveService {
       if(form.status === 0){
         this.sendEmail(form.employeeid,'Your leave request had been approved by HR, admins will respond to your request within two business days');
       } else {
+        this.http.get('https://localhost:44333/api/Vacation/RejectWaterMark/' + form.filepath).subscribe();
         this.sendEmail(form.employeeid,'We are sorry, your leave request had been rejected by HR');
       }
     }, err => {
