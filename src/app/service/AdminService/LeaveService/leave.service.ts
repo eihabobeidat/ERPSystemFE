@@ -38,6 +38,9 @@ export class LeaveService {
       this.toaster.success('Leave Status Updated','Success');
       if(form.status === 1){
         this.updateBalance(form);
+        this.http.get('https://localhost:44333/api/Vacation/ApproveWaterMark/' + form.filepath).subscribe();
+      } else {
+        this.http.get('https://localhost:44333/api/Vacation/RejectWaterMark/' + form.filepath).subscribe();
       }
     }, err => {
       this.toaster.error('Something went wrong','Update Error');
