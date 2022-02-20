@@ -39,7 +39,7 @@
   <!-- </div> -->
   
   <div class="message-box">
-    <textarea type="text" #newMessageItem class="message-input" placeholder="Type message..."></textarea>
+    <textarea type="text" #newMessageItem (keydown.enter)="sendMessage(newMessageItem)" class="message-input" placeholder="Type message..."></textarea>
     <button type="submit" (click)="sendMessage(newMessageItem)" class="message-submit">Send</button>
   </div>
 </div>
