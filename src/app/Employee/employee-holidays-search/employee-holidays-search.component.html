@@ -60,12 +60,12 @@
   
         <ng-container matColumnDef="starttime">
           <th mat-header-cell *matHeaderCellDef> Start Time  </th>
-          <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.starttime}} </td>
+          <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.starttime|date:'medium'}} </td>
         </ng-container>
   
         <ng-container matColumnDef="endtime">
           <th mat-header-cell *matHeaderCellDef> End Time  </th>
-          <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.endtime}} </td>
+          <td mat-cell *matCellDef="let IVacationList"> {{IVacationList.endtime|date:'medium'}} </td>
         </ng-container>
   
         <ng-container matColumnDef="type">

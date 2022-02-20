@@ -3,8 +3,8 @@
     <div class="outer" *ngFor="let item of this.service.MyLeaves">
       <div class="card">
         <div class="info">
-            <h3 class="title" style="color: red;">Start In : {{item.starttime}}</h3>
-            <h3  style="color: green;">End In : {{item.starttime}}</h3>
+            <h3 class="title" style="color: red;">Start In : {{item.starttime|date:'medium'}}</h3>
+            <h3  style="color: green;">End In : {{item.starttime|date:'medium'}}</h3>
             <p>{{item.type}},{{item.status}}</p>
             
             <p> {{item.comments}}</p>

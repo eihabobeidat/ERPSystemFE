@@ -34,7 +34,7 @@ export class AdminProfileComponent implements OnInit {
   roleid=new FormControl('',[Validators.required])
   firstname=new FormControl('',[Validators.required])
   lastname=new FormControl('',[Validators.required])
-  mobile=new FormControl('',[Validators.required])
+  mobile=new FormControl('',[Validators.required,Validators.maxLength(10)])
   address=new FormControl('',[Validators.required])
   imagePath=new FormControl('',[Validators.required])
   salary=new FormControl('',[Validators.required])

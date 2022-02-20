@@ -33,7 +33,7 @@
        
         <ng-container matColumnDef="time">
           <th mat-header-cell *matHeaderCellDef> Time </th>
-          <td mat-cell *matCellDef="let IQulafication"> {{IQulafication.time}} </td>
+          <td mat-cell *matCellDef="let IQulafication"> {{IQulafication.time|date:'medium'}} </td>
         </ng-container>
       
         

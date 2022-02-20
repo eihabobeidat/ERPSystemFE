@@ -328,7 +328,7 @@ h1::after {
 /* Team Section
 --------------------------------*/
 #team {
-    background: #fff;
+    background: transparent;
     padding: 60px 0;
   }
   #team .member {
