@@ -83,6 +83,7 @@ import { AvatarModule } from 'ngx-avatar';
 import { PermissionsComponent } from './Admin/permissions/permissions.component';
 import { WeatherComponent } from './Shared/weather/weather.component';
 import { JokesComponent } from './Shared/jokes/jokes.component';
+import { VideoMeetComponent } from './Shared/video-meet/video-meet.component';
 import { EmployeeAttendanceComponent } from './Admin/employee-attendance/employee-attendance.component';
 
 
@@ -148,6 +149,7 @@ import { EmployeeAttendanceComponent } from './Admin/employee-attendance/employe
     PermissionsComponent,
     WeatherComponent,
     JokesComponent,
+    VideoMeetComponent,
     EmployeeAttendanceComponent,
 
   ],
