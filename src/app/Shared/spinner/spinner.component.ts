@@ -12,15 +12,19 @@ export class SpinnerComponent implements OnInit {
    }
 
    ngOnInit(): void {
+     this.show()
+     setTimeout(() => {
+       this.hide()
+     }, 3000);
     
   }
 
-  static show() {
+   show() {
     let spinner: any = document.querySelector(".spinner-bg-color") as HTMLElement;
     spinner.classList.remove("display-none");
   }
 
-  static hide() {
+  hide() {
     let spinner: any = document.querySelector(".spinner-bg-color") as HTMLElement;
     spinner.classList.add("display-none");
   }

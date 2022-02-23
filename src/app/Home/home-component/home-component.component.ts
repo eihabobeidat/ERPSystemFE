@@ -20,8 +20,7 @@ export class HomeComponentComponent implements OnInit {
     config.pauseOnHover = false;  
     service.getTopTenEmployee();
     service.getCellImage();
-    SpinnerComponent.show()
-    setTimeout(() => SpinnerComponent.hide(), 2000);
+    
    
   
   }

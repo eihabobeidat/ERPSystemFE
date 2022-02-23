@@ -1,0 +1,115 @@
+.mat-table{    
+    border-radius: 12px;
+    overflow:hidden !important;
+  }
+  
+  
+  table {
+      width: 93%;
+      background-color: rgb(236, 229, 229);
+      border-collapse:collapse;
+      border-radius: 5em;
+    }
+  
+    th ,td{
+      
+      width: auto;
+      justify-content: center;
+  
+    }
+  
+    .sameh {
+      margin-left: 3.333333% !important;
+  }
+    table tr:last-child td /*To remove the last border*/
+    {
+      border-bottom:0 solid
+    }
+  
+    td{
+        color: black;
+    }
+  
+    th{
+      color: white;
+      background-color: #d70926;
+     
+      
+    }
+    table[_ngcontent-cpq-c245] {
+      width: 91%;
+      background-color: rgb(73, 68, 68);
+      border-collapse: collapse;
+      border-radius: 5em;
+  }
+    
+  
+  .col-sm-4 {
+      padding-left: 0px;
+     
+  }
+  
+  
+  
+  
+  input {
+    color: black !important;
+  }
+  
+  
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: white;
+    }
+   
+    .mat-hint, input, ::placeholder, .mat-form-field-label {
+          color: white;
+       }
+    
+     .mat-sort-header-container {
+    justify-content: center !important;
+    }
+    td, th {
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+  
+    
+  
+  .col-sm-4 {
+      padding-left: 0px;
+     
+  }
+  
+  
+  
+  input {
+    color: black !important;
+  }
+  
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white;
+  }
+   
+  .mat-hint, input, ::placeholder, .mat-form-field-label {
+   color: white;
+  }
+  
+  
+  .btn-success {
+    color: #fff;
+    background-color: #d70926;
+    border-color: #d70926;
+  }
+  
+  .btn:focus,
+  .btn.focus {
+  outline: 0;
+  box-shadow: 0 
+  }
+  .btn-success:focus,
+  .btn-success.focus {
+  box-shadow: none !important
+  }
+  
+  
