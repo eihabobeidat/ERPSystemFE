@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainNavbarComponentComponent } from './Home/main-navbar-component/main-navbar-component.component';
+import { VideoMeetComponent } from './Shared/video-meet/video-meet.component';
 
 const routes: Routes = [
   { 
-    path:'',component:MainNavbarComponentComponent 
+    path:'',component:MainNavbarComponentComponent
+  },
+  {
+    path:'meet', component:VideoMeetComponent
   },
   {
     path: 'home', loadChildren: () => import('../app/Modules/homemodule/homemodule.module').then(
