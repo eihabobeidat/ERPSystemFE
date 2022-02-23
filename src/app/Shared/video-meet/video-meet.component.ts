@@ -70,9 +70,10 @@ export class VideoMeetComponent implements OnInit {
   client = ZoomMtgEmbedded.createClient();
   apiKey = '8WNiew3iTm6b_EPB414sQg'
   signature = ''
-  meetingNumber = '' //api post
-  password = ''// api post
-  userName = this.email.split('@')[0]; //lS
+  meetingNumber = '81402930786' //api post
+  password = 'kY42h1'// api post
+  userName="Tameem";
+  // userName = this.email.split('@')[0]; //lS
   userEmail = this.email; //ls
   role = 0;
   constructor(private http:HttpClient) { }
@@ -121,6 +122,8 @@ export class VideoMeetComponent implements OnInit {
       this.meetingNumber = res.id;
       this.getSignature();
     })
+    
+    
   }
 
   joinMeeting(){
