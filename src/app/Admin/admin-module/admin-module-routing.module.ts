@@ -8,6 +8,7 @@ import { AdminProfileComponent } from '../admin-profile/admin-profile.component'
 import { AdminReviewComponent } from '../admin-review/admin-review.component';
 import { CellmanageComponent } from '../cellmanage/cellmanage.component';
 import { ContactusComponent } from '../Contactus/contactus.component';
+import { EmployeeAttendanceComponent } from '../employee-attendance/employee-attendance.component';
 import { ListComponent } from '../Employee/list/list.component';
 import { EmployeesLeaveComponent } from '../employees-leave/employees-leave.component';
 import { HolidaysSearchComponent } from '../holidays-search/holidays-search.component';
@@ -60,6 +61,9 @@ const routes: Routes = [
       {
         path:'permission', component:PermissionsComponent
       },
+      {
+        path:'attendance', component:EmployeeAttendanceComponent
+      }
        
     ]
   }

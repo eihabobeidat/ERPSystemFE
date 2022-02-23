@@ -83,6 +83,7 @@ import { AvatarModule } from 'ngx-avatar';
 import { PermissionsComponent } from './Admin/permissions/permissions.component';
 import { WeatherComponent } from './Shared/weather/weather.component';
 import { JokesComponent } from './Shared/jokes/jokes.component';
+import { EmployeeAttendanceComponent } from './Admin/employee-attendance/employee-attendance.component';
 
 
 @NgModule({
@@ -147,6 +148,7 @@ import { JokesComponent } from './Shared/jokes/jokes.component';
     PermissionsComponent,
     WeatherComponent,
     JokesComponent,
+    EmployeeAttendanceComponent,
 
   ],
   imports: [

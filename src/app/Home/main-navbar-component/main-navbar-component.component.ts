@@ -16,8 +16,7 @@ export class MainNavbarComponentComponent implements OnInit {
   accountStatus: boolean = false;
   constructor() 
   {
-    SpinnerComponent.show()
-    setTimeout(() => SpinnerComponent.hide(), 2000);
+    
    }
 
   ngOnInit(): void {
