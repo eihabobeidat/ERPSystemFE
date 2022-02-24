@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import ZoomMtgEmbedded from "@zoomus/websdk/embedded";
 
 interface ISignature {
@@ -7,8 +8,9 @@ interface ISignature {
 }
 
 interface IApiMeet {
-  id:string,
+  id:string
   password:string
+  start_url:string
 }
 
 interface IMeeting {
@@ -41,6 +43,8 @@ interface IMeeting {
 })
 
 export class VideoMeetComponent implements OnInit {
+ 
+
   email = localStorage.getItem('email') as string;
   jwtToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IjhXTmlldzNpVG02Yl9FUEI0MTRzUWciLCJleHAiOjE2NzcxMDI4NDAsImlhdCI6MTY0NTU2MTUzMX0.fnvkuLNZCD-ONCrlF3fOs3Rd21pOyUECwFFuNCX55Ow'
   meeting = {
@@ -70,14 +74,19 @@ export class VideoMeetComponent implements OnInit {
   client = ZoomMtgEmbedded.createClient();
   apiKey = '8WNiew3iTm6b_EPB414sQg'
   signature = ''
-  meetingNumber = '81402930786' //api post
-  password = 'kY42h1'// api post
-  userName="Tameem";
-  // userName = this.email.split('@')[0]; //lS
+  meetingNumber = '' //api post // useruser
+  password = ''// api post    // useruser
+  userName = this.email.split('@')[0]; //lS
   userEmail = this.email; //ls
   role = 0;
   constructor(private http:HttpClient) { }
-
+  adminstart():boolean{
+    if(localStorage.getItem('role')==='Admin')
+    {
+      return true;
+    }
+    return false;
+  }
   initiateMeeting(){
     let meetingSDKElement = document.getElementById('meetingSDKElement') as HTMLElement;
 
@@ -102,36 +111,43 @@ export class VideoMeetComponent implements OnInit {
     });
   }
 
-  getSignature(){
+  getSignature(meetNum:string,meetPass:string){
     this.http.post<ISignature>('https://zoom-signture-gen-tahaluf.herokuapp.com/', {
-      meetingNumber: this.meetingNumber,
+      meetingNumber: meetNum,
       role: this.role
     }).subscribe( res => {
       this.signature = res.signature;
-      this.joinMeeting();
+      this.joinMeeting(meetNum,meetPass);
     }, err => {
       console.log('No internet connection');
     })
   }
 
-  startMeeting(){
+  startMeeting(link:HTMLElement){
     this.http.get<IApiMeet>('https://localhost:44333/api/Zoom')
     .subscribe( res => {
       console.log(res);
       this.password = res.password;
       this.meetingNumber = res.id;
-      this.getSignature();
+      link.setAttribute('href',res.start_url);
+      link.click();
+      
+      this.http.post('https://localhost:44333/api/Message/Insert',{text:"Meeting Number :" + this.meetingNumber + "   Password: " + this.password ,
+      sender:parseInt(localStorage.getItem('id') as string),
+      time:new Date()})
+      .subscribe(res=>{
+      })
     })
     
     
   }
 
-  joinMeeting(){
+  joinMeeting(meetNum:string,meetPass:string){
     this.client.join({
       apiKey: this.apiKey,
       signature: this.signature,
-      meetingNumber: this.meetingNumber,
-      password: this.password,
+      meetingNumber: meetNum,
+      password: meetPass,
       userName: this.userName,
       userEmail: this.userEmail
     })

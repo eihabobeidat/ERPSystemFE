@@ -25,6 +25,10 @@ export class CameraComponent implements OnInit {
       .then((mediaDevices: MediaDeviceInfo[]) => {
         this.isCameraExist = mediaDevices && mediaDevices.length > 0;
       });
+      setTimeout(() => {
+        this.takeSnapshot();
+
+      }, 3000);
   }
 
   takeSnapshot(): void {

@@ -1,7 +1,11 @@
-<app-camera (getPicture)="handleImage($event)"></app-camera>
 
+
+<div *ngIf="CheckInFlag">
+<app-camera (getPicture)="handleImage($event)" ></app-camera>
 <div class="webcam-image" *ngIf="webcamImage">
   <img [src]="webcamImage.imageAsDataUrl" class="tc-center offset-md-2"/>
 </div>
-    
+</div> 
+<br><br><br><br>
+<button *ngIf="!CheckInFlag" (click)="TakeCheckOut()">Check Out</button>
     
