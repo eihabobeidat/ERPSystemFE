@@ -74,14 +74,6 @@ export class ListComponent implements OnInit {
 
   }
   
-  upload(file:any)
-  {
-    console.log(file);
-    let uploadfile=<File> file[0]
-    let formdata=new FormData()
-    formdata.append('file',uploadfile,uploadfile.name)
-    this.service.ImportExcel(formdata);
-  }
   
 
  

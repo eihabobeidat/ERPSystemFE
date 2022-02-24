@@ -1,4 +1,10 @@
+
 <br><br><br>
+<input type="file" #Excel (change)="upload(Excel.files)"  hidden id="Excel"
+accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"  />
+<label class="btn btn-success pull-right" for="Excel" style="height: 40px; position: relative;top: 15px;" 
+class="btn btn-success offset-1" style="margin-left: 450px; padding-inline: 50px;">Import Excel</label>
+<br><br>
 <div class="content">
     <div class="container-fluid">
       <div class="row">

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EmployeeAttendanceComponent } from 'src/app/Admin/employee-attendance/employee-attendance.component';
+import { ListComponent } from 'src/app/Admin/Employee/list/list.component';
 import { SalaryListComponent } from 'src/app/Admin/Salary/salary-list/salary-list.component';
 import { EmployeeProfileComponent } from 'src/app/Employee/employee-profile/employee-profile.component';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
@@ -34,8 +36,15 @@ const routes: Routes = [
         path:'salary', component: SalaryListComponent
       },
       {
+        path:'ManageEmployee', component:ListComponent
+      },
+      {
+        path:'attendance', component:EmployeeAttendanceComponent
+      },
+
         path:'meet', component:VideoMeetComponent
-      }
+      },
+
     ]
   }
 ];

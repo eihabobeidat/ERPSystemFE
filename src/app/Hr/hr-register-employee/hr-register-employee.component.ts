@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmployeeService } from 'src/app/service/Admin/Employee/employee.service';
 import { AuthenticationService } from 'src/app/service/AuthenticationService/authentication.service';
+
 
 @Component({
   selector: 'app-hr-register-employee',
@@ -28,7 +30,7 @@ export class HrRegisterEmployeeComponent implements OnInit {
     return false;
   }
 
-  constructor(private service:AuthenticationService) 
+  constructor(private service:AuthenticationService, private empservice:EmployeeService) 
   { 
 
   }
@@ -45,4 +47,14 @@ export class HrRegisterEmployeeComponent implements OnInit {
   {
 
   }
+
+  upload(file:any)
+  {
+    console.log(file);
+    let uploadfile=<File> file[0]
+    let formdata=new FormData()
+    formdata.append('file',uploadfile,uploadfile.name)
+    this.empservice.ImportExcel(formdata);
+  }
+  
 }
