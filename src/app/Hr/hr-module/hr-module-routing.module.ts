@@ -41,7 +41,7 @@ const routes: Routes = [
       {
         path:'attendance', component:EmployeeAttendanceComponent
       },
-
+      {
         path:'meet', component:VideoMeetComponent
       },
 
