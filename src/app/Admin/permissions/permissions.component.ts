@@ -53,12 +53,14 @@ export class PermissionsComponent implements OnInit {
       this.perm.updatePermission(object)
   }
 
+
     
   }//end statuscheck
 
 
   StatusCheck1(status:any,permession:any,flag:number)
   {
+
 
     if(status.checked == true)
     {

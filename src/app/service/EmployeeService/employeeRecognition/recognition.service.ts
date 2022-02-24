@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class RecognitionService {
-  
+  faceId:string;
   constructor(private http:HttpClient) {
   }
 
@@ -14,7 +14,7 @@ export class RecognitionService {
   {
     this.http.post<any>('https://localhost:44333/api/Attendance/DetectFace',{image:face})
     .subscribe((res:any) =>{
-      
+      this.faceId=res.image
       console.log(res.image,"Result String");
 
     })

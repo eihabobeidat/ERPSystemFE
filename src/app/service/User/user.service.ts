@@ -65,9 +65,8 @@ export class UserService {
     let obj={
       id:parseInt(x.toString())
       }
-    this.http.post('https://localhost:44333/api/Attendance/UpdateCheckOut', obj).subscribe((result)=>{
-        
-       
+    this.http.post<string>('https://localhost:44333/api/Attendance/UpdateCheckOut', obj).subscribe((result)=>{
+      this.toaster1.success("have taken","Update");
 
      });
 
