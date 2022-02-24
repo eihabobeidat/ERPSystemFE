@@ -49,6 +49,7 @@ export class PermissionService {
   updatePermission(form:IPermissionBasic){
     this.http.put('https://localhost:44333/api/Permission', form)
     .subscribe(res => {
+      this.getAllPermissions();
       this.toaster.success('Permission granted','Submition Successful');
     }, err => {
       this.toaster.error('Try again later','Submition Failed');

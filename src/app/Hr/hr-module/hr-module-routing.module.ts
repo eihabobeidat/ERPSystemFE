@@ -5,6 +5,7 @@ import { ListComponent } from 'src/app/Admin/Employee/list/list.component';
 import { SalaryListComponent } from 'src/app/Admin/Salary/salary-list/salary-list.component';
 import { EmployeeProfileComponent } from 'src/app/Employee/employee-profile/employee-profile.component';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
+import { VideoMeetComponent } from 'src/app/Shared/video-meet/video-meet.component';
 import { HrDashboardComponent } from '../hr-dashboard/hr-dashboard.component';
 import { HrLeaveComponent } from '../hr-leave/hr-leave.component';
 import { HrNavComponent } from '../hr-nav/hr-nav.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path:'attendance', component:EmployeeAttendanceComponent
       },
+
+        path:'meet', component:VideoMeetComponent
+      },
+
     ]
   }
 ];

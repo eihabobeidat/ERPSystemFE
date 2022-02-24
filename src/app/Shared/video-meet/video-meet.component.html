@@ -1,6 +1,15 @@
-<button (click)="startMeeting()">Start Meeting</button>
-<button (click)="getSignature()">Join Meeting</button>
+<br><br><br><br><br>
+<button (click)="startMeeting(linkmeetingzoom)" *ngIf="adminstart()">Start Meeting</button>
+
+<a href="" target="_blank" hidden #linkmeetingzoom>Link meeting</a>
+<div *ngIf="!adminstart()">
+<input type="text" value="" placeholder="Enter Meeting Number" #meetNum >
+<input type="password" placeholder="Enter Password"  #meetPass>
+
+<button (click)="getSignature(meetNum.value,meetPass.value)">Join Meeting</button>
+</div>
 <br>
-<div id="meetingSDKElement">
+<br>
+<div id="meetingSDKElement" style="width: 50%; height: 50%;">
     <!-- Zoom Meeting SDK Rendered Here -->
- </div>
+</div>

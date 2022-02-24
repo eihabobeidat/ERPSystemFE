@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
+import { VideoMeetComponent } from 'src/app/Shared/video-meet/video-meet.component';
 import { AboutManageComponent } from '../about-manage/about-manage.component';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from '../admin-nav/admin-nav.component';
@@ -63,6 +64,9 @@ const routes: Routes = [
       },
       {
         path:'attendance', component:EmployeeAttendanceComponent
+      },
+      {
+        path:'meet', component:VideoMeetComponent
       }
        
     ]
