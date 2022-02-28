@@ -14,6 +14,9 @@ export class TestimonialComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      document.getElementById("myCarouselnextitem")?.click()
+    }, 6000);
   }
 
 }

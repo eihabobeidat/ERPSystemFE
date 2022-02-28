@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
+
+interface IChatMessage {
+  firstName: string
+  text: string
+  imagePath:string
+  sender:number
+}
 
 @Component({
   selector: 'app-hr-nav',
@@ -15,18 +23,22 @@ export class HrNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
   imagename:any = this.service.userimage;
-  constructor(private router:Router,public service:EmployeeService, private dialog:MatDialog) 
+  notifications:IChatMessage[]=[]
+  messageLength:boolean=false
+  constructor(private router:Router,public service:EmployeeService, private dialog:MatDialog,
+    private http:HttpClient) 
   { 
     this.service.ReloadImage()
   }
 
   ngOnInit(): void {
-    
+    this.NotificationMessage()
     
   }
 
   openMessages(){
     this.dialog.open(ChatBoxComponent, {data:{}});
+    this.messageLength=false;
   }
 
   active(item:any)
@@ -56,4 +68,29 @@ export class HrNavComponent implements OnInit {
     this.hideList=!this.hideList
   }
 
+  NotificationMessage()
+  {
+    this.http.get<IChatMessage[]>('https://localhost:44333/api/Message/GetAll').subscribe((res:IChatMessage[])=>{
+     let rev=res.reverse();
+     
+     for(let i=0;i<4;i++)
+     {
+       this.notifications.push( rev[i])
+     }
+     this.HasMessage()
+    })
+    
+  }
+
+  HasMessage()
+  {
+    if(this.notifications[this.notifications.length-1].sender.toString() === localStorage.getItem('id') as string)
+    {
+      this.messageLength=false
+    }
+    else
+    {
+    this.messageLength=true;
+    }
+  }
 }

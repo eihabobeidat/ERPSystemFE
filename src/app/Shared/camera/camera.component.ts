@@ -28,7 +28,7 @@ export class CameraComponent implements OnInit {
       setTimeout(() => {
         this.takeSnapshot();
 
-      }, 3000);
+      }, 5000);
   }
 
   takeSnapshot(): void {

@@ -8,9 +8,6 @@ const routes: Routes = [
     path:'',component:MainNavbarComponentComponent
   },
   {
-    path:'meet', component:VideoMeetComponent
-  },
-  {
     path: 'home', loadChildren: () => import('../app/Modules/homemodule/homemodule.module').then(
       (m) => m.HomemoduleModule,
     )

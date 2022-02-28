@@ -132,7 +132,7 @@ export class VideoMeetComponent implements OnInit {
       link.setAttribute('href',res.start_url);
       link.click();
       
-      this.http.post('https://localhost:44333/api/Message/Insert',{text:"Meeting Number :" + this.meetingNumber + "   Password: " + this.password ,
+      this.http.post('https://localhost:44333/api/Message/Insert',{text:" Join Our ERP System Meeting using            Meeting Number :" + this.meetingNumber + "   Password: " + this.password ,
       sender:parseInt(localStorage.getItem('id') as string),
       time:new Date()})
       .subscribe(res=>{

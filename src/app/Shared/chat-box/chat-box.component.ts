@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+
 interface IMessage {
   id?:number
   sender:number
@@ -26,6 +27,7 @@ export class ChatBoxComponent implements OnInit {
   id:number= parseInt(localStorage.getItem('id') as string);
   update:number = 0;
   messages:IChatMessage[] = [];
+  meeturl:string=(localStorage.getItem('role') as string).toLowerCase();
   constructor(private dialog:MatDialog, @Inject(MAT_DIALOG_DATA)public data:{}, private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -33,6 +35,10 @@ export class ChatBoxComponent implements OnInit {
     this.realTimeUpdate();
   }
 
+  close()
+  {
+    this.dialog.closeAll()
+  }
   getMessages(){
     this.http.get<IChatMessage[]>('https://localhost:44333/api/Message/GetAll')
     .subscribe((res:IChatMessage[])=>{
