@@ -4,7 +4,7 @@ import { UserService } from 'src/app/service/User/user.service';
 @Component({
   selector: 'app-my-leave',
   templateUrl: './my-leave.component.html',
-  styleUrls: ['./my-leave.component.css']
+  styleUrls: ['./myleave.scss']
 })
 export class MyLeaveComponent implements OnInit {
 
