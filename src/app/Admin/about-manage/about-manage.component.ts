@@ -29,6 +29,7 @@ export class AboutManageComponent implements OnInit {
     formdata.append("Id",id.toString());
 
      this.service.UpdateAbout(formdata);
+     this.aboutForm.reset()
     
 
 

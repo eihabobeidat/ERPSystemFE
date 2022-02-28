@@ -4,6 +4,14 @@ import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
 import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/service/EmployeeService/employee.service';
 import { IPermission, PermissionService } from 'src/app/service/AdminService/PermissionService/permission.service';
+import { HttpClient } from '@angular/common/http';
+
+interface IChatMessage {
+  firstName: string
+  text: string
+  imagePath:string
+  sender:number
+}
 
 @Component({
   selector: 'app-employee-nav',
@@ -14,12 +22,14 @@ export class EmployeeNavComponent implements OnInit {
   hideList:boolean=true;
   oldItem:any
   imagename:any = this.service.userimage;
-  
+  notifications:IChatMessage[]=[]
+  messageLength:boolean=false
   constructor(private router:Router,public service:EmployeeService,private dialog:MatDialog,
-     public permissions:PermissionService) { }
+     public permissions:PermissionService, private http:HttpClient) { }
   
   openMessages(){
     this.dialog.open(ChatBoxComponent, {data:{}});
+    this.messageLength=false;
   }
 
 
@@ -27,6 +37,7 @@ export class EmployeeNavComponent implements OnInit {
   ngOnInit(): void {
     this.service.ReloadImage()
     this.permissions.getPermission(localStorage.getItem('id') as string)
+    this.NotificationMessage()
     
   }
 
@@ -52,7 +63,33 @@ export class EmployeeNavComponent implements OnInit {
     this.hideList=!this.hideList
   }
 
+  NotificationMessage()
+  {
+    this.http.get<IChatMessage[]>('https://localhost:44333/api/Message/GetAll').subscribe((res:IChatMessage[])=>{
+     let rev=res.reverse();
      
+     for(let i=0;i<4;i++)
+     {
+       this.notifications.push( rev[i])
+     }
+     this.HasMessage()
+    })
+    
+  }
+
+  HasMessage()
+  {
+   
+    
+    if(this.notifications[this.notifications.length-1].sender.toString() === localStorage.getItem('id') as string)
+    {
+      this.messageLength=false
+    }
+    else
+    {
+    this.messageLength=true;
+    }
+  }
 
 
 }

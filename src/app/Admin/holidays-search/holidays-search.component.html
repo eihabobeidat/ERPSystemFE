@@ -1,9 +1,11 @@
 <br><br><br>
 <div class="container-fluid">
   <button  id="export" (click)="exportToExcel()" class="btn btn text-white" 
-  style="background-color: rgb(20, 160, 20);">Excel</button>  <button  id="export1" (click)="exportToCSV('members.csv')" class="btn btn-primary mx-3">CSV</button>
-  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
-
+  style="background-color: rgb(20, 160, 20);"> <i class="fa fa-file-excel-o"> Excel</i></button>
+  <button  id="export1" (click)="exportToCSV('employeesLeaves.csv')" class="btn btn-primary mx-3">
+    <i class='fas fa-file-csv'> CSV</i></button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> 
+    <i class="fa fa-file-pdf-o"> Print</i></button>
 <br><br><br>
 
 <form class="" [formGroup]="searchForm" (ngSubmit)="onSubmit()" >

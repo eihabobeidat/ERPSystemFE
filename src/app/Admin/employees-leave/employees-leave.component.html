@@ -1,8 +1,11 @@
 <br><br><br>
 <div class="container-fluid">
   <button  id="export" (click)="exportToExcel()" class="btn btn text-white" 
-  style="background-color: rgb(20, 160, 20);">Excel</button>  <button  id="export1" (click)="exportToCSV('employeesLeaves.csv')" class="btn btn-primary mx-3">CSV</button>
-  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> Print</button>
+  style="background-color: rgb(20, 160, 20);"> <i class="fa fa-file-excel-o"> Excel</i></button>
+  <button  id="export1" (click)="exportToCSV('employeesLeaves.csv')" class="btn btn-primary mx-3">
+    <i class='fas fa-file-csv'> CSV</i></button>
+  <button  class="btn btn-danger" (click)="printBtn()"><span class="glyphicon glyphicon-print"></span> 
+    <i class="fa fa-file-pdf-o"> Print</i></button>
 
 <br><br><br>
 
@@ -55,19 +58,9 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef>Status</th>
-        <td mat-cell *matCellDef="let vacation">
-            <div *ngIf="vacation.status === 0">
-                <span>Pending</span>
-            </div>
-            <div *ngIf="vacation.status === 1">
-              <span style="color: rgb(49, 179, 49)">Approved</span>
-            </div>
-            <div *ngIf="vacation.status === 2">
-                <span style="color: red">Rejected</span>
-            </div>
-        </td>
+      <ng-container matColumnDef="filepath">
+        <th mat-header-cell *matHeaderCellDef>Vacation File</th>
+        <td mat-cell *matCellDef="let vacation"><a target="_blank" href="../../../assets/FileLeave/{{vacation.filepath}}"><i class="fa fa-download" style="font-size:30px;"></i></a> </td>
       </ng-container>
 
       <ng-container matColumnDef="comments">
@@ -86,10 +79,10 @@
             </div>
             <ng-template #elseBlock>
                 <div *ngIf="vacation.status === 1; else elseBlock">
-                    <span>Approved</span>
+                  <span style="color: rgb(49, 179, 49)">Approved</span>
                 </div>
                 <ng-template #elseBlock>
-                    <span>Rejected</span>
+                  <span style="color: red">Rejected</span>
                 </ng-template>
             </ng-template>
         </td>

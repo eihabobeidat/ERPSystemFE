@@ -17,7 +17,7 @@ declare const printTable: any;
 
 export class EmployeesLeaveComponent implements OnInit {
   displayedColumns: string[] = ['id', 'duration', 'employeeName', 'starttime',
-  'endtime','type','status','comments', 'Approve'];
+  'endtime','type','filepath','comments', 'Approve'];
   //'reviewedby','approvedby',
   constructor(public service:LeaveService, private http:HttpClient, private toaster:ToastrService)
   { 
