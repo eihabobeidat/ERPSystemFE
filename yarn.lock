@@ -2436,6 +2436,11 @@
     "path-type" "^4.0.0"
     "yaml" "^1.10.0"
 
+"creditcardpayments@^1.0.3":
+  "integrity" "sha512-h3QGaa2QVr8NKWK8vJ0yN5BDHUUE6yNaYEdbz9+9Ust0xqGbu1mKI8GXDhPPtAUxB6vEuMcdXMZsAJEJRf2obA=="
+  "resolved" "https://registry.npmjs.org/creditcardpayments/-/creditcardpayments-1.0.3.tgz"
+  "version" "1.0.3"
+
 "critters@0.0.16":
   "integrity" "sha512-JwjgmO6i3y6RWtLYmXwO5jMd+maZt8Tnfu7VVISmEWyQqfLpB8soBswf8/2bu6SBXxtKA68Al3c+qIG1ApT68A=="
   "resolved" "https://registry.npmjs.org/critters/-/critters-0.0.16.tgz"

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChatBoxComponent } from 'src/app/Shared/chat-box/chat-box.component';
+import { PaybalComponent } from 'src/app/Shared/paybal/paybal.component';
 import { VideoMeetComponent } from 'src/app/Shared/video-meet/video-meet.component';
 import { AboutManageComponent } from '../about-manage/about-manage.component';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
@@ -67,6 +68,8 @@ const routes: Routes = [
       },
       {
         path:'meet', component:VideoMeetComponent
+      },{
+        path:'paybal', component:PaybalComponent
       }
        
     ]
