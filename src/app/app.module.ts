@@ -85,6 +85,7 @@ import { WeatherComponent } from './Shared/weather/weather.component';
 import { JokesComponent } from './Shared/jokes/jokes.component';
 import { VideoMeetComponent } from './Shared/video-meet/video-meet.component';
 import { EmployeeAttendanceComponent } from './Admin/employee-attendance/employee-attendance.component';
+import { PaybalComponent } from './Shared/paybal/paybal.component';
 
 
 @NgModule({
@@ -151,6 +152,7 @@ import { EmployeeAttendanceComponent } from './Admin/employee-attendance/employe
     JokesComponent,
     VideoMeetComponent,
     EmployeeAttendanceComponent,
+    PaybalComponent,
 
   ],
   imports: [
