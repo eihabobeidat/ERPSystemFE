@@ -8,6 +8,12 @@ import {render} from 'creditcardpayments/creditCardPayments';
 export class PaybalComponent implements OnInit {
 
   constructor() {
+  
+    
+      
+   }
+
+  ngOnInit(): void {
     render(
       {
           id: "#myPaybalButton",
@@ -19,10 +25,6 @@ export class PaybalComponent implements OnInit {
           }
         }
       )
-      
-   }
-
-  ngOnInit(): void {
   }
  
   
