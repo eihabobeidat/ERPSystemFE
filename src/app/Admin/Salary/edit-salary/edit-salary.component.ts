@@ -38,7 +38,7 @@ export class EditSalaryComponent implements OnInit {
       EmployeeId:this.data.id,
       DoneBy:parseInt(localStorage.getItem('id') as string)
      
-    }; 
+    };  
     this.service.EditSalary(obj);
     this.closeDialogBox();
     setTimeout(() => {
