@@ -68,8 +68,6 @@ const routes: Routes = [
       },
       {
         path:'meet', component:VideoMeetComponent
-      },{
-        path:'paybal', component:PaybalComponent
       }
        
     ]
