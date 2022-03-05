@@ -26,7 +26,11 @@ export interface IPermissionBasic{
 export class PermissionService {
 
   data:any=[]
-  permission:IPermission
+  permission:IPermission={
+    salaryFlag:0,
+    employFlag:0
+  };
+
 
   constructor(private http:HttpClient, private toaster:ToastrService) { }
 
