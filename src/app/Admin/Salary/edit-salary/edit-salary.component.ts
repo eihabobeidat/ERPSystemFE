@@ -41,6 +41,9 @@ export class EditSalaryComponent implements OnInit {
     };
     this.service.EditSalary(obj);
     this.closeDialogBox();
+    setTimeout(() => {
+      this.service.getAllSalary()
+    }, 2500);
 
   }
 

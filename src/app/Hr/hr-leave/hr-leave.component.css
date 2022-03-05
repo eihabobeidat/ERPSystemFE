@@ -5,7 +5,7 @@
 
 
 table {
-    width: 93%;
+    width: 97%;
     background-color: rgb(236, 229, 229);
     border-collapse:collapse;
     border-radius: 5em;
@@ -19,7 +19,7 @@ table {
   }
 
   .sameh {
-    margin-left: 3.333333% !important;
+    margin-left: 2.333333% !important;
 }
   table tr:last-child td /*To remove the last border*/
   {
